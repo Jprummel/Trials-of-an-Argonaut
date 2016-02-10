@@ -7,4 +7,5 @@ public class Unit : MonoBehaviour {
     public float damage;
     [SerializeField]private float _range;
     [SerializeField]private float _movementSpeed;
+
 }
