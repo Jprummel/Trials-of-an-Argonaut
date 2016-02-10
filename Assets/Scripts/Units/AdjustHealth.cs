@@ -3,23 +3,31 @@ using System.Collections;
 
 public class AdjustHealth : MonoBehaviour {
 
-    private float unitHealth;
-
-	// Use this for initialization
-	void Start () {
-        unitHealth = GetComponent<Unit>().health;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
+    [SerializeField]private float _deathTimer;
+                    private float unitHealth;
+    
     void OnTriggerEnter(Collider other)
     {
-        float Damage = other.gameObject.GetComponent<Unit>().damage;
-        float currentHealth = this.GetComponent<Unit>().health - Damage;
-        this.GetComponent<Unit>().health = currentHealth;
+        if (other.tag == "Unit")
+        {
+            float Damage = other.gameObject.GetComponent<Unit>().damage;
+            float currentHealth = this.GetComponent<Unit>().health;
+            currentHealth -= Damage;
+            this.GetComponent<Unit>().health = currentHealth;
+
+            if (currentHealth <= 0)
+            {
+                StartCoroutine(DeathTimer());
+            }
+        }
+
+    }
+
+    IEnumerator DeathTimer()
+    {
+        yield return new WaitForSeconds(_deathTimer);
+        Destroy(this.gameObject);
+        //AnimStateHandler.AnimState();
     }
 
 }
