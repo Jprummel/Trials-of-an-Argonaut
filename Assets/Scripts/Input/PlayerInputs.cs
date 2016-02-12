@@ -3,9 +3,12 @@ using System.Collections;
 
 public class PlayerInputs : MonoBehaviour {
 
+    private AttackRangeCheck _target;
+
 	// Update is called once per frame
 	void Update () {
         Inputs();
+        _target = this.gameObject.GetComponent<AttackRangeCheck>();
 	}
 
     void Inputs()
@@ -36,6 +39,7 @@ public class PlayerInputs : MonoBehaviour {
             //Call movement function for dpad down
             Debug.Log("Dpad down");
         }
+
         //ANALOG STICKS
 
         float leftX = Input.GetAxis(InputAxes.leftX); //LEFT ANALOG X AXIS
@@ -109,6 +113,7 @@ public class PlayerInputs : MonoBehaviour {
         if(Input.GetButtonDown(InputAxes.b))
         {
             Debug.Log("B Pressed");
+            _target.CurrentTarget();
         }
         if (Input.GetButtonDown(InputAxes.x))
         {
@@ -120,6 +125,8 @@ public class PlayerInputs : MonoBehaviour {
         }
 
         //BUMPERS & TRIGGERS
+
+        //BUMPERS
         if (Input.GetButtonDown(InputAxes.lb))
         {
             Debug.Log("LB Pressed");
@@ -129,8 +136,10 @@ public class PlayerInputs : MonoBehaviour {
             Debug.Log("RB Pressed");
         }
 
+        //TRIGGERS
         float leftTrigger = Input.GetAxis(InputAxes.lt);
         float rightTrigger = Input.GetAxis(InputAxes.rt);
+
         if (leftTrigger > 0)
         {
             Debug.Log("LT Pressed");
