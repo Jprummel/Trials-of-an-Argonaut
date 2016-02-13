@@ -8,7 +8,7 @@ public class AdjustHealth : MonoBehaviour {
     
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Unit")
+        if (other.tag == "PlayerUnit" && this.tag == "EnemyUnit")
         {
             float Damage = other.gameObject.GetComponent<Unit>().damage;
             float currentHealth = this.GetComponent<Unit>().health;
