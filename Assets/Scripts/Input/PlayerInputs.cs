@@ -3,13 +3,10 @@ using System.Collections;
 
 public class PlayerInputs : MonoBehaviour {
 
-    private AttackRangeCheck _target;
-
-	// Update is called once per frame
+  	// Update is called once per frame
 	void Update () {
         Inputs();
-        _target = this.gameObject.GetComponent<AttackRangeCheck>();
-	}
+    }
 
     void Inputs()
     {
@@ -113,7 +110,6 @@ public class PlayerInputs : MonoBehaviour {
         if(Input.GetButtonDown(InputAxes.b))
         {
             Debug.Log("B Pressed");
-            _target.CurrentTarget();
         }
         if (Input.GetButtonDown(InputAxes.x))
         {
