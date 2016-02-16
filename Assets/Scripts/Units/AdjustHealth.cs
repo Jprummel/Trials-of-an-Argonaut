@@ -3,9 +3,15 @@ using System.Collections;
 
 public class AdjustHealth : MonoBehaviour {
 
+                    private PlayerAttack _attack;
     [SerializeField]private float _deathTimer;
                     private float unitHealth;
-    
+
+    void Start()
+    {
+        _attack = GetComponent<PlayerAttack>();
+    }
+
     void OnTriggerEnter(Collider other)
     {
 
