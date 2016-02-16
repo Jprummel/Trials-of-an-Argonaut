@@ -3,14 +3,21 @@ using System.Collections;
 
 public class AdjustHealth : MonoBehaviour {
 
+                    private PlayerAttack _attack;
     [SerializeField]private float _deathTimer;
                     private float unitHealth;
-    
+
+    void Start()
+    {
+        _attack = GetComponent<PlayerAttack>();
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "PlayerUnit" && this.tag == "EnemyUnit" || other.tag == "EnemyUnit" && this.tag =="PlayerUnit")
+
+        if (other.tag == Tags.PLAYERWEAPON && this.tag == Tags.ENEMY || other.tag == Tags.ENEMYWEAPON && this.tag == Tags.PLAYER)
         {
-            float Damage = other.gameObject.GetComponent<Unit>().damage;
+            float Damage = other.gameObject.GetComponent<Damage>().damage;
             float currentHealth = this.GetComponent<Unit>().health;
             currentHealth -= Damage;
             this.GetComponent<Unit>().health = currentHealth;
@@ -20,7 +27,6 @@ public class AdjustHealth : MonoBehaviour {
                 StartCoroutine(DeathTimer());
             }
         }
-
     }
 
     IEnumerator DeathTimer()
