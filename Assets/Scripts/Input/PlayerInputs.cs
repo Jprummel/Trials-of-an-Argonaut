@@ -3,6 +3,12 @@ using System.Collections;
 
 public class PlayerInputs : MonoBehaviour {
 
+    private PlayerAttack _attack;
+
+    void Start()
+    {
+        _attack = GetComponentInChildren<PlayerAttack>();
+    }
   	// Update is called once per frame
 	void Update () {
         Inputs();
@@ -114,6 +120,7 @@ public class PlayerInputs : MonoBehaviour {
         if (Input.GetButtonDown(InputAxes.x))
         {
             Debug.Log("X Pressed");
+            _attack.AttackState();
         }
         if (Input.GetButtonDown(InputAxes.y))
         {
