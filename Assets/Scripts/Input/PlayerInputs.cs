@@ -3,16 +3,27 @@ using System.Collections;
 
 public class PlayerInputs : MonoBehaviour {
 
+    private PlayerAttack _attack;
+    private PlayerMovement _movement;
+    private PlayerRotation _rotation;
+    private CameraRotation _camRotation;
 
-	// Update is called once per frame
+    void Start()
+    {
+        _attack = GetComponent<PlayerAttack>();
+        _movement = GetComponent<PlayerMovement>();
+        _rotation = GetComponent<PlayerRotation>();
+        _camRotation = GetComponent<CameraRotation>();
+    }
+  	// Update is called once per frame
 	void Update () {
         Inputs();
-	}
+    }
 
     void Inputs()
     {
         //DPAD
-        float dpadX = Input.GetAxis(InputAxes.dpadX); //LEFT ANALOG X AXIS
+        float dpadX = Input.GetAxis(InputAxes.DPADX); //LEFT ANALOG X AXIS
 
         if (dpadX > 0)
         {
@@ -25,7 +36,7 @@ public class PlayerInputs : MonoBehaviour {
             Debug.Log("dpad left");
         }
 
-        float dpadY = Input.GetAxis(InputAxes.dpadY); //LEFT ANALOG X AXIS
+        float dpadY = Input.GetAxis(InputAxes.DPADY); //LEFT ANALOG X AXIS
 
         if (dpadY > 0)
         {
@@ -40,83 +51,79 @@ public class PlayerInputs : MonoBehaviour {
 
         //ANALOG STICKS
 
-        float leftX = Input.GetAxis(InputAxes.leftX); //LEFT ANALOG X AXIS
+        float leftX = Input.GetAxis(InputAxes.LEFTX); //LEFT ANALOG X AXIS
 
         if(leftX > 0)
         {
-            //Call movement function for going right
-            Debug.Log("Leftstick right");
+            _movement.MoveX(leftX);     // Move right
         }else if(leftX < 0)
         {
-            //Call movement function for going left
-            Debug.Log("Leftstick left");
+            _movement.MoveX(leftX);     // Move left
         }
 
-        float leftY = Input.GetAxis(InputAxes.leftY); //LEFT ANALOG Y AXIS
+        float leftY = Input.GetAxis(InputAxes.LEFTY); //LEFT ANALOG Y AXIS
         
         if(leftY > 0)
         {
-            //Call movement function for going backward
-            Debug.Log("Leftstick down");
+            _movement.MoveY(leftY);     //Move backward
         }else if(leftY < 0)
         {
-            //Call movement function for going forward
-            Debug.Log("Leftstick up");
+            _movement.MoveY(leftY);     //Move forward
         }
 
-        float rightX = Input.GetAxis(InputAxes.rightX); //RIGHT ANALOG X AXIS
+        float rightX = Input.GetAxis(InputAxes.RIGHTX); //RIGHT ANALOG X AXIS
 
         if (rightX > 0)
         {
-            //Call movement function for rotating right
-            Debug.Log("Rightstick right");
+            _rotation.RotateY(rightX);  //Rotate Right
         }
         else if (rightX < 0)
         {
-            //Call movement function for rotating left
-            Debug.Log("Rightstick left");
+            _rotation.RotateY(rightX);  //Rotate left
         }
 
-        float rightY = Input.GetAxis(InputAxes.rightY); //RIGHT ANALOG X AXIS
+        float rightY = Input.GetAxis(InputAxes.RIGHTY); //RIGHT ANALOG X AXIS
 
         if (rightY > 0)
         {
             //Call movement function for rotating camera down
             Debug.Log("Rightstick down");
+            _rotation.RotateX(rightY);  //Look down
         }
         else if (rightY < 0)
         {
-            //Call movement function for rotating camera up
-            Debug.Log("Rightstick up");
+            _rotation.RotateX(rightY);  //Look up
         }
 
-        if (Input.GetButtonDown(InputAxes.l3))
+        if (Input.GetButtonDown(InputAxes.L3))
         {
             //Function for clicking left analog
             Debug.Log("Leftstick click");
         }
 
-        if (Input.GetButtonDown(InputAxes.r3))
+        if (Input.GetButtonDown(InputAxes.R3))
         {
             //Function for clicking right analog
             Debug.Log("Rightstick click");
         }
 
         //FACE BUTTONS
-        if(Input.GetButtonDown(InputAxes.a))
+        if(Input.GetButtonDown(InputAxes.A))
         {
             Debug.Log("A Pressed");
+            _movement.Jump();
         }
 
-        if(Input.GetButtonDown(InputAxes.b))
+        if(Input.GetButtonDown(InputAxes.B))
         {
             Debug.Log("B Pressed");
         }
-        if (Input.GetButtonDown(InputAxes.x))
+        if (Input.GetButtonDown(InputAxes.X))
         {
             Debug.Log("X Pressed");
+            _attack.Attack();
         }
-        if (Input.GetButtonDown(InputAxes.y))
+        if (Input.GetButtonDown(InputAxes.Y))
         {
             Debug.Log("Y Pressed");
         }
@@ -124,18 +131,18 @@ public class PlayerInputs : MonoBehaviour {
         //BUMPERS & TRIGGERS
 
         //BUMPERS
-        if (Input.GetButtonDown(InputAxes.lb))
+        if (Input.GetButtonDown(InputAxes.LB))
         {
             Debug.Log("LB Pressed");
         }
-        if (Input.GetButtonDown(InputAxes.rb))
+        if (Input.GetButtonDown(InputAxes.RB))
         {
             Debug.Log("RB Pressed");
         }
 
         //TRIGGERS
-        float leftTrigger = Input.GetAxis(InputAxes.lt);
-        float rightTrigger = Input.GetAxis(InputAxes.rt);
+        float leftTrigger = Input.GetAxis(InputAxes.LT);
+        float rightTrigger = Input.GetAxis(InputAxes.RT);
 
         if (leftTrigger > 0)
         {
@@ -147,11 +154,11 @@ public class PlayerInputs : MonoBehaviour {
         }
 
         //START & BACK
-        if (Input.GetButtonDown(InputAxes.start))
+        if (Input.GetButtonDown(InputAxes.START))
         {
             Debug.Log("Start Pressed");
         } 
-        if (Input.GetButtonDown(InputAxes.back))
+        if (Input.GetButtonDown(InputAxes.BACK))
         {
             Debug.Log("Back Pressed");
         }
