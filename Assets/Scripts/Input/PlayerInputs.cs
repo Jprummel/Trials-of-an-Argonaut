@@ -6,14 +6,12 @@ public class PlayerInputs : MonoBehaviour {
     private PlayerAttack    _attack;
     private PlayerMovement  _movement;
     private Rotation        _rotation;
-    private CameraRotation  _camRotation;
 
     void Start()
     {
         _attack         = GetComponent<PlayerAttack>();
         _movement       = GetComponent<PlayerMovement>();
         _rotation       = GetComponent<Rotation>();
-        _camRotation    = GetComponent<CameraRotation>();
     }
   	// Update is called once per frame
 	void Update () {
@@ -105,6 +103,7 @@ public class PlayerInputs : MonoBehaviour {
         {
             //Function for clicking right analog
             Debug.Log("Rightstick click");
+            _rotation.CenterCamera();
         }
 
         //FACE BUTTONS
