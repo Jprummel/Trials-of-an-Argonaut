@@ -3,10 +3,18 @@ using System.Collections;
 
 public class PlayerAttack : MonoBehaviour {
 
+    private Damage  _damageAmount;
     private int     _attackState;
     private float   _attackInterval = 1;
     private float   _attackTimer =0;
     private bool    _isAttacking;
+    private float   _damageBase;
+
+    void Start()
+    {
+        _damageAmount = GetComponent<Damage>();
+        _damageBase = _damageAmount.damage;
+    }
 
     void Update()
     {
@@ -20,6 +28,7 @@ public class PlayerAttack : MonoBehaviour {
     {
         if(_attackState == 0 && _attackTimer >= _attackInterval)
         {
+            _damageAmount.damage = _damageBase; // resets to base damage
             //AnimStateHandler.AnimState(*Attack1 Animation*);
             Debug.Log("Attack 1");
             _attackState++;
@@ -28,6 +37,7 @@ public class PlayerAttack : MonoBehaviour {
         }
         else if (_attackState == 1 && _attackTimer >= _attackInterval)
         {
+            _damageAmount.damage = _damageAmount.damage * 1.5f; //increases power for hit 2
             //AnimStateHandler.AnimState(*Attack2 Animation*);
             Debug.Log("Attack 2");
             _attackState++;
@@ -36,6 +46,7 @@ public class PlayerAttack : MonoBehaviour {
         }
         else if (_attackState == 2 && _attackTimer >= _attackInterval)
         {
+            _damageAmount.damage = _damageAmount.damage * 2f; //increases power for hit 3
             //AnimStateHandler.AnimState(*Attack3 Animation*);
             Debug.Log("Attack 3");
             _attackState = 0;

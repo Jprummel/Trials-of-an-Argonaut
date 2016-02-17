@@ -14,7 +14,6 @@ public class PlayerRotation : MonoBehaviour {
     void Start()
     {
         _camera = transform.GetChild(0);
-        _cameraY = _camera.transform.rotation.y;
     }
 
     void Update()
@@ -24,7 +23,6 @@ public class PlayerRotation : MonoBehaviour {
 
     public void RotateY(float value)
     {
-        
         transform.Rotate(Vector3.up * _rotationSpeed * Time.deltaTime * value);
     }
 

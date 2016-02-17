@@ -17,7 +17,8 @@ public class AdjustHealth : MonoBehaviour {
 
         if (other.tag == Tags.PLAYERWEAPON && this.tag == Tags.ENEMY)
         {
-            if (_attack.IsAttacking())
+            PlayerAttack checkAttack = other.GetComponentInParent<PlayerAttack>();
+            if (checkAttack.IsAttacking())
             {
                 CalculateNewHealth(other);
             }
