@@ -2,11 +2,11 @@
 using System.Collections;
 
 
-public enum StateID
-{
-	NullState = 0
+//public enum StateID
+//{
 
-}
+
+//}
 
 
 public class EnemyScript : MonoBehaviour {
