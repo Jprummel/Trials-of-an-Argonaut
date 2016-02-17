@@ -79,7 +79,7 @@ public class MainBehaviour : MonoBehaviour {
 			if (currentTarget != null) 
 			{
 			
-			Vector3 targetDir = currentTarget - transform.position;
+			Vector3 targetDir = new Vector3((currentTarget.x - transform.position.x),transform.position.y,(currentTarget.z - transform.position.z));
 			float step = (_maxSpeed * Time.deltaTime)/2;
 			Vector3 newDir = Vector3.RotateTowards (transform.forward, targetDir, step, 0.0f);
 			transform.rotation = Quaternion.LookRotation (newDir);
