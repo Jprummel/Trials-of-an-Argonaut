@@ -4,13 +4,14 @@ using System.Collections;
 public class IdleBehaviour : StateParent {
 	
 	[SerializeField] private GameObject _target;
-
+	[SerializeField] private float _MaxSpeed = 30f;
 	MainBehaviour mainBehaviour;
 
 	public override void Enter ()
 	{
+		
 		mainBehaviour = GetComponent<MainBehaviour> ();
-		mainBehaviour.setTarget (_target.transform.position);
+		mainBehaviour.maxSpeed = _MaxSpeed;
 
 		StartCoroutine(Waiting(2.0f));
 
@@ -18,11 +19,11 @@ public class IdleBehaviour : StateParent {
 
 	public override void Leave ()
 	{
-		Debug.Log ("I leave");
 	} 
 
 	public override void Act ()
 	{
+		mainBehaviour.setTarget (_target.transform.position);
 		mainBehaviour.Rotating ();
 		Debug.Log ("I rotate");
 

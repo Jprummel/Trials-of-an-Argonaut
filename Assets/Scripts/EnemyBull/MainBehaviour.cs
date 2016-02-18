@@ -15,7 +15,7 @@ public class MainBehaviour : MonoBehaviour {
 
 	private StateMachine _stateMachine;
 
-	[SerializeField] private float _maxSpeed = 5;
+	 private float _maxSpeed;
 	[SerializeField] private float _mass = 20;
 	[SerializeField] private float _turnSpeed;
 
@@ -23,6 +23,16 @@ public class MainBehaviour : MonoBehaviour {
 	private Vector3 _currentPosition;
 	private Vector3 _currentTarget;
 
+	public float maxSpeed
+	{
+		get { return _maxSpeed; }
+		set { _maxSpeed = value; }
+	}
+	public Vector3 currentVelocity
+	{
+		get { return _currentVelocity;}
+		set { }
+	}
 	public Vector3 currentTarget
 	{
 		get { return _currentTarget;	}
@@ -36,15 +46,14 @@ public class MainBehaviour : MonoBehaviour {
 
 		MakeStates ();
 
-
-			_stateMachine.SetState (StateID.IdleBull);
+		_stateMachine.SetState (StateID.IdleBull);
 	}
 
 	void MakeStates()
 	{
 		_stateMachine.AddState (StateID.IdleBull, GetComponent<IdleBehaviour> () );
 		_stateMachine.AddState (StateID.AttackBull, GetComponent<AttackBehaviour> () );
-		_stateMachine.AddState (StateID.RecoverBull, GetComponent<RecoverState> ());
+		_stateMachine.AddState (StateID.RecoverBull, GetComponent<RecoverState>() );
 
 
 	}
@@ -79,7 +88,7 @@ public class MainBehaviour : MonoBehaviour {
 			if (currentTarget != null) 
 			{
 			
-			Vector3 targetDir = new Vector3((currentTarget.x - transform.position.x),transform.position.y,(currentTarget.z - transform.position.z));
+			Vector3 targetDir = new Vector3((currentTarget.x - transform.position.x),(currentTarget.y - transform.position.y),(currentTarget.z - transform.position.z));
 			float step = (_maxSpeed * Time.deltaTime)/2;
 			Vector3 newDir = Vector3.RotateTowards (transform.forward, targetDir, step, 0.0f);
 			transform.rotation = Quaternion.LookRotation (newDir);
