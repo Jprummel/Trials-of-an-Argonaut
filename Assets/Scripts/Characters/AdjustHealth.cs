@@ -33,6 +33,7 @@ public class AdjustHealth : MonoBehaviour {
     void CalculateNewHealth(Collider coll)
     {
         Debug.Log(coll);
+        AnimStateHandler.AnimState(9);
         float Damage = coll.gameObject.GetComponent<Damage>().damage;
         float currentHealth = this.GetComponent<Health>().health;
         currentHealth -= Damage;
@@ -46,7 +47,7 @@ public class AdjustHealth : MonoBehaviour {
 
     IEnumerator DeathTimer()
     {
-        //AnimStateHandler.AnimState();
+        AnimStateHandler.AnimState(11);
         yield return new WaitForSeconds(_deathTimer);
         Destroy(this.gameObject);
         
