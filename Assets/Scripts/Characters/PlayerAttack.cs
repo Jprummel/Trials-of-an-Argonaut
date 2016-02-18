@@ -12,7 +12,7 @@ public class PlayerAttack : MonoBehaviour {
 
     void Start()
     {
-        _damageAmount = GetComponent<Damage>();
+        _damageAmount = GetComponentInChildren<Damage>();
         _damageBase = _damageAmount.damage;
     }
 
