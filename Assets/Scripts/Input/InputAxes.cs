@@ -3,29 +3,29 @@ using System.Collections;
 
 public class InputAxes{
     //Face Buttons
-    public const string a       = "Xbox_A";
-    public const string b       = "Xbox_B";
-    public const string x       = "Xbox_X";
-    public const string y       = "Xbox_Y";
+    public const string A       = "Xbox_A";
+    public const string B       = "Xbox_B";
+    public const string X       = "Xbox_X";
+    public const string Y       = "Xbox_Y";
     //Start and back
-    public const string start   = "Xbox_Start";
-    public const string back    = "Xbox_Back";
+    public const string START   = "Xbox_Start";
+    public const string BACK    = "Xbox_Back";
     //Triggers and Bumpers
-    public const string lt      = "Xbox_LT";
-    public const string rt      = "Xbox_RT";
-    public const string lb      = "Xbox_LB";
-    public const string rb      = "Xbox_RB";
+    public const string LT      = "Xbox_LT";
+    public const string RT      = "Xbox_RT";
+    public const string LB      = "Xbox_LB";
+    public const string RB      = "Xbox_RB";
     //Analog Clicks
-    public const string l3      = "Xbox_L3";
-    public const string r3      = "Xbox_R3";
+    public const string L3      = "Xbox_L3";
+    public const string R3      = "Xbox_R3";
     //Analog Sticks
     //Left
-    public const string leftX   = "Xbox_LeftStick_X";
-    public const string leftY   = "Xbox_LeftStick_Y";
+    public const string LEFTX   = "Xbox_LeftStick_X";
+    public const string LEFTY   = "Xbox_LeftStick_Y";
     //Right
-    public const string rightX  = "Xbox_RightStick_X";
-    public const string rightY  = "Xbox_RightStick_Y";
+    public const string RIGHTX  = "Xbox_RightStick_X";
+    public const string RIGHTY  = "Xbox_RightStick_Y";
     //Dpad
-    public const string dpadX   = "Xbox_DPad_X";
-    public const string dpadY   = "Xbox_DPad_Y";
+    public const string DPADX   = "Xbox_DPad_X";
+    public const string DPADY   = "Xbox_DPad_Y";
 }
