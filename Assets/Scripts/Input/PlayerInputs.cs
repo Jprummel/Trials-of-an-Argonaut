@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerInputs : MonoBehaviour {
 
+<<<<<<< HEAD
     private PlayerAttack _attack;
     private PlayerMovement _movement;
     private PlayerRotation _rotation;
@@ -14,6 +15,17 @@ public class PlayerInputs : MonoBehaviour {
         _movement = GetComponent<PlayerMovement>();
         _rotation = GetComponent<PlayerRotation>();
         _camRotation = GetComponent<CameraRotation>();
+=======
+    private PlayerAttack    _attack;
+    private PlayerMovement  _movement;
+    private Rotation        _rotation;
+
+    void Start()
+    {
+        _attack         = GetComponent<PlayerAttack>();
+        _movement       = GetComponent<PlayerMovement>();
+        _rotation       = GetComponent<Rotation>();
+>>>>>>> aec6f53fc0e1cbafb4ad8f2e62b495201fefaca2
     }
   	// Update is called once per frame
 	void Update () {
@@ -23,7 +35,11 @@ public class PlayerInputs : MonoBehaviour {
     void Inputs()
     {
         //DPAD
+<<<<<<< HEAD
         float dpadX = Input.GetAxis(InputAxes.DPADX); //LEFT ANALOG X AXIS
+=======
+        float dpadX = Input.GetAxis(InputAxes.DPADX); //DPAD X AXIS
+>>>>>>> aec6f53fc0e1cbafb4ad8f2e62b495201fefaca2
 
         if (dpadX > 0)
         {
@@ -36,7 +52,11 @@ public class PlayerInputs : MonoBehaviour {
             Debug.Log("dpad left");
         }
 
+<<<<<<< HEAD
         float dpadY = Input.GetAxis(InputAxes.DPADY); //LEFT ANALOG X AXIS
+=======
+        float dpadY = Input.GetAxis(InputAxes.DPADY); //DPAD Y AXIS
+>>>>>>> aec6f53fc0e1cbafb4ad8f2e62b495201fefaca2
 
         if (dpadY > 0)
         {
@@ -105,6 +125,7 @@ public class PlayerInputs : MonoBehaviour {
         {
             //Function for clicking right analog
             Debug.Log("Rightstick click");
+            _rotation.CenterCamera();
         }
 
         //FACE BUTTONS
