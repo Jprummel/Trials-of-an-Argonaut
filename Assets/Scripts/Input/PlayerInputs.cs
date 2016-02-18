@@ -3,17 +3,15 @@ using System.Collections;
 
 public class PlayerInputs : MonoBehaviour {
 
-    private PlayerAttack _attack;
-    private PlayerMovement _movement;
-    private PlayerRotation _rotation;
-    private CameraRotation _camRotation;
+    private PlayerAttack    _attack;
+    private PlayerMovement  _movement;
+    private Rotation        _rotation;
 
     void Start()
     {
-        _attack = GetComponent<PlayerAttack>();
-        _movement = GetComponent<PlayerMovement>();
-        _rotation = GetComponent<PlayerRotation>();
-        _camRotation = GetComponent<CameraRotation>();
+        _attack         = GetComponent<PlayerAttack>();
+        _movement       = GetComponent<PlayerMovement>();
+        _rotation       = GetComponent<Rotation>();
     }
   	// Update is called once per frame
 	void Update () {
@@ -23,7 +21,7 @@ public class PlayerInputs : MonoBehaviour {
     void Inputs()
     {
         //DPAD
-        float dpadX = Input.GetAxis(InputAxes.DPADX); //LEFT ANALOG X AXIS
+        float dpadX = Input.GetAxis(InputAxes.DPADX); //DPAD X AXIS
 
         if (dpadX > 0)
         {
@@ -36,7 +34,7 @@ public class PlayerInputs : MonoBehaviour {
             Debug.Log("dpad left");
         }
 
-        float dpadY = Input.GetAxis(InputAxes.DPADY); //LEFT ANALOG X AXIS
+        float dpadY = Input.GetAxis(InputAxes.DPADY); //DPAD Y AXIS
 
         if (dpadY > 0)
         {
@@ -105,6 +103,7 @@ public class PlayerInputs : MonoBehaviour {
         {
             //Function for clicking right analog
             Debug.Log("Rightstick click");
+            _rotation.CenterCamera();
         }
 
         //FACE BUTTONS
