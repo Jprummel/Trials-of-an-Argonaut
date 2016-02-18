@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerRotation : MonoBehaviour {
+public class Rotation : MonoBehaviour {
 
     [SerializeField]private float _rotationSpeed;
     private Transform _camera;
@@ -16,11 +16,6 @@ public class PlayerRotation : MonoBehaviour {
         _camera = transform.GetChild(0);
     }
 
-    void Update()
-    {
-        
-    }
-
     public void RotateY(float value)
     {
         transform.Rotate(Vector3.up * _rotationSpeed * Time.deltaTime * value);
@@ -29,7 +24,13 @@ public class PlayerRotation : MonoBehaviour {
     public void RotateX(float value)
     {
         _rotationX = Mathf.Clamp(_rotationX, _minX, _maxX);
-        _camera.transform.eulerAngles = new Vector3(_rotationX, 0);
+        _camera.transform.eulerAngles = new Vector3(_rotationX, transform.localEulerAngles.y);
         _rotationX -= Time.deltaTime * _camSensitivityX * value;
+    }
+
+    public void CenterCamera()
+    {
+        _camera.transform.eulerAngles = new Vector3(0, transform.localEulerAngles.y);
+        _rotationX = 0;
     }
 }
