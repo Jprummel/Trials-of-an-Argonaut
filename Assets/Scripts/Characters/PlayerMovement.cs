@@ -44,8 +44,11 @@ public class PlayerMovement : MonoBehaviour {
     {
         //AnimStateHandler.AnimState();
         Debug.Log("Jump");
-        _rigidBody.velocity = new Vector3(0,_jumpHeight,0);
-        _isGrounded = false;
+        if (_isGrounded)
+        {
+            _rigidBody.velocity = new Vector3(0, _jumpHeight, 0);
+            _isGrounded = false;
+        }
     }
 
     void OnCollisionEnter(Collision other)
