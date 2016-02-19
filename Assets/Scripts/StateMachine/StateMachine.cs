@@ -19,8 +19,7 @@ public class StateMachine : MonoBehaviour {
 			if (currentState != null) 
 			{
 				currentState.Reason();
-				currentState.Act();
-				
+				currentState.Act();				
 			}
 	}
 
