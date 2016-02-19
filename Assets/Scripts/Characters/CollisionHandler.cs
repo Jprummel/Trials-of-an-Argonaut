@@ -21,6 +21,7 @@ public class CollisionHandler : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
 
+        //Player attacking bull
         if (other.tag == Tags.PLAYERWEAPON && this.tag == Tags.ENEMY)
         {
             PlayerAttack checkAttack = other.GetComponentInParent<PlayerAttack>();
@@ -41,6 +42,11 @@ public class CollisionHandler : MonoBehaviour {
         if (other.gameObject.tag == Tags.GROUND && this.tag == Tags.PLAYER)
         {
             _movement.IsGrounded();
+        }
+
+        if(other.gameObject.tag == Tags.PILLAR && this.tag == Tags.BULL)
+        {
+            //Damage bull
         }
     }
 }
