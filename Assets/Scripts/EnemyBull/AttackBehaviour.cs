@@ -24,6 +24,7 @@ public class AttackBehaviour : StateParent {
 
 	public override void Act ()
 	{
+		
 		Charging ();
 	}
 
