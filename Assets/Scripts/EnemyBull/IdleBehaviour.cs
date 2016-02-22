@@ -42,6 +42,4 @@ public class IdleBehaviour : StateParent {
 		yield return new WaitForSeconds (waitTime);
 		GetComponent<StateMachine> ().SetState (StateID.AttackBull);
 	}
-
-
 }

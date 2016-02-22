@@ -51,11 +51,16 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter(Collision other)
+    /*void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == Tags.GROUND)
         {
             _isGrounded = true;
         }
+    }*/
+
+    public bool IsGrounded()
+    {
+        return _isGrounded = true;
     }
 }
