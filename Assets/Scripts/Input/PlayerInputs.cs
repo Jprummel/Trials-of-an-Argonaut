@@ -4,12 +4,14 @@ using System.Collections;
 public class PlayerInputs : MonoBehaviour {
 
     private PlayerAttack    _attack;
+    private PlayerBlock     _block;
     private PlayerMovement  _movement;
     private Rotation        _rotation;
 
     void Start()
     {
         _attack         = GetComponent<PlayerAttack>();
+        _block          = GetComponent<PlayerBlock>();
         _movement       = GetComponent<PlayerMovement>();
         _rotation       = GetComponent<Rotation>();
     }
@@ -116,6 +118,7 @@ public class PlayerInputs : MonoBehaviour {
         if(Input.GetButtonDown(InputAxes.B))
         {
             Debug.Log("B Pressed");
+            _block.Block();
         }
         if (Input.GetButtonDown(InputAxes.X))
         {
