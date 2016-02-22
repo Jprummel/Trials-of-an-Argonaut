@@ -19,13 +19,13 @@ public class RecoverState : StateParent {
 
 		mainBehaviour = GetComponent<MainBehaviour> ();
 
-		Debug.Log ("Ik begin : Enter");
+
 		StartCoroutine(Waiting(_waitForRecover));
 	}
 
 	public override void Leave ()
 	{
-		Debug.Log ("I leave");
+
 	} 
 
 	public override void Act ()
@@ -41,7 +41,6 @@ public class RecoverState : StateParent {
 	public override void Reason ()
 	{
 
-		Debug.Log ("reason");
 	}
 	IEnumerator Waiting(float waitTime)
 	{

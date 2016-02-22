@@ -5,6 +5,7 @@ public class IdleBehaviour : StateParent {
 	
 	[SerializeField] private GameObject _target;
 	[SerializeField] private float _MaxSpeed = 30f;
+	[SerializeField] private float waitTimer = 1f;
 	MainBehaviour mainBehaviour;
 
 	public override void Enter ()
@@ -13,7 +14,7 @@ public class IdleBehaviour : StateParent {
 		mainBehaviour = GetComponent<MainBehaviour> ();
 		mainBehaviour.maxSpeed = _MaxSpeed;
 
-		StartCoroutine(Waiting(2.0f));
+		StartCoroutine(Waiting(waitTimer));
 
 	}
 
@@ -25,7 +26,7 @@ public class IdleBehaviour : StateParent {
 	{
 		mainBehaviour.setTarget (_target.transform.position);
 		mainBehaviour.Rotating ();
-		Debug.Log ("I rotate");
+
 
 
 	}
