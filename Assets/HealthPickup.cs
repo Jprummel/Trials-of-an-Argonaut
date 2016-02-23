@@ -3,18 +3,23 @@ using System.Collections;
 
 public class HealthPickup : MonoBehaviour 
 {
-    private Health _playerHealth;
+    private Health _health;
     [SerializeField]private float _healthToAdd;
     [SerializeField]private float _timeToRespawn;
 
     void Start()
     {
-        _playerHealth = GetComponent<Health>();
+        _health = GetComponent<Health>();
     }
 
-    public void AddHealth()
+    public void AddHealth(float value)
     {
-        _playerHealth.health += _healthToAdd;
+        _health.health += _healthToAdd * value;
+        if(_health.health > _health.maxHealth)
+        {
+            _health.health = _health.maxHealth;
+        }
+        PickupCooldown();
     }
 
     IEnumerator PickupCooldown()
