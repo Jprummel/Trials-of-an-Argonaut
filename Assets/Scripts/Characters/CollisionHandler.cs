@@ -12,12 +12,15 @@ public class CollisionHandler : MonoBehaviour {
         if (this.tag == Tags.PLAYER)
         {
             _movement = GetComponent<PlayerMovement>();
-            _pickUp = GetComponent<HealthPickup>();
         }
 
         if(this.tag == Tags.ENEMY || this.tag == Tags.PLAYER)
         {
             _adjustHealth = GetComponent<AdjustHealth>();
+        }
+        if (this.tag == Tags.PICKUP)
+        {
+            _pickUp = GetComponent<HealthPickup>();
         }
 	}
 	
@@ -48,9 +51,9 @@ public class CollisionHandler : MonoBehaviour {
             }
         }
 
-        if(other.tag == Tags.PICKUP && this.tag == Tags.PLAYER)
+        if(other.tag == Tags.PLAYER && this.tag == Tags.PICKUP)
         {
-            _pickUp.AddHealth();
+            _pickUp.AddHealth(1);
         }
     }
 

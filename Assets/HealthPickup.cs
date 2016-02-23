@@ -9,7 +9,7 @@ public class HealthPickup : MonoBehaviour
 
     void Start()
     {
-        _health = GetComponent<Health>();
+        _health = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
     }
 
     public void AddHealth(float value)
@@ -19,12 +19,12 @@ public class HealthPickup : MonoBehaviour
         {
             _health.health = _health.maxHealth;
         }
-        PickupCooldown();
+        StartCoroutine(PickupCooldown());
     }
 
     IEnumerator PickupCooldown()
     {
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         yield return new WaitForSeconds(_timeToRespawn);
         RespawnPickup();
 
@@ -32,6 +32,6 @@ public class HealthPickup : MonoBehaviour
 
     void RespawnPickup()
     {
-        this.gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 }
