@@ -39,28 +39,4 @@ public class PlayerMovement : MonoBehaviour {
        
         transform.Translate(Vector3.left * _movementSpeed * Time.deltaTime * value);
     }
-
-    public void Jump()
-    {
-        //AnimStateHandler.AnimState();
-        Debug.Log("Jump");
-        if (_isGrounded)
-        {
-            _rigidBody.velocity = new Vector3(0, _jumpHeight, 0);
-            _isGrounded = false;
-        }
-    }
-
-    /*void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == Tags.GROUND)
-        {
-            _isGrounded = true;
-        }
-    }*/
-
-    public bool IsGrounded()
-    {
-        return _isGrounded = true;
-    }
 }

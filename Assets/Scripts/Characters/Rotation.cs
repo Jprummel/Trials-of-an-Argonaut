@@ -25,7 +25,7 @@ public class Rotation : MonoBehaviour {
     {
         _rotationX = Mathf.Clamp(_rotationX, _minX, _maxX);
         _camera.transform.eulerAngles = new Vector3(_rotationX, transform.localEulerAngles.y);
-        _rotationX -= Time.deltaTime * _camSensitivityX * value;
+        _rotationX += Time.deltaTime * _camSensitivityX * value;
     }
 
     public void CenterCamera()

@@ -48,51 +48,34 @@ public class PlayerInputs : MonoBehaviour {
             //Call movement function for dpad down
             Debug.Log("Dpad down");
         }
-
+        
         //ANALOG STICKS
 
         float leftX = Input.GetAxis(InputAxes.LEFTX); //LEFT ANALOG X AXIS
-
-        if(leftX > 0)
-        {
-            _movement.MoveX(leftX);     // Move right
-        }else if(leftX < 0)
-        {
-            _movement.MoveX(leftX);     // Move left
-        }
-
         float leftY = Input.GetAxis(InputAxes.LEFTY); //LEFT ANALOG Y AXIS
-        
-        if(leftY > 0)
+
+        if(leftX != 0)  //X Axis Movement
         {
-            _movement.MoveY(leftY);     //Move backward
-        }else if(leftY < 0)
-        {
-            _movement.MoveY(leftY);     //Move forward
+            _movement.MoveX(leftX);
         }
+        
+        if(leftY != 0)  //Y Axis Movement
+        {
+            _movement.MoveY(leftY);
+        }
+        
 
         float rightX = Input.GetAxis(InputAxes.RIGHTX); //RIGHT ANALOG X AXIS
-
-        if (rightX > 0)
-        {
-            _rotation.RotateY(rightX);  //Rotate Right
-        }
-        else if (rightX < 0)
-        {
-            _rotation.RotateY(rightX);  //Rotate left
-        }
-
         float rightY = Input.GetAxis(InputAxes.RIGHTY); //RIGHT ANALOG X AXIS
 
-        if (rightY > 0)
+        if(rightX != 0) //Y Axis Camera Rotation (X Axis on stick)
         {
-            //Call movement function for rotating camera down
-            Debug.Log("Rightstick down");
-            _rotation.RotateX(rightY);  //Look down
+            _rotation.RotateY(rightX);
         }
-        else if (rightY < 0)
+
+        if(rightY != 0) //X Axis Camera Rotation (Y Axis on stick)
         {
-            _rotation.RotateX(rightY);  //Look up
+            _rotation.RotateX(rightY);
         }
 
         if (Input.GetButtonDown(InputAxes.L3))
@@ -112,7 +95,6 @@ public class PlayerInputs : MonoBehaviour {
         if(Input.GetButtonDown(InputAxes.A))
         {
             Debug.Log("A Pressed");
-            _movement.Jump();
         }
 
         if(Input.GetButtonDown(InputAxes.B))
@@ -133,8 +115,9 @@ public class PlayerInputs : MonoBehaviour {
         //BUMPERS & TRIGGERS
 
         //BUMPERS
-        if (Input.GetButtonDown(InputAxes.LB))
+        if (Input.GetButton(InputAxes.LB))
         {
+            _block.Block();
             Debug.Log("LB Pressed");
         }
         if (Input.GetButtonDown(InputAxes.RB))
