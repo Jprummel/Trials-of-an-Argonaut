@@ -5,13 +5,14 @@ public class CollisionHandler : MonoBehaviour {
 
     private AdjustHealth _adjustHealth;
     private PlayerMovement _movement;
-    //private HealthPickup _pickUp;
-	// Use this for initialization
+    private HealthPickup _pickUp;
+	
+    // Use this for initialization
 	void Start () {
         if (this.tag == Tags.PLAYER)
         {
             _movement = GetComponent<PlayerMovement>();
-            //_pickUp = GetComponent<HealthPickup>();
+            _pickUp = GetComponent<HealthPickup>();
         }
 
         if(this.tag == Tags.ENEMY || this.tag == Tags.PLAYER)
@@ -49,7 +50,7 @@ public class CollisionHandler : MonoBehaviour {
 
         if(other.tag == Tags.PICKUP && this.tag == Tags.PLAYER)
         {
-            //_pickUp.AddHealth();
+            _pickUp.AddHealth();
         }
     }
 
