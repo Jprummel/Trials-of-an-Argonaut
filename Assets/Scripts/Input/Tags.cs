@@ -15,4 +15,5 @@ public class Tags : MonoBehaviour {
     //Enviroment Tags
     public const string GROUND          = "Ground";
     public const string PILLAR          = "Pillar";
+    public const string PICKUP          = "Pickup";
 }

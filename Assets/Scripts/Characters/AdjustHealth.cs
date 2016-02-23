@@ -4,7 +4,6 @@ using System.Collections;
 public class AdjustHealth : MonoBehaviour {
 
     [SerializeField]private float _deathTimer;
-                    private float unitHealth;
 
     public void CalculateNewHealth(Collider coll)
     {
