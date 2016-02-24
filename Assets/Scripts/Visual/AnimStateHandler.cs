@@ -9,8 +9,15 @@ public class AnimStateHandler : MonoBehaviour {
         _Animator = GetComponent<Animator>();
     }
 
-    public static void AnimState(int whichState)//Sets the animation state
+    public static void AnimStateBottom(int whichState)//Sets the animation state for the general layer (lower body movements)
     {
+        _Animator.GetLayerName(1);
+        _Animator.SetInteger("State", whichState);
+    }
+
+    public static void AnimStateTop(int whichState)//Sets the animation state for combat related animations (upper body movements)
+    {
+        _Animator.GetLayerName(0);
         _Animator.SetInteger("State", whichState);
     }
 }

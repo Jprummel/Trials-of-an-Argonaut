@@ -16,13 +16,13 @@ public class PlayerMovement : MonoBehaviour {
 
     public void MoveY(float value)
     {
-        /*if (value < 0)
+        if (value < 0)
         {
-            AnimStateHandler.AnimState();
+            AnimStateHandler.AnimStateBottom(1);
         }else if(value > 0)
         {
-            AnimStateHandler.AnimState();
-        }*/
+            AnimStateHandler.AnimStateBottom(2);
+        }
         
         transform.Translate(Vector3.forward * _movementSpeed * Time.deltaTime * value);
     }
@@ -31,10 +31,10 @@ public class PlayerMovement : MonoBehaviour {
     {
        /* if (value < 0)
         {
-            AnimStateHandler.AnimState();
+            AnimStateHandler.AnimStateBottom();
         }else if(value > 0)
         {
-            AnimStateHandler.AnimState();
+            AnimStateHandler.AnimStateBottom();
         }*/
        
         transform.Translate(Vector3.left * _movementSpeed * Time.deltaTime * value);
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public void Jump()
     {
-        //AnimStateHandler.AnimState();
+        AnimStateHandler.AnimStateBottom(5);
         Debug.Log("Jump");
         if (_isGrounded)
         {
