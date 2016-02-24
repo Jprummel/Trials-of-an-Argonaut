@@ -21,6 +21,7 @@ public class CollisionHandler : MonoBehaviour {
         if (this.tag == Tags.PICKUP)
         {
             _pickUp = GetComponent<HealthPickup>();
+            
         }
 	}
 	

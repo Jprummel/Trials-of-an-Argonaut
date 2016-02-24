@@ -18,10 +18,10 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (value < 0)
         {
-            AnimStateHandler.AnimStateBottom(1);
+            AnimStateHandler.AnimStateGeneral(1);
         }else if(value > 0)
         {
-            AnimStateHandler.AnimStateBottom(2);
+            AnimStateHandler.AnimStateGeneral(2);
         }
         
         transform.Translate(Vector3.forward * _movementSpeed * Time.deltaTime * value);
@@ -29,20 +29,20 @@ public class PlayerMovement : MonoBehaviour {
 
     public void MoveX(float value)
     {
-       /* if (value < 0)
+        if (value < 0)
         {
-            AnimStateHandler.AnimStateBottom();
+            AnimStateHandler.AnimStateGeneral(3);
         }else if(value > 0)
         {
-            AnimStateHandler.AnimStateBottom();
-        }*/
+            AnimStateHandler.AnimStateGeneral(4);
+        }
        
         transform.Translate(Vector3.left * _movementSpeed * Time.deltaTime * value);
     }
 
     public void Jump()
     {
-        AnimStateHandler.AnimStateBottom(5);
+        AnimStateHandler.AnimStateGeneral(5);
         Debug.Log("Jump");
         if (_isGrounded)
         {
@@ -50,14 +50,6 @@ public class PlayerMovement : MonoBehaviour {
             _isGrounded = false;
         }
     }
-
-    /*void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == Tags.GROUND)
-        {
-            _isGrounded = true;
-        }
-    }*/
 
     public bool IsGrounded()
     {

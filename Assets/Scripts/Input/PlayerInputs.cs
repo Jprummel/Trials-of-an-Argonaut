@@ -22,6 +22,12 @@ public class PlayerInputs : MonoBehaviour {
 
     void Inputs()
     {
+
+        if (!Input.anyKeyDown)
+        {
+            AnimStateHandler.AnimStateGeneral(0);
+        }
+
         //DPAD
         float dpadX = Input.GetAxis(InputAxes.DPADX); //DPAD X AXIS
 
