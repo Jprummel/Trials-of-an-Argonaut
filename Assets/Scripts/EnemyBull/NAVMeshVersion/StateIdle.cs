@@ -16,6 +16,7 @@ public class StateIdle : StateParent {
 	[SerializeField] private float _wanderTime;
 	private Transform _newTransform;
 	private float wanderRadius = 30f;
+
 	public override void Enter ()
 	{
 
@@ -55,7 +56,7 @@ public class StateIdle : StateParent {
 
 	void DistanceChecker()
 	{
-		if (DistanceTo () >= 40f) 
+		if (DistanceTo () >= 30f) 
 		{
 			GetComponent<StateMachine> ().SetState (StateID.ChargeState);
 
