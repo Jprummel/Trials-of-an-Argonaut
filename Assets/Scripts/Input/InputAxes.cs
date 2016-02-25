@@ -28,4 +28,10 @@ public class InputAxes{
     //Dpad
     public const string DPADX   = "Xbox_DPad_X";
     public const string DPADY   = "Xbox_DPad_Y";
+
+    //Keyboard
+    public const string KEYX    = "Horizontal";
+    public const string KEYY    = "Vertical";
+    public const string MOUSEX  = "Mouse_X";
+    public const string MOUSEY  = "Mouse_Y";
 }

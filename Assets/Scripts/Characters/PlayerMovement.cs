@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
             AnimStateHandler.AnimStateGeneral(2);
         }
         
-        transform.Translate(Vector3.forward * _movementSpeed * Time.deltaTime * value);
+        transform.Translate(-Vector3.forward * _movementSpeed * Time.deltaTime * value);
     }
 
     public void MoveX(float value)
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour {
             AnimStateHandler.AnimStateGeneral(4);
         }
        
-        transform.Translate(Vector3.left * _movementSpeed * Time.deltaTime * value);
+        transform.Translate(-Vector3.left * _movementSpeed * Time.deltaTime * value);
     }
 
     public void Jump()
