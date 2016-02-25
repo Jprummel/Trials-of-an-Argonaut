@@ -14,23 +14,29 @@ public class StateCharge : StateParent {
 	private Vector3 _NewTarget;
 	private Vector3 _desiredVelocity;
 
-	private float _chargeSpeed = 50f;
+	[SerializeField]private float _chargeSpeed = 35f;
 
+	private bool _isCharging = false;
 
+	public bool isCharging
+	{
+		get{ return _isCharging; }
+
+	}
 	public override void Enter ()
 	{
 		bullBehaviour = GetComponent<BullBehaviour> ();
 		stateIdle = GetComponent<StateIdle> ();
 
 		bullBehaviour.setSpeed(_chargeSpeed);
-
+		_isCharging = true;
 
 	
 	}
 
 	public override void Leave()
 	{
-		
+		_isCharging = false;
 	}
 	public override void Act ()
 	{
@@ -42,12 +48,13 @@ public class StateCharge : StateParent {
 
 		bullBehaviour.targetPos = _NewTarget;
 
+		Debug.Log (_isCharging);
 	}
 
 	public override void Reason ()
 	{
 		float distanceToTarget = (_CurrentTarget - transform.position).magnitude;
-		if (distanceToTarget < 10f) 
+		if (distanceToTarget < 2f) 
 		{
 			GetComponent<StateMachine> ().SetState (StateID.RecoverState);
 		}
