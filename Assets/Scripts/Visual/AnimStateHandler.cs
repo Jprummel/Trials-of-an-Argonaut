@@ -12,12 +12,12 @@ public class AnimStateHandler : MonoBehaviour {
     public static void AnimStateGeneral(int whichState)//Sets the animation state for the General Layer
     {
         _Animator.GetLayerName(0);
-        _Animator.SetInteger("State", whichState);
+        _Animator.SetInteger("GeneralState", whichState);
     }
 
     public static void AnimStateOverride(int whichState)//Sets the animation state for the Override Layer
     {
         _Animator.GetLayerName(1);
-        _Animator.SetInteger("State", whichState);
+        _Animator.SetInteger("OverrideState", whichState);
     }
 }

@@ -12,8 +12,8 @@ public class PlayerAttack : MonoBehaviour {
 
     void Start()
     {
-        //_damageAmount = GetComponentInChildren<Damage>();
-        //_damageBase = _damageAmount.damage;
+        _damageAmount = GetComponentInChildren<Damage>();
+        _damageBase = _damageAmount.damage;
     }
 
     void Update()
@@ -29,16 +29,16 @@ public class PlayerAttack : MonoBehaviour {
         if(_attackState == 0 && _attackTimer >= _attackInterval)
         {
             _damageAmount.damage = _damageBase; // resets to base damage
-            //AnimStateHandler.AnimState(*Attack1 Animation*);
+            AnimStateHandler.AnimStateOverride(1);
             Debug.Log("Attack 1");
             _attackState++;
             TimerReset();
-            StartCoroutine(AttackState(5));
+            StartCoroutine(AttackState(1.5f));
         }
         else if (_attackState == 1 && _attackTimer >= _attackInterval)
         {
             _damageAmount.damage = _damageAmount.damage * 1.5f; //increases power for hit 2
-            //AnimStateHandler.AnimState(*Attack2 Animation*);
+            AnimStateHandler.AnimStateOverride(2);
             Debug.Log("Attack 2");
             _attackState++;
             TimerReset();
@@ -47,7 +47,7 @@ public class PlayerAttack : MonoBehaviour {
         else if (_attackState == 2 && _attackTimer >= _attackInterval)
         {
             _damageAmount.damage = _damageAmount.damage * 2f; //increases power for hit 3
-            //AnimStateHandler.AnimState(*Attack3 Animation*);
+            AnimStateHandler.AnimStateOverride(3);
             Debug.Log("Attack 3");
             _attackState = 0;
             TimerReset();
@@ -62,6 +62,7 @@ public class PlayerAttack : MonoBehaviour {
         yield return new WaitForSeconds(cooldown);
         _isAttacking = false;
         Debug.Log(_isAttacking);
+        AnimStateHandler.AnimStateOverride(0);
     }
 
     public bool IsAttacking()
