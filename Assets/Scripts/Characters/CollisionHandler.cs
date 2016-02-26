@@ -66,6 +66,11 @@ public class CollisionHandler : MonoBehaviour {
         {
             _pickUp.AddHealth(1);
         }
+
+        if(other.tag == Tags.BULL && this.tag == Tags.PICKUP)
+        {
+            _pickUp.AddHealth(3);
+        }
     }
 
     void OnCollisionEnter(Collision other) 
