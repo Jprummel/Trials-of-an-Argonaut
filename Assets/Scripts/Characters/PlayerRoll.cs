@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerRoll : MonoBehaviour {
 
     private Rigidbody _rigidBody;
-    private float _rollCooldown = 1.3f;
+    [SerializeField] private float _rollCooldown = 1.3f;
     private bool _CanUsesDodge = true;
     [SerializeField] private int _rollSpeed = 110;
     
