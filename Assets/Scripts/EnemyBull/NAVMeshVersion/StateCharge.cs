@@ -36,6 +36,16 @@ public class StateCharge : StateParent {
 		_isCharging = true;
 
 	
+		_CurrentTarget = stateIdle.targetPlayer.transform.position;
+		bullBehaviour.setSpeed (_chargeSpeed);
+
+		_desiredStep = _CurrentTarget - transform.position;
+
+		_NewTarget = (_desiredStep + transform.position);
+
+		bullBehaviour.targetPos = _NewTarget;
+		Debug.Log ("I am doing it!");
+
 	}
 
 	public override void Leave()
@@ -49,22 +59,7 @@ public class StateCharge : StateParent {
 
 		float distanceToTarget = (_CurrentTarget - transform.position).magnitude;
 
-	
-		if (distanceToTarget > 20f) {
-			_CurrentTarget = stateIdle.targetPlayer.transform.position;
-			bullBehaviour.setSpeed (_chargeSpeed);
-
-			_desiredStep = _CurrentTarget - transform.position;
-
-			_NewTarget = (_desiredStep + transform.position);
-
-			bullBehaviour.targetPos = _NewTarget;
-			Debug.Log ("I am doing it!");
-
-		} else {
-			Debug.Log ("Damn missed");
-		}
-		if (distanceToTarget < 2f) 
+		if (distanceToTarget < 1f) 
 		{
 			GetComponent<StateMachine> ().SetState (StateID.RecoverState);
 		}

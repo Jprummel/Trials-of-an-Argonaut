@@ -23,23 +23,26 @@ public class StateIdle : StateParent {
 
 		bullBehaviour = GetComponent<BullBehaviour> ();
 
+		StartCoroutine(wandering (_wanderTime));
+
 		bullBehaviour.targetPos = _targetPlayer.transform.position;
 
 		bullBehaviour.setSpeed (_movementSpeed);
 
 		Vector3 newPos = RandomNavSphere (transform.position, wanderRadius, -1);
 		bullBehaviour.targetPos = newPos;
+	
 	}
 
 	public override void Act ()
 	{
-		
+		Debug.Log ("Idle Act");
 
 	}
 
 	public override void Reason ()
 	{
-		StartCoroutine(wandering (_wanderTime));
+		
 	}
 
 	float DistanceTo()
@@ -64,7 +67,8 @@ public class StateIdle : StateParent {
 		}
 		else if (DistanceTo () > 10f) 
 		{
-			
+			Debug.Log ("ME STUPIT");
+			GetComponent<StateMachine> ().SetState (StateID.ChargeState);
 		}
 
 	}
