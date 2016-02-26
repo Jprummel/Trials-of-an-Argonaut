@@ -18,6 +18,7 @@ public class StateRecover : StateParent {
 
 	public override void Enter ()
 	{
+		Debug.Log ("Recover");
 		_startPos = transform.position;
 
 		bullbehaviour = GetComponent<BullBehaviour> ();
@@ -53,6 +54,6 @@ public class StateRecover : StateParent {
 	{
 		yield return new WaitForSeconds (waitTime);
 		GetComponent<StateMachine> ().SetState (StateID.IdleState);
-
+		Debug.Log ("switch");
 	}
 }

@@ -5,6 +5,8 @@ public class StateCharge : StateParent {
 
 	[SerializeField] private int _recoverDistance;
 
+	[SerializeField] private GameObject _targetObject;
+	private Vector3 _targetPosObject;
 	BullBehaviour bullBehaviour;
 	StateIdle stateIdle;
 
@@ -14,7 +16,7 @@ public class StateCharge : StateParent {
 	private Vector3 _NewTarget;
 	private Vector3 _desiredVelocity;
 
-	[SerializeField]private float _chargeSpeed = 35f;
+	[SerializeField]private float _chargeSpeed = 50f;
 
 	private bool _isCharging = false;
 
@@ -25,10 +27,12 @@ public class StateCharge : StateParent {
 	}
 	public override void Enter ()
 	{
+		
+		Debug.Log ("Charge");
 		bullBehaviour = GetComponent<BullBehaviour> ();
 		stateIdle = GetComponent<StateIdle> ();
 
-		bullBehaviour.setSpeed(_chargeSpeed);
+
 		_isCharging = true;
 
 	
@@ -40,24 +44,41 @@ public class StateCharge : StateParent {
 	}
 	public override void Act ()
 	{
-		_CurrentTarget = stateIdle.targetPlayer.transform.position;
+		_targetPosObject = _CurrentTarget;
+		_targetObject.transform.position = _targetPosObject;
 
-		_desiredStep = _CurrentTarget - transform.position;
-
-		_NewTarget =  (_desiredStep + transform.position);
-
-		bullBehaviour.targetPos = _NewTarget;
-
-		Debug.Log (_isCharging);
-	}
-
-	public override void Reason ()
-	{
 		float distanceToTarget = (_CurrentTarget - transform.position).magnitude;
+
+	
+		if (distanceToTarget > 20f) {
+			_CurrentTarget = stateIdle.targetPlayer.transform.position;
+			bullBehaviour.setSpeed (_chargeSpeed);
+
+			_desiredStep = _CurrentTarget - transform.position;
+
+			_NewTarget = (_desiredStep + transform.position);
+
+			bullBehaviour.targetPos = _NewTarget;
+			Debug.Log ("I am doing it!");
+
+		} else {
+			Debug.Log ("Damn missed");
+		}
 		if (distanceToTarget < 2f) 
 		{
 			GetComponent<StateMachine> ().SetState (StateID.RecoverState);
 		}
+
+
+	}
+
+	public override void Reason ()
+	{
+		/*float distanceToTarget = (_CurrentTarget - transform.position).magnitude;
+		if (distanceToTarget < 2f) 
+		{
+			GetComponent<StateMachine> ().SetState (StateID.RecoverState);
+		}*/
 	}
 
 

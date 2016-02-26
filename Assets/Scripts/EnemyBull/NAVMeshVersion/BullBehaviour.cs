@@ -62,8 +62,9 @@ public class BullBehaviour : MonoBehaviour {
 
 	public void setSpeed(float newSpeed)
 	{
-		_navComponent.speed = newSpeed;
-
+	//	_navComponent.speed = newSpeed;
+		float speedMultiplyer = 1.0f - 0.9f *  Vector3.Angle (transform.forward, _navComponent.steeringTarget - transform.position) / 180.0f;
+		_navComponent.speed = newSpeed * speedMultiplyer;
 	}
 
 
