@@ -5,7 +5,7 @@ public class PlayerAttack : MonoBehaviour {
 
     private Damage  _damageAmount;
     private int     _attackState;
-    private float   _attackInterval = 1;
+    private float   _attackInterval = 0.6f;
     private float   _attackTimer =0;
     private bool    _isAttacking;
     private float   _damageBase;
