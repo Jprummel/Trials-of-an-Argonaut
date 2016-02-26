@@ -19,6 +19,7 @@ public class StateIdle : StateParent {
 
 	public override void Enter ()
 	{
+		Debug.Log ("Idle");
 
 		bullBehaviour = GetComponent<BullBehaviour> ();
 
