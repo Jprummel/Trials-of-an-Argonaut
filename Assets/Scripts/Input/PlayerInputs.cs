@@ -7,6 +7,7 @@ public class PlayerInputs : MonoBehaviour {
     private PlayerBlock     _block;
     private PlayerMovement  _movement;
     private Rotation        _rotation;
+    private PlayerRoll      _dodge;
 
     void Start()
     {
@@ -14,6 +15,7 @@ public class PlayerInputs : MonoBehaviour {
         _block          = GetComponent<PlayerBlock>();
         _movement       = GetComponent<PlayerMovement>();
         _rotation       = GetComponent<Rotation>();
+        _dodge          = GetComponent<PlayerRoll>();
 
         Cursor.visible = false;
     }
@@ -191,6 +193,19 @@ public class PlayerInputs : MonoBehaviour {
         if (Input.GetButtonDown(InputAxes.BACK))
         {
             Debug.Log("Back Pressed");
+        }
+
+        //Combined Inputs
+        if(Input.GetButtonDown(InputAxes.A)&& leftX != 0)
+        {
+            _dodge.RollX(leftX);
+            Debug.Log("They see me rolling");
+        }
+
+        if(Input.GetButtonDown(InputAxes.A)&& leftY != 0)
+        {
+            _dodge.RollY(leftY);
+            Debug.Log("They hating");
         }
     }
 }

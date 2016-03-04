@@ -15,68 +15,27 @@ public class PlayerRoll : MonoBehaviour {
         _rigidBody = GetComponent<Rigidbody>();
     }
 
-    
-    void Update()
+    public void RollX(float value)
     {
-        float leftX = Input.GetAxis(InputAxes.LEFTX);
-        float leftY = Input.GetAxis(InputAxes.LEFTY);
-
-        if (leftX != 0 && (Input.GetKeyDown(KeyCode.JoystickButton0)))
+        if (_CanUsesDodge)
         {
-            if (leftX < 0 && _CanUsesDodge == true)
-            {
-            //roll left
-                StartCoroutine(RollLeft());
-            }
-            else if (leftX > 0 && _CanUsesDodge == true)
-            { 
-            //roll right
-                StartCoroutine(RollRight());
-            }
+            _rigidBody.AddForce(transform.right * _rollSpeed * value * 4);
+            StartCoroutine(RollCooldown());
         }
+    }
 
-        if (leftY != 0 && (Input.GetKeyDown(KeyCode.JoystickButton0)))
+    public void RollY(float value)
+    {
+        if (_CanUsesDodge)
         {
-            if (leftY < 0 && _CanUsesDodge == true)
-            {
-                //roll front
-                StartCoroutine(RollUp());
-            }
-            else if (leftY > 0 && _CanUsesDodge == true)
-            {
-                //roll back
-                StartCoroutine(RollDown());
-            }
+            _rigidBody.AddForce(-transform.forward * _rollSpeed * value * 4);
+            StartCoroutine(RollCooldown());
         }
-
     }
 
-    IEnumerator RollLeft()
+    IEnumerator RollCooldown()
     {
         _CanUsesDodge = false;
-        _rigidBody.AddForce(-transform.right * _rollSpeed * 4);
-        yield return new WaitForSeconds(_rollCooldown);
-        _CanUsesDodge = true;
-       
-    }
-    IEnumerator RollRight()
-    {
-        _CanUsesDodge = false;
-        _rigidBody.AddForce(transform.right * _rollSpeed * 4);
-        yield return new WaitForSeconds(_rollCooldown);
-        _CanUsesDodge = true;
-    }
-    IEnumerator RollUp()
-    {
-        _CanUsesDodge = false;
-        _rigidBody.AddForce(transform.forward * _rollSpeed * 4);
-        yield return new WaitForSeconds(_rollCooldown);
-        _CanUsesDodge = true;
-    }
-    IEnumerator RollDown()
-    {
-        _CanUsesDodge = false;
-        _rigidBody.AddForce(-transform.forward * _rollSpeed * 4);
         yield return new WaitForSeconds(_rollCooldown);
         _CanUsesDodge = true;
     }
