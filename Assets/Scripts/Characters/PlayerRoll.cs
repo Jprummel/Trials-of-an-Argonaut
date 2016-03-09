@@ -28,6 +28,7 @@ public class PlayerRoll : MonoBehaviour {
     {
         if (_CanUsesDodge)
         {
+            AnimStateHandler.AnimStateGeneral(6);
             _rigidBody.AddForce(-transform.forward * _rollSpeed * value * 4);
             StartCoroutine(RollCooldown());
         }

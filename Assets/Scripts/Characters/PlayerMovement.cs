@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour {
         if (value < 0)
         {
             AnimStateHandler.AnimStateGeneral(1);
+            Debug.Log(value);
         }else if(value > 0)
         {
             AnimStateHandler.AnimStateGeneral(2);
