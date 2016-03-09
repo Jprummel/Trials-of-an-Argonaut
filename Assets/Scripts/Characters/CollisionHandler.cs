@@ -59,7 +59,7 @@ public class CollisionHandler : MonoBehaviour {
 			{
 				_adjustHealth.CalculateNewHealth (other);
 				Debug.Log ("It happend");
-               // this.transform.Translate (-Vector3.forward * Time.deltaTime * 5);
+                _adjustHealth.Knockback(500);
 			}
 		}
 

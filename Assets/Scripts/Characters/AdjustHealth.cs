@@ -3,7 +3,13 @@ using System.Collections;
 
 public class AdjustHealth : MonoBehaviour {
 
-    [SerializeField]private float _deathTimer;
+    [SerializeField]private float       _deathTimer;
+                    private Rigidbody   _rigidbody;
+
+    void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+    }
 
     public void CalculateNewHealth(Collider coll)
     {
@@ -26,6 +32,13 @@ public class AdjustHealth : MonoBehaviour {
         yield return new WaitForSeconds(_deathTimer);
         Destroy(this.gameObject);
         
+    }
+
+    public void Knockback(float value)
+    {
+        //_rigidbody.AddForce(Vector3.forward * Time.deltaTime * value);
+        _rigidbody.AddForce(Vector3.left * value);
+        Debug.Log("Knockback");
     }
 
 }
