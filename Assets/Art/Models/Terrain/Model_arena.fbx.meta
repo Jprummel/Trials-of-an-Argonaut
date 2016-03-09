@@ -229,6 +229,35 @@ ModelImporter:
     100442: Walls_first_ring
     100444: walls_first_ring
     100446: Walls_second_ring
+    100448: banner
+    100450: banner1
+    100452: banner2
+    100454: banner3
+    100456: banner4
+    100458: banner5
+    100460: banner6
+    100462: banner7
+    100464: banners_first_ring
+    100466: pPlane10
+    100468: pPlane11
+    100470: pPlane12
+    100472: pPlane13
+    100474: pPlane14
+    100476: pPlane15
+    100478: pPlane2
+    100480: pPlane3
+    100482: pPlane4
+    100484: pPlane5
+    100486: pPlane6
+    100488: pPlane7
+    100490: pPlane8
+    100492: pPlane9
+    100494: Roof_balk
+    100496: Roof_balk10
+    100498: Roof_balk9
+    100500: Roof_sunscreens
+    100502: roof_sunscreens
+    100504: Roof_sunscreens1
     400000: //RootNode
     400002: polySurface1
     400004: polySurface2
@@ -453,6 +482,35 @@ ModelImporter:
     400442: Walls_first_ring
     400444: walls_first_ring
     400446: Walls_second_ring
+    400448: banner
+    400450: banner1
+    400452: banner2
+    400454: banner3
+    400456: banner4
+    400458: banner5
+    400460: banner6
+    400462: banner7
+    400464: banners_first_ring
+    400466: pPlane10
+    400468: pPlane11
+    400470: pPlane12
+    400472: pPlane13
+    400474: pPlane14
+    400476: pPlane15
+    400478: pPlane2
+    400480: pPlane3
+    400482: pPlane4
+    400484: pPlane5
+    400486: pPlane6
+    400488: pPlane7
+    400490: pPlane8
+    400492: pPlane9
+    400494: Roof_balk
+    400496: Roof_balk10
+    400498: Roof_balk9
+    400500: Roof_sunscreens
+    400502: roof_sunscreens
+    400504: Roof_sunscreens1
     2300000: polySurface8
     2300002: Model_Arena_Bank17
     2300004: Model_Arena_Bank18
@@ -644,6 +702,32 @@ ModelImporter:
     2300376: Model_Arena_Muur_pilaar8 1
     2300378: Model_Arena_Muur_pilaar9
     2300380: Model_Arena_Muur_pilaar9 1
+    2300382: banner
+    2300384: banner1
+    2300386: banner2
+    2300388: banner3
+    2300390: banner4
+    2300392: banner5
+    2300394: banner6
+    2300396: banner7
+    2300398: pPlane10
+    2300400: pPlane11
+    2300402: pPlane12
+    2300404: pPlane13
+    2300406: pPlane14
+    2300408: pPlane15
+    2300410: pPlane2
+    2300412: pPlane3
+    2300414: pPlane4
+    2300416: pPlane5
+    2300418: pPlane6
+    2300420: pPlane7
+    2300422: pPlane8
+    2300424: pPlane9
+    2300426: Roof_balk10
+    2300428: Roof_balk9
+    2300430: Roof_sunscreens
+    2300432: Roof_sunscreens1
     3300000: polySurface8
     3300002: Model_Arena_Bank17
     3300004: Model_Arena_Bank18
@@ -835,6 +919,32 @@ ModelImporter:
     3300376: Model_Arena_Muur_pilaar8 1
     3300378: Model_Arena_Muur_pilaar9
     3300380: Model_Arena_Muur_pilaar9 1
+    3300382: banner
+    3300384: banner1
+    3300386: banner2
+    3300388: banner3
+    3300390: banner4
+    3300392: banner5
+    3300394: banner6
+    3300396: banner7
+    3300398: pPlane10
+    3300400: pPlane11
+    3300402: pPlane12
+    3300404: pPlane13
+    3300406: pPlane14
+    3300408: pPlane15
+    3300410: pPlane2
+    3300412: pPlane3
+    3300414: pPlane4
+    3300416: pPlane5
+    3300418: pPlane6
+    3300420: pPlane7
+    3300422: pPlane8
+    3300424: pPlane9
+    3300426: Roof_balk10
+    3300428: Roof_balk9
+    3300430: Roof_sunscreens
+    3300432: Roof_sunscreens1
     4300000: polySurface8
     4300002: Model_Arena_bank_grond3
     4300004: Model_Arena_bank_grond4
@@ -1026,6 +1136,32 @@ ModelImporter:
     4300376: Model_Arena_Bank19
     4300378: Model_Arena_Bank18
     4300380: Model_Arena_Bank17
+    4300382: Roof_balk10
+    4300384: Roof_balk9
+    4300386: pPlane15
+    4300388: pPlane14
+    4300390: pPlane13
+    4300392: Roof_sunscreens1
+    4300394: pPlane12
+    4300396: pPlane11
+    4300398: pPlane10
+    4300400: pPlane9
+    4300402: pPlane8
+    4300404: pPlane7
+    4300406: pPlane6
+    4300408: pPlane5
+    4300410: pPlane4
+    4300412: pPlane3
+    4300414: pPlane2
+    4300416: Roof_sunscreens
+    4300418: banner
+    4300420: banner1
+    4300422: banner2
+    4300424: banner3
+    4300426: banner4
+    4300428: banner5
+    4300430: banner6
+    4300432: banner7
     9500000: //RootNode
   materials:
     importMaterials: 1

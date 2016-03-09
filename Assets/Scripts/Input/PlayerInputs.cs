@@ -29,10 +29,7 @@ public class PlayerInputs : MonoBehaviour {
         XboxControllerInput();
         PCInput();
         
-        if (!Input.anyKeyDown)
-        {
-            AnimStateHandler.AnimStateGeneral(0);
-        }
+       
     }
 
     void PCInput()
@@ -206,6 +203,12 @@ public class PlayerInputs : MonoBehaviour {
         {
             _dodge.RollY(leftY);
             Debug.Log("They hating");
+        }
+
+        //Idle
+        if (!Input.anyKeyDown && leftY == 0 && leftX == 0)
+        {
+            AnimStateHandler.AnimStateGeneral(0);
         }
     }
 }
