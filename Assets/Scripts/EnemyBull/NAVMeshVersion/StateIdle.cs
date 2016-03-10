@@ -65,10 +65,9 @@ public class StateIdle : StateParent {
 			GetComponent<StateMachine> ().SetState (StateID.ChargeState);
 
 		}
-		else if (DistanceTo () > 10f) 
+		else if (DistanceTo () < 10f) 
 		{
-			Debug.Log ("ME STUPIT");
-			GetComponent<StateMachine> ().SetState (StateID.ChargeState);
+            GetComponent<StateMachine>().SetState(StateID.FlameState);
 		}
 
 	}

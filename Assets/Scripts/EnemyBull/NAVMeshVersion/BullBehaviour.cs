@@ -48,6 +48,7 @@ public class BullBehaviour : MonoBehaviour {
 		_stateMachine.AddState (StateID.IdleState, GetComponent<StateIdle> () );
 		_stateMachine.AddState (StateID.ChargeState, GetComponent<StateCharge> ());
 		_stateMachine.AddState (StateID.RecoverState, GetComponent<StateRecover> ());
+        _stateMachine.AddState(StateID.FlameState, GetComponent<StateFireBreath>());
 	}
 	// Update is called once per frame
 	void Update () {
