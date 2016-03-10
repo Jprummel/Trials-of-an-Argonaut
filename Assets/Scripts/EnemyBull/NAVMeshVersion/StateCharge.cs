@@ -3,79 +3,79 @@ using System.Collections;
 
 public class StateCharge : StateParent {
 
-	[SerializeField] private int _recoverDistance;
+	//[SerializeField] private int _recoverDistance;
 
-	[SerializeField] private GameObject _targetObject;
 	private Vector3 _targetPosObject;
 	BullBehaviour bullBehaviour;
-	StateIdle stateIdle;
 
 	private Vector3 _CurrentTarget;
+	public Vector3 currentTarget
+	{
+		get{ return _CurrentTarget; }
 
-	private Vector3 _desiredStep;
-	private Vector3 _NewTarget;
-	private Vector3 _desiredVelocity;
+	}
+	[SerializeField] private float _waitTime;
+	[SerializeField]private float _chargeSpeed = 200f;
 
-	[SerializeField]private float _chargeSpeed = 50f;
-
-	private bool _isCharging = false;
-
+	/*private bool _isCharging = false;
 	public bool isCharging
 	{
 		get{ return _isCharging; }
+	}*/
+	private Vector3 _recoverLocation;
+	public Vector3 recoverLocation
+	{
+		get{ return _recoverLocation; }
 
 	}
+
+	StatePrepare prepare;
+
 	public override void Enter ()
 	{
 		
 		Debug.Log ("Charge");
 		bullBehaviour = GetComponent<BullBehaviour> ();
-		stateIdle = GetComponent<StateIdle> ();
+		prepare = GetComponent<StatePrepare> ();
 
-
-		_isCharging = true;
-
-	
-		_CurrentTarget = stateIdle.targetPlayer.transform.position;
+		_CurrentTarget = prepare.targetPlayer.transform.position;
 		bullBehaviour.setSpeed (_chargeSpeed);
-
-		_desiredStep = _CurrentTarget - transform.position;
-
-		_NewTarget = (_desiredStep + transform.position);
-
-		bullBehaviour.targetPos = _NewTarget;
-		Debug.Log ("I am doing it!");
-
+		bullBehaviour.acceleration (50);
+		bullBehaviour.isCharging = true;
 	}
 
 	public override void Leave()
 	{
-		_isCharging = false;
+		//bullBehaviour.isCharging = false;
+		bullBehaviour.acceleration (30);
 	}
 	public override void Act ()
 	{
-		_targetPosObject = _CurrentTarget;
-		_targetObject.transform.position = _targetPosObject;
-
-		float distanceToTarget = (_CurrentTarget - transform.position).magnitude;
-
-		if (distanceToTarget < 1f) 
-		{
-			GetComponent<StateMachine> ().SetState (StateID.RecoverState);
-		}
-
-
+		//Running ();
 	}
 
 	public override void Reason ()
 	{
-		/*float distanceToTarget = (_CurrentTarget - transform.position).magnitude;
-		if (distanceToTarget < 2f) 
+		if (bullBehaviour.isCharging) 
 		{
-			GetComponent<StateMachine> ().SetState (StateID.RecoverState);
-		}*/
+			Charging ();
+		}
+
 	}
 
+	void Charging()
+	{
+		float distanceToTarget = (_CurrentTarget - transform.position).magnitude; //checked of hij er is. 
 
+		if (distanceToTarget < 2.5f) 
+		{
+
+			_recoverLocation = transform.position;
+		}
+		if (distanceToTarget < 1.5f) {
+			GetComponent<StateMachine> ().SetState (StateID.RecoverState);
+
+		} 
+	}
 
 }

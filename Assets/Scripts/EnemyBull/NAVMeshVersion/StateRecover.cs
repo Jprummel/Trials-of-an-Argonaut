@@ -3,35 +3,32 @@ using System.Collections;
 
 public class StateRecover : StateParent {
 
-	[SerializeField] private float _maxSpeed = 20f;
-	[SerializeField] private float _waitForRecover = 1f;
+	[SerializeField] private float _maxSpeed = 10f;
 
 	private Vector3 _startPos;
-	private Vector3 _currentPosition;
 
 	private Vector3 _mainTarget;
 	private Vector3 _newTarget;
 
 
 	BullBehaviour bullbehaviour;
-	StateIdle stateIdle; 
+
+	StateCharge stateCharge;
 
 	public override void Enter ()
 	{
-		Debug.Log ("Recover");
-		_startPos = transform.position;
-
 		bullbehaviour = GetComponent<BullBehaviour> ();
-		stateIdle = GetComponent<StateIdle> ();
+		stateCharge = GetComponent<StateCharge>();
+
+		_startPos = stateCharge.recoverLocation;
+		_mainTarget = transform.position;
+
 
 		bullbehaviour.setSpeed (_maxSpeed);
 
-		_mainTarget = stateIdle.targetPlayer.transform.position;
-		_newTarget = _mainTarget + _startPos;
+		_newTarget = _startPos + _mainTarget;
 
 		bullbehaviour.targetPos = _newTarget;
-
-		StartCoroutine (Waiting (_waitForRecover));
 	}
 
 	public override void Leave ()
@@ -47,13 +44,10 @@ public class StateRecover : StateParent {
 
 	public override void Reason ()
 	{
-
-	}
-
-	IEnumerator Waiting(float waitTime)
-	{
-		yield return new WaitForSeconds (waitTime);
-		GetComponent<StateMachine> ().SetState (StateID.IdleState);
-		Debug.Log ("switch");
+		float distanceToTarget = (_newTarget - transform.position).magnitude;
+		if (distanceToTarget < 1f) 
+		{
+			GetComponent<StateMachine> ().SetState (StateID.IdleState);
+		}
 	}
 }

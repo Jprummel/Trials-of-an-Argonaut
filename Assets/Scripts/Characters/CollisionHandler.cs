@@ -53,9 +53,9 @@ public class CollisionHandler : MonoBehaviour {
         }
 		if (other.tag == Tags.BULLHORNS && this.tag == Tags.PLAYER) 
 		{
-			StateCharge stateCharge = other.GetComponentInParent<StateCharge> ();
+			BullBehaviour bullBehaviour = other.GetComponentInParent<BullBehaviour> ();
 			Debug.Log ("Ayylmaokai");
-			if (stateCharge.isCharging) 
+			if (bullBehaviour.isCharging == true) 
 			{
 				_adjustHealth.CalculateNewHealth (other);
 				Debug.Log ("It happend");
