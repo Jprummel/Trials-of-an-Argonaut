@@ -8,6 +8,7 @@ public class PlayerInputs : MonoBehaviour {
     private PlayerMovement  _movement;
     private Rotation        _rotation;
     private PlayerRoll      _dodge;
+    private AdjustHealth    _health;
 
     void Start()
     {
@@ -16,8 +17,9 @@ public class PlayerInputs : MonoBehaviour {
         _movement       = GetComponent<PlayerMovement>();
         _rotation       = GetComponent<Rotation>();
         _dodge          = GetComponent<PlayerRoll>();
+        _health         = GetComponent<AdjustHealth>();
 
-        Cursor.visible = false;
+        Cursor.visible  = false;
     }
   	// Update is called once per frame
 	void Update () {
@@ -26,10 +28,11 @@ public class PlayerInputs : MonoBehaviour {
 
     void Inputs()
     {
-        XboxControllerInput();
-        PCInput();
-        
-       
+        if (_health.CanUseInput())
+        {
+            XboxControllerInput();
+            PCInput();
+        }       
     }
 
     void PCInput()

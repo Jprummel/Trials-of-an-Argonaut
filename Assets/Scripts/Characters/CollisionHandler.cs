@@ -3,15 +3,17 @@ using System.Collections;
 
 public class CollisionHandler : MonoBehaviour {
 
-    private AdjustHealth _adjustHealth;
-    private PlayerMovement _movement;
-    private HealthPickup _pickUp;
+    private PlayerInputs    _input;
+    private AdjustHealth    _adjustHealth;
+    private PlayerMovement  _movement;
+    private HealthPickup    _pickUp;
 	
     // Use this for initialization
 	void Start () {
         if (this.tag == Tags.PLAYER)
         {
-            _movement = GetComponent<PlayerMovement>();
+            _input      = GetComponent<PlayerInputs>();
+            _movement   = GetComponent<PlayerMovement>();
         }
 
         if(this.tag == Tags.ENEMY || this.tag == Tags.PLAYER)
@@ -59,7 +61,7 @@ public class CollisionHandler : MonoBehaviour {
 			{
 				_adjustHealth.CalculateNewHealth (other);
 				Debug.Log ("It happend");
-                _adjustHealth.Knockback(500);
+                _adjustHealth.Knockback(1000);
 			}
 		}
 
@@ -76,11 +78,6 @@ public class CollisionHandler : MonoBehaviour {
 
     void OnCollisionEnter(Collision other) 
     {
-        if (other.gameObject.tag == Tags.GROUND && this.tag == Tags.PLAYER)
-        {
-            _movement.IsGrounded();
-        }
-
         if(other.gameObject.tag == Tags.PILLAR && this.tag == Tags.BULL)
         {
             //Damage bull
