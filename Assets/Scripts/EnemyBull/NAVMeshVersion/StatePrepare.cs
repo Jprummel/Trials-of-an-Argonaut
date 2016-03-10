@@ -52,10 +52,10 @@ public class StatePrepare : StateParent {
 			GetComponent<StateMachine> ().SetState (StateID.ChargeState);
 			Debug.Log (" >= 30f");
 		}
-		else if (DistanceTo () > 10f) 
+		else if (DistanceTo () < 10f) 
 		{
 			Debug.Log (" > 10f");
-			//GetComponent<StateMachine> ().SetState (StateID.ChargeState);
+            GetComponent<StateMachine>().SetState(StateID.FlameState);
 		}
 
 	}
