@@ -38,14 +38,6 @@ public class StateIdle : StateParent {
 
 			GetComponent<StateMachine> ().SetState (StateID.PrepareState);
 		}
-<<<<<<< HEAD
-=======
-		else if (DistanceTo () < 10f) 
-		{
-            GetComponent<StateMachine>().SetState(StateID.FlameState);
-		}
-
->>>>>>> bacb69effcee04e71520b470aa1996cea41140fc
 	}
 	public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask) //zoekt een random lokatie binnen de range.
 	{
