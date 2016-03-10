@@ -49,7 +49,11 @@ public class BullBehaviour : MonoBehaviour {
 		_stateMachine.AddState (StateID.IdleState, GetComponent<StateIdle> () );
 		_stateMachine.AddState (StateID.ChargeState, GetComponent<StateCharge> ());
 		_stateMachine.AddState (StateID.RecoverState, GetComponent<StateRecover> ());
+<<<<<<< HEAD
 		_stateMachine.AddState (StateID.PrepareState, GetComponent<StatePrepare> ());
+=======
+        _stateMachine.AddState(StateID.FlameState, GetComponent<StateFireBreath>());
+>>>>>>> bacb69effcee04e71520b470aa1996cea41140fc
 	}
 
 	void Update () 

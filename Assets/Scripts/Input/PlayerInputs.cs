@@ -7,6 +7,8 @@ public class PlayerInputs : MonoBehaviour {
     private PlayerBlock     _block;
     private PlayerMovement  _movement;
     private Rotation        _rotation;
+    private PlayerRoll      _dodge;
+    private AdjustHealth    _health;
 
     void Start()
     {
@@ -14,8 +16,10 @@ public class PlayerInputs : MonoBehaviour {
         _block          = GetComponent<PlayerBlock>();
         _movement       = GetComponent<PlayerMovement>();
         _rotation       = GetComponent<Rotation>();
+        _dodge          = GetComponent<PlayerRoll>();
+        _health         = GetComponent<AdjustHealth>();
 
-        Cursor.visible = false;
+        Cursor.visible  = false;
     }
   	// Update is called once per frame
 	void Update () {
@@ -24,13 +28,11 @@ public class PlayerInputs : MonoBehaviour {
 
     void Inputs()
     {
-        XboxControllerInput();
-        PCInput();
-        
-        if (!Input.anyKeyDown)
+        if (_health.CanUseInput())
         {
-            AnimStateHandler.AnimStateGeneral(0);
-        }
+            XboxControllerInput();
+            PCInput();
+        }       
     }
 
     void PCInput()
@@ -114,7 +116,7 @@ public class PlayerInputs : MonoBehaviour {
 
         if (rightX != 0) //Y Axis Camera Rotation (X Axis on stick)
         {
-            _rotation.RotateY(500f,rightX);
+            _rotation.RotateY(150f,rightX);
         }
 
         if (rightY != 0) //X Axis Camera Rotation (Y Axis on stick)
@@ -191,6 +193,25 @@ public class PlayerInputs : MonoBehaviour {
         if (Input.GetButtonDown(InputAxes.BACK))
         {
             Debug.Log("Back Pressed");
+        }
+
+        //Combined Inputs
+        if(Input.GetButtonDown(InputAxes.A)&& leftX != 0)
+        {
+            _dodge.RollX(leftX);
+            Debug.Log("They see me rolling");
+        }
+
+        if(Input.GetButtonDown(InputAxes.A)&& leftY != 0)
+        {
+            _dodge.RollY(leftY);
+            Debug.Log("They hating");
+        }
+
+        //Idle
+        if (!Input.anyKeyDown && leftY == 0 && leftX == 0)
+        {
+            AnimStateHandler.AnimStateGeneral(0);
         }
     }
 }
