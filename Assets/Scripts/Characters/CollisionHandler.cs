@@ -61,7 +61,7 @@ public class CollisionHandler : MonoBehaviour {
 			{
 				_adjustHealth.CalculateNewHealth (other);
 				Debug.Log ("It happend");
-                _adjustHealth.Knockback(1000);
+                _adjustHealth.Knockback(250);
 			}
 		}
 
