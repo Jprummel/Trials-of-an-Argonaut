@@ -168,8 +168,6 @@ public class PlayerInputs : MonoBehaviour {
         //BUMPERS
         if (Input.GetButton(InputAxes.LB))
         {
-            _block.Block();
-            Debug.Log(_block.IsBlocking());
             Debug.Log("LB Pressed");
         }
         if (Input.GetButtonDown(InputAxes.RB))
