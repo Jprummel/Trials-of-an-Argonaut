@@ -28,6 +28,7 @@ public class StateFireBreath : StateParent
         //particle fire system
         StartCoroutine(ParticleStart());
         //Player damage zone
+
         //leave
         StartCoroutine(EndBehaviour());
     }
@@ -43,7 +44,7 @@ public class StateFireBreath : StateParent
         //calculation update
     }
 
-    IEnumerator ParticleStart() 
+    IEnumerator ParticleStart()
     {
         
         var par = transform.Find("FX_fire").gameObject;
