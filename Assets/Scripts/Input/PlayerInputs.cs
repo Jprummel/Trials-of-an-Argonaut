@@ -73,26 +73,22 @@ public class PlayerInputs : MonoBehaviour {
 
         if (dpadX > 0)
         {
-            //Call movement function for dpad right
-            Debug.Log("dpad right");
+
         }
         else if (dpadX < 0)
         {
-            //Call movement function for dpad left
-            Debug.Log("dpad left");
+
         }
 
         float dpadY = Input.GetAxis(InputAxes.DPADY); //DPAD Y AXIS
 
         if (dpadY > 0)
         {
-            //Call movement function for dpad up
-            Debug.Log("Dpad up");
+
         }
         else if (dpadY < 0)
         {
-            //Call movement function for dpad down
-            Debug.Log("Dpad down");
+
         }
 
         //ANALOG STICKS
@@ -126,26 +122,22 @@ public class PlayerInputs : MonoBehaviour {
 
         if (Input.GetButtonDown(InputAxes.L3))
         {
-            //Function for clicking left analog
-            Debug.Log("Leftstick click");
+
         }
 
         if (Input.GetButtonDown(InputAxes.R3))
         {
-            //Function for clicking right analog
-            Debug.Log("Rightstick click");
             _rotation.CenterCamera();
         }
 
         //FACE BUTTONS
         if (Input.GetButtonDown(InputAxes.A))
         {
-            Debug.Log("A Pressed");
+
         }
 
         if (Input.GetButton(InputAxes.B))
         {
-            Debug.Log("B Pressed");
             _block.Block();
         }
         else
@@ -155,12 +147,11 @@ public class PlayerInputs : MonoBehaviour {
         
         if (Input.GetButtonDown(InputAxes.X))
         {
-            Debug.Log("X Pressed");
             _attack.Attack();
         }
         if (Input.GetButtonDown(InputAxes.Y))
         {
-            Debug.Log("Y Pressed");
+
         }
 
         //BUMPERS & TRIGGERS
@@ -168,11 +159,11 @@ public class PlayerInputs : MonoBehaviour {
         //BUMPERS
         if (Input.GetButton(InputAxes.LB))
         {
-            Debug.Log("LB Pressed");
+
         }
         if (Input.GetButtonDown(InputAxes.RB))
         {
-            Debug.Log("RB Pressed");
+
         }
 
         //TRIGGERS
@@ -181,34 +172,32 @@ public class PlayerInputs : MonoBehaviour {
 
         if (leftTrigger > 0)
         {
-            Debug.Log("LT Pressed");
+
         }
         if (rightTrigger > 0)
         {
-            Debug.Log("RT Pressed");
+
         }
 
         //START & BACK
         if (Input.GetButtonDown(InputAxes.START))
         {
-            Debug.Log("Start Pressed");
+
         }
         if (Input.GetButtonDown(InputAxes.BACK))
         {
-            Debug.Log("Back Pressed");
+
         }
 
         //Combined Inputs
         if(Input.GetButtonDown(InputAxes.A)&& leftX != 0)
         {
             _dodge.RollX(leftX);
-            Debug.Log("They see me rolling");
         }
 
         if(Input.GetButtonDown(InputAxes.A)&& leftY != 0)
         {
             _dodge.RollY(leftY);
-            Debug.Log("They hating");
         }
 
         //Idle
