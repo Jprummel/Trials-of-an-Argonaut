@@ -9,8 +9,7 @@ public enum StateID
 	AttackState = 3,
 	FlameState = 4,
 	RecoverState = 5,
-	PrepareState = 6,
-	StaggerState = 7
+	PrepareState = 6
 
 }
 public class BullBehaviour : MonoBehaviour {
@@ -52,7 +51,6 @@ public class BullBehaviour : MonoBehaviour {
 		_stateMachine.AddState (StateID.RecoverState, GetComponent<StateRecover> ());
 		_stateMachine.AddState (StateID.PrepareState, GetComponent<StatePrepare> ());
         _stateMachine.AddState(StateID.FlameState, GetComponent <StateFireBreath>());
-		_stateMachine.AddState (StateID.StaggerState, GetComponent<StateStagger> ());
 	}
 
 	void Update () 
@@ -65,18 +63,8 @@ public class BullBehaviour : MonoBehaviour {
 
 			_targetObject.transform.position = _targetPos;
 		}
-
-
-
 	}
-	void OnCollisionEnter(Collision col)
-	{
-		if (_isCharging && col.gameObject.tag == "Obstakel") 
-		{
 
-			GetComponent<StateMachine>().SetState(StateID.StaggerState);
-		}
-	}
 	public void setSpeed(float newSpeed)
 	{
 
@@ -88,10 +76,6 @@ public class BullBehaviour : MonoBehaviour {
 
 		_navComponent.acceleration = newAcc;
 
-	}
-	public void AutoBraking (bool OfforOn)
-	{
-		_navComponent.autoBraking = OfforOn;
 	}
 	void RotatingSmooth()
 	{

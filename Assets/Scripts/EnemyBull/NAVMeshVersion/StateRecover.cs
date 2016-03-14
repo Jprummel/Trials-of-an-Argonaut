@@ -26,15 +26,14 @@ public class StateRecover : StateParent {
 
 		bullbehaviour.setSpeed (_maxSpeed);
 
-		_newTarget = _mainTarget;
-		_newTarget.y = 2;
+		_newTarget = _startPos + _mainTarget;
+
 		bullbehaviour.targetPos = _newTarget;
 	}
 
 	public override void Leave ()
 	{
-		bullbehaviour.AutoBraking (true);
-	
+
 	} 
 
 	public override void Act ()
@@ -46,13 +45,9 @@ public class StateRecover : StateParent {
 	public override void Reason ()
 	{
 		float distanceToTarget = (_newTarget - transform.position).magnitude;
-		if (distanceToTarget < 2f) 
+		if (distanceToTarget < 1f) 
 		{
 			GetComponent<StateMachine> ().SetState (StateID.IdleState);
-		}
-		if (distanceToTarget > 9f) 
-		{
-			bullbehaviour.AutoBraking (true);
 		}
 	}
 }

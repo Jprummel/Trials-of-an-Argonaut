@@ -21,8 +21,8 @@ public class StatePrepare : StateParent {
 	}
 	public override void Leave()
 	{
-
-
+		bullBehaviour.isCharging = false;
+		Debug.Log (bullBehaviour.isCharging);
 	}
 	public override void Act ()
 	{
