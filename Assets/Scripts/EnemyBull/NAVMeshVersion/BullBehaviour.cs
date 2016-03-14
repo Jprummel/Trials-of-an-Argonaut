@@ -8,31 +8,32 @@ public enum StateID
 	ChargeState = 2,
 	AttackState = 3,
 	FlameState = 4,
-	RecoverState = 5
+	RecoverState = 5,
+	PrepareState = 6
 
 }
 public class BullBehaviour : MonoBehaviour {
 
 	private StateMachine _stateMachine;
+	[SerializeField] private GameObject _targetObject;
+
+	private bool _isCharging = false;
+	public bool isCharging
+	{
+		get{ return _isCharging; }
+		set{ _isCharging = value; }
+	}
 
 	private Vector3 _targetPos;
 	public Vector3 targetPos
 	{
-		get{return _targetPos; }
+		get{return _targetPos; } //target van waar hij nu naar toe moet.
 		set{_targetPos = value; }
 	}
-
-
+		
 	private NavMeshAgent _navComponent;
 
 
-	private float _maxSpeed;
-	public float maxSpeed
-	{
-		get{return _maxSpeed;}
-		set{ _maxSpeed = value;}
-	}
-	// Use this for initialization
 	void Start () 
 	{
 		_navComponent = GetComponent<NavMeshAgent> ();
@@ -48,27 +49,39 @@ public class BullBehaviour : MonoBehaviour {
 		_stateMachine.AddState (StateID.IdleState, GetComponent<StateIdle> () );
 		_stateMachine.AddState (StateID.ChargeState, GetComponent<StateCharge> ());
 		_stateMachine.AddState (StateID.RecoverState, GetComponent<StateRecover> ());
-        _stateMachine.AddState(StateID.FlameState, GetComponent<StateFireBreath>());
+		_stateMachine.AddState (StateID.PrepareState, GetComponent<StatePrepare> ());
+        _stateMachine.AddState(StateID.FlameState, GetComponent <StateFireBreath>());
 	}
-	// Update is called once per frame
-	void Update () {
+
+	void Update () 
+	{
+		RotatingSmooth ();
 
 		if(_targetPos != null)
 		{
-			_navComponent.SetDestination(_targetPos);
-			//DistanceTo ();
+			_navComponent.SetDestination(_targetPos); 
 
+			_targetObject.transform.position = _targetPos;
 		}
 	}
 
 	public void setSpeed(float newSpeed)
 	{
-	//	_navComponent.speed = newSpeed;
-		float speedMultiplyer = 1.0f - 0.9f *  Vector3.Angle (transform.forward, _navComponent.steeringTarget - transform.position) / 180.0f;
-		_navComponent.speed = newSpeed * speedMultiplyer;
+
+		_navComponent.speed = newSpeed;
+
 	}
+	public void acceleration(float newAcc)
+	{
 
+		_navComponent.acceleration = newAcc;
 
+	}
+	void RotatingSmooth()
+	{
+		Quaternion lookRotation = Quaternion.LookRotation (_navComponent.desiredVelocity);
+		transform.rotation = Quaternion.RotateTowards (transform.rotation, lookRotation, _navComponent.angularSpeed * Time.deltaTime);
+	}
 
 
 }

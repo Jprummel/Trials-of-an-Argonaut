@@ -7,25 +7,28 @@ public class StateFireBreath : StateParent
     private int _stop = 0;
     private bool _particle = false;
     [SerializeField]private ParticleSystem FX_fire;
+    [SerializeField]
+    private GameObject Player;
 
     public override void Leave()
     {
         // on exit
         StartCoroutine(ParticleEnd());
-        Debug.Log("Im Leaving");
+        //Debug.Log("Im Leaving");
     }
 
     public override void Enter()
     {
         bullBehaviour = GetComponent<BullBehaviour> ();
-        Debug.Log("Im hot");
+        //Debug.Log("Im hot");
         //stand still
         bullBehaviour.setSpeed(_stop);
-        transform.LookAt(bullBehaviour.targetPos);
+        //look at player
+        
         //particle fire system
         StartCoroutine(ParticleStart());
         //Player damage zone
-        
+
         //leave
         StartCoroutine(EndBehaviour());
     }
@@ -33,6 +36,7 @@ public class StateFireBreath : StateParent
     public override void Act()
     {
         //update
+        LookAtPlayer();
     }
 
     public override void Reason()
@@ -40,7 +44,7 @@ public class StateFireBreath : StateParent
         //calculation update
     }
 
-    IEnumerator ParticleStart() 
+    IEnumerator ParticleStart()
     {
         
         var par = transform.Find("FX_fire").gameObject;
@@ -58,6 +62,11 @@ public class StateFireBreath : StateParent
     {
         yield return new WaitForSeconds(3);
         GetComponent<StateMachine>().SetState(StateID.IdleState);
+    }
+
+    private void LookAtPlayer()
+    {
+        transform.LookAt(Player.transform.position);
     }
 
 }

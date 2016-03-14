@@ -11,6 +11,12 @@ public class PlayerBlock : MonoBehaviour {
         _isBlocking = true;
     }
 
+    public void StopBlock()
+    {
+        AnimStateHandler.AnimStateOverride(0);
+        _isBlocking = false;
+    }
+
     public bool IsBlocking()
     {
         return _isBlocking = true;

@@ -143,11 +143,16 @@ public class PlayerInputs : MonoBehaviour {
             Debug.Log("A Pressed");
         }
 
-        if (Input.GetButtonDown(InputAxes.B))
+        if (Input.GetButton(InputAxes.B))
         {
             Debug.Log("B Pressed");
             _block.Block();
         }
+        else
+        {
+            _block.StopBlock();
+        }
+        
         if (Input.GetButtonDown(InputAxes.X))
         {
             Debug.Log("X Pressed");
@@ -163,8 +168,6 @@ public class PlayerInputs : MonoBehaviour {
         //BUMPERS
         if (Input.GetButton(InputAxes.LB))
         {
-            _block.Block();
-            Debug.Log(_block.IsBlocking());
             Debug.Log("LB Pressed");
         }
         if (Input.GetButtonDown(InputAxes.RB))
