@@ -30,6 +30,7 @@ public class AdjustHealth : MonoBehaviour {
 
     IEnumerator DeathTimer()
     {
+        _canUseInput = false;
         //AnimStateHandler.AnimState(11);
         yield return new WaitForSeconds(_deathTimer);
         Destroy(this.gameObject);        
