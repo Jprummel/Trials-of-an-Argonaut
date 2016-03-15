@@ -273,6 +273,23 @@ ModelImporter:
     100530: pCube24
     100532: pCube25
     100534: Seats_first_ring
+    100536: pPlane10 1
+    100538: pPlane11 1
+    100540: pPlane12 1
+    100542: pPlane13 1
+    100544: pPlane14 1
+    100546: pPlane15 1
+    100548: pPlane2 1
+    100550: pPlane3 1
+    100552: pPlane4 1
+    100554: pPlane5 1
+    100556: pPlane6 1
+    100558: pPlane7 1
+    100560: pPlane8 1
+    100562: pPlane9 1
+    100564: Roof_sunscreens 1
+    100566: Roof_sunscreens1 1
+    100568: roof_sunscreens_reversed_normals_for_shadows
     400000: //RootNode
     400002: polySurface1
     400004: polySurface2
@@ -541,6 +558,23 @@ ModelImporter:
     400530: pCube24
     400532: pCube25
     400534: Seats_first_ring
+    400536: pPlane10 1
+    400538: pPlane11 1
+    400540: pPlane12 1
+    400542: pPlane13 1
+    400544: pPlane14 1
+    400546: pPlane15 1
+    400548: pPlane2 1
+    400550: pPlane3 1
+    400552: pPlane4 1
+    400554: pPlane5 1
+    400556: pPlane6 1
+    400558: pPlane7 1
+    400560: pPlane8 1
+    400562: pPlane9 1
+    400564: Roof_sunscreens 1
+    400566: Roof_sunscreens1 1
+    400568: roof_sunscreens_reversed_normals_for_shadows
     2300000: polySurface8
     2300002: Model_Arena_Bank17
     2300004: Model_Arena_Bank18
@@ -772,6 +806,22 @@ ModelImporter:
     2300456: pCube22
     2300458: pCube24
     2300460: pCube25
+    2300462: pPlane10 1
+    2300464: pPlane11 1
+    2300466: pPlane12 1
+    2300468: pPlane13 1
+    2300470: pPlane14 1
+    2300472: pPlane15 1
+    2300474: pPlane2 1
+    2300476: pPlane3 1
+    2300478: pPlane4 1
+    2300480: pPlane5 1
+    2300482: pPlane6 1
+    2300484: pPlane7 1
+    2300486: pPlane8 1
+    2300488: pPlane9 1
+    2300490: Roof_sunscreens 1
+    2300492: Roof_sunscreens1 1
     3300000: polySurface8
     3300002: Model_Arena_Bank17
     3300004: Model_Arena_Bank18
@@ -1003,6 +1053,22 @@ ModelImporter:
     3300456: pCube22
     3300458: pCube24
     3300460: pCube25
+    3300462: pPlane10 1
+    3300464: pPlane11 1
+    3300466: pPlane12 1
+    3300468: pPlane13 1
+    3300470: pPlane14 1
+    3300472: pPlane15 1
+    3300474: pPlane2 1
+    3300476: pPlane3 1
+    3300478: pPlane4 1
+    3300480: pPlane5 1
+    3300482: pPlane6 1
+    3300484: pPlane7 1
+    3300486: pPlane8 1
+    3300488: pPlane9 1
+    3300490: Roof_sunscreens 1
+    3300492: Roof_sunscreens1 1
     4300000: polySurface8
     4300002: Model_Arena_bank_grond3
     4300004: Model_Arena_bank_grond4
@@ -1234,6 +1300,22 @@ ModelImporter:
     4300456: pCube22
     4300458: pCube24
     4300460: pCube25
+    4300462: pPlane15
+    4300464: pPlane14
+    4300466: pPlane13
+    4300468: Roof_sunscreens1
+    4300470: pPlane12
+    4300472: pPlane11
+    4300474: pPlane10
+    4300476: pPlane9
+    4300478: pPlane8
+    4300480: pPlane7
+    4300482: pPlane6
+    4300484: pPlane5
+    4300486: pPlane4
+    4300488: pPlane3
+    4300490: pPlane2
+    4300492: Roof_sunscreens
     9500000: //RootNode
   materials:
     importMaterials: 1
