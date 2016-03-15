@@ -33,7 +33,7 @@ public class StatePrepare : StateParent {
 	public override void Reason ()
 	{
 		float distanceToBeginPoint = (this.transform.position - _startZone).magnitude;
-		if (distanceToBeginPoint > 10f) 
+		if (distanceToBeginPoint >= 6f) 
 		{
 			DistanceChecker ();
 		}
