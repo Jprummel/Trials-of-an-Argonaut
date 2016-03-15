@@ -258,6 +258,21 @@ ModelImporter:
     100500: Roof_sunscreens
     100502: roof_sunscreens
     100504: Roof_sunscreens1
+    100506: banner11
+    100508: banner12
+    100510: banner13
+    100512: banner14
+    100514: banner15
+    100516: banner16
+    100518: banner17
+    100520: banner18
+    100522: pCube19
+    100524: pCube20
+    100526: pCube21
+    100528: pCube22
+    100530: pCube24
+    100532: pCube25
+    100534: Seats_first_ring
     400000: //RootNode
     400002: polySurface1
     400004: polySurface2
@@ -511,6 +526,21 @@ ModelImporter:
     400500: Roof_sunscreens
     400502: roof_sunscreens
     400504: Roof_sunscreens1
+    400506: banner11
+    400508: banner12
+    400510: banner13
+    400512: banner14
+    400514: banner15
+    400516: banner16
+    400518: banner17
+    400520: banner18
+    400522: pCube19
+    400524: pCube20
+    400526: pCube21
+    400528: pCube22
+    400530: pCube24
+    400532: pCube25
+    400534: Seats_first_ring
     2300000: polySurface8
     2300002: Model_Arena_Bank17
     2300004: Model_Arena_Bank18
@@ -728,6 +758,20 @@ ModelImporter:
     2300428: Roof_balk9
     2300430: Roof_sunscreens
     2300432: Roof_sunscreens1
+    2300434: banner11
+    2300436: banner12
+    2300438: banner13
+    2300440: banner14
+    2300442: banner15
+    2300444: banner16
+    2300446: banner17
+    2300448: banner18
+    2300450: pCube19
+    2300452: pCube20
+    2300454: pCube21
+    2300456: pCube22
+    2300458: pCube24
+    2300460: pCube25
     3300000: polySurface8
     3300002: Model_Arena_Bank17
     3300004: Model_Arena_Bank18
@@ -945,6 +989,20 @@ ModelImporter:
     3300428: Roof_balk9
     3300430: Roof_sunscreens
     3300432: Roof_sunscreens1
+    3300434: banner11
+    3300436: banner12
+    3300438: banner13
+    3300440: banner14
+    3300442: banner15
+    3300444: banner16
+    3300446: banner17
+    3300448: banner18
+    3300450: pCube19
+    3300452: pCube20
+    3300454: pCube21
+    3300456: pCube22
+    3300458: pCube24
+    3300460: pCube25
     4300000: polySurface8
     4300002: Model_Arena_bank_grond3
     4300004: Model_Arena_bank_grond4
@@ -1162,6 +1220,20 @@ ModelImporter:
     4300428: banner5
     4300430: banner6
     4300432: banner7
+    4300434: banner11
+    4300436: banner12
+    4300438: banner13
+    4300440: banner14
+    4300442: banner15
+    4300444: banner16
+    4300446: banner17
+    4300448: banner18
+    4300450: pCube21
+    4300452: pCube20
+    4300454: pCube19
+    4300456: pCube22
+    4300458: pCube24
+    4300460: pCube25
     9500000: //RootNode
   materials:
     importMaterials: 1
