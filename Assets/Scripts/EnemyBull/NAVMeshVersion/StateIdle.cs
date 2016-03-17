@@ -7,26 +7,42 @@ public class StateIdle : StateParent {
 
 
 	[SerializeField] private float _movementSpeed;
-	[SerializeField] private float _wanderTime;
+
 	private Transform _newTransform;
-	private float wanderRadius = 30f;
+
+	private NavMeshPath _path;
+	private NavMeshAgent _agent;
+
+	private float wanderRadius = 20f;
 
 	private Vector3 _newPos; 
 	public override void Enter ()
 	{
 
 		bullBehaviour = GetComponent<BullBehaviour> ();
+		_agent = GetComponent<NavMeshAgent> ();
+
+		bullBehaviour.isCharging = false;
 		bullBehaviour.acceleration(8);
+
 		bullBehaviour.setSpeed (_movementSpeed);
 
 		_newPos = RandomNavSphere (transform.position, wanderRadius, -1);
 		bullBehaviour.targetPos = _newPos;
 
+
+		_path = new NavMeshPath ();
+
 	}
 
 	public override void Act ()
 	{
-
+		_agent.CalculatePath (_newPos, _path);
+		Debug.Log (_path.status);
+		if (_path.status == NavMeshPathStatus.PathPartial) 
+		{
+			GetComponent<StateMachine> ().SetState (StateID.IdleState);
+		}
 	}
 
 	public override void Reason ()

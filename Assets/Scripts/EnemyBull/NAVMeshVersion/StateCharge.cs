@@ -3,8 +3,6 @@ using System.Collections;
 
 public class StateCharge : StateParent {
 
-	//[SerializeField] private int _recoverDistance;
-
 	private Vector3 _targetPosObject;
 	BullBehaviour bullBehaviour;
 
@@ -17,11 +15,7 @@ public class StateCharge : StateParent {
 	[SerializeField] private float _waitTime;
 	[SerializeField]private float _chargeSpeed = 200f;
 
-	/*private bool _isCharging = false;
-	public bool isCharging
-	{
-		get{ return _isCharging; }
-	}*/
+
 	private Vector3 _recoverLocation;
 	public Vector3 recoverLocation
 	{
@@ -42,11 +36,12 @@ public class StateCharge : StateParent {
 		bullBehaviour.setSpeed (_chargeSpeed);
 		bullBehaviour.acceleration (50);
 		bullBehaviour.isCharging = true;
+
 	}
 
 	public override void Leave()
 	{
-		//bullBehaviour.isCharging = false;
+
 		bullBehaviour.acceleration (30);
 	}
 	public override void Act ()
@@ -69,7 +64,7 @@ public class StateCharge : StateParent {
 
 		if (distanceToTarget < 2.5f) 
 		{
-
+			bullBehaviour.AutoBraking (false);
 			_recoverLocation = transform.position;
 		}
 		if (distanceToTarget < 1.5f) {
