@@ -33,6 +33,7 @@ public class CollisionHandler : MonoBehaviour {
         //Player attacking bull
         if (other.tag == Tags.PLAYERWEAPON && this.tag == Tags.BULL)
         {
+            Debug.Log("Ik hit");
             PlayerAttack checkAttack = other.GetComponentInParent<PlayerAttack>();
             if (checkAttack.IsAttacking())
             {
