@@ -16,7 +16,7 @@ public class CollisionHandler : MonoBehaviour {
             _movement   = GetComponent<PlayerMovement>();
         }
 
-        if(this.tag == Tags.ENEMY || this.tag == Tags.PLAYER)
+        if(this.tag == Tags.BULL || this.tag == Tags.PLAYER)
         {
             _adjustHealth = GetComponent<AdjustHealth>();
         }
@@ -31,18 +31,14 @@ public class CollisionHandler : MonoBehaviour {
     {
 
         //Player attacking bull
-        if (other.tag == Tags.PLAYERWEAPON && this.tag == Tags.ENEMY)
+        if (other.tag == Tags.PLAYERWEAPON && this.tag == Tags.BULL)
         {
+            Debug.Log("Ik hit");
             PlayerAttack checkAttack = other.GetComponentInParent<PlayerAttack>();
             if (checkAttack.IsAttacking())
             {
                 _adjustHealth.CalculateNewHealth(other);
             }
-        }
-
-        if (other.tag == Tags.ENEMYWEAPON && this.tag == Tags.PLAYER)
-        {
-            _adjustHealth.CalculateNewHealth(other);
         }
 
         if(other.tag == Tags.BULLFIRE && this.tag == Tags.PLAYER)

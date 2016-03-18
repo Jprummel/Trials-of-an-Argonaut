@@ -55,7 +55,7 @@ public class StateRecover : StateParent {
 	public override void Reason ()
 	{
 		float distanceToTarget = (_startPos	 - transform.position).magnitude;
-		if (distanceToTarget > 12f) 
+		if (distanceToTarget > 10f) 
 		{
 			GetComponent<StateMachine> ().SetState (StateID.IdleState);
 		}
