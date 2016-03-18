@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 890bc9740973fd54cb597615200b1647
-timeCreated: 1455620511
+guid: d31f3ece28a672742a799c7489640a8a
+timeCreated: 1458298019
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: bull
+    4300000: bull_uv_02:Group2
     9500000: //RootNode
   materials:
     importMaterials: 1
