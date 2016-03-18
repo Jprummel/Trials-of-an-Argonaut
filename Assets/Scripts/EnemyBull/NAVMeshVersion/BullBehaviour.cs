@@ -32,6 +32,8 @@ public class BullBehaviour : MonoBehaviour {
 		set{_targetPos = value; }
 	}
 		
+	public bool canICharge = false;
+
 	private NavMeshAgent _navComponent;
 
 
@@ -71,9 +73,10 @@ public class BullBehaviour : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision col)
 	{
-		if (_isCharging && col.gameObject.tag == "Obstakel") 
+		Debug.Log (col.gameObject.tag + "Holla holla dikke dolla");
+		if (_isCharging && col.gameObject.tag == Tags.PILLAR) 
 		{
-
+			Debug.Log ("Hallo ik ben stom..");
 			GetComponent<StateMachine>().SetState(StateID.StaggerState);
 		}
 	}
@@ -89,10 +92,7 @@ public class BullBehaviour : MonoBehaviour {
 		_navComponent.acceleration = newAcc;
 
 	}
-	public void AutoBraking (bool OfforOn)
-	{
-		_navComponent.autoBraking = OfforOn;
-	}
+
 	void RotatingSmooth()
 	{
 		Quaternion lookRotation = Quaternion.LookRotation (_navComponent.desiredVelocity);

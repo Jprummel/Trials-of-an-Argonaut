@@ -42,7 +42,7 @@ public class StateCharge : StateParent {
 	public override void Leave()
 	{
 
-		bullBehaviour.acceleration (30);
+		bullBehaviour.acceleration (60);
 	}
 	public override void Act ()
 	{
@@ -62,9 +62,9 @@ public class StateCharge : StateParent {
 	{
 		float distanceToTarget = (_CurrentTarget - transform.position).magnitude; //checked of hij er is. 
 
-		if (distanceToTarget < 2.5f) 
+		if (distanceToTarget < 4f) 
 		{
-			bullBehaviour.AutoBraking (false);
+
 			_recoverLocation = transform.position;
 		}
 		if (distanceToTarget < 1.5f) {
