@@ -3,14 +3,17 @@ using System.Collections;
 
 public class StateRecover : StateParent {
 
-	[SerializeField] private float _maxSpeed = 10f;
+	[SerializeField] private float _maxSpeed = 18f;
+	[SerializeField] private GameObject _rotatePos1;
+	[SerializeField] private GameObject _rotatePos2;
+
 
 	private Vector3 _startPos;
 
 	private Vector3 _mainTarget;
 	private Vector3 _newTarget;
 
-
+	private bool _Zside;
 	BullBehaviour bullbehaviour;
 
 	StateCharge stateCharge;
@@ -21,38 +24,41 @@ public class StateRecover : StateParent {
 		stateCharge = GetComponent<StateCharge>();
 
 		_startPos = stateCharge.recoverLocation;
-		_mainTarget = transform.position;
-
 
 		bullbehaviour.setSpeed (_maxSpeed);
 
-		_newTarget = _mainTarget;
-		_newTarget.y = 2;
-		bullbehaviour.targetPos = _newTarget;
+		if (transform.position.z > 0) {
+			_Zside = true;
+		} else {
+			_Zside = false;
+		}
 	}
 
 	public override void Leave ()
 	{
-		bullbehaviour.AutoBraking (true);
-	
+
 	} 
 
 	public override void Act ()
 	{
-		
+		if (_Zside) {
+			_newTarget = _rotatePos2.transform.position;
+		} else {
+			_newTarget = _rotatePos1.transform.position;
+		}
+
+		_newTarget.y = 2;
+		bullbehaviour.targetPos = _newTarget;
 
 	}
 
 	public override void Reason ()
 	{
-		float distanceToTarget = (_newTarget - transform.position).magnitude;
-		if (distanceToTarget < 2f) 
+		float distanceToTarget = (_startPos	 - transform.position).magnitude;
+		if (distanceToTarget > 12f) 
 		{
 			GetComponent<StateMachine> ().SetState (StateID.IdleState);
 		}
-		if (distanceToTarget > 9f) 
-		{
-			bullbehaviour.AutoBraking (true);
-		}
+
 	}
 }

@@ -23,7 +23,7 @@ public class StateIdle : StateParent {
 		_agent = GetComponent<NavMeshAgent> ();
 
 		bullBehaviour.isCharging = false;
-		bullBehaviour.acceleration(8);
+		bullBehaviour.acceleration(10);
 
 		bullBehaviour.setSpeed (_movementSpeed);
 
