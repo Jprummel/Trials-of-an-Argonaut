@@ -6,10 +6,36 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: group
+    100004: pasted__pilaar
+    100006: pasted__pilaar_stuk_bottom
+    100008: pasted__pilaar_stuk_top
+    100010: pasted__pilaren
+    100012: pillars
+    100014: Plane
     400000: //RootNode
+    400002: group
+    400004: pasted__pilaar
+    400006: pasted__pilaar_stuk_bottom
+    400008: pasted__pilaar_stuk_top
+    400010: pasted__pilaren
+    400012: pillars
+    400014: Plane
     2300000: //RootNode
+    2300002: pasted__pilaar
+    2300004: pasted__pilaar_stuk_bottom
+    2300006: pasted__pilaar_stuk_top
+    2300008: Plane
     3300000: //RootNode
+    3300002: pasted__pilaar
+    3300004: pasted__pilaar_stuk_bottom
+    3300006: pasted__pilaar_stuk_top
+    3300008: Plane
     4300000: pCube1
+    4300002: Plane
+    4300004: pasted__pilaar_stuk_bottom
+    4300006: pasted__pilaar_stuk_top
+    4300008: pasted__pilaar
   materials:
     importMaterials: 1
     materialName: 0
