@@ -290,6 +290,223 @@ ModelImporter:
     100564: Roof_sunscreens 1
     100566: Roof_sunscreens1 1
     100568: roof_sunscreens_reversed_normals_for_shadows
+    100570: base_stadium 1
+    100572: Base_Stadium 2
+    100574: Base_Stadium 3
+    100576: base_stadium_middle_pilar_ring 1
+    100578: base_stadium_ring1 1
+    100580: ground_for_seats_normals_reversed
+    100582: group1
+    100584: group1 1
+    100586: group2
+    100588: group2 1
+    100590: group3
+    100592: group3 1
+    100594: group4
+    100596: group4 1
+    100598: Model_Arena_bank_grond43
+    100600: Model_Arena_bank_grond44
+    100602: Model_Arena_bank_grond45
+    100604: Model_Arena_bank_grond46
+    100606: Model_Arena_bank_grond47
+    100608: Model_Arena_bank_grond48
+    100610: Model_Arena_bank_grond49
+    100612: Model_Arena_bank_grond50
+    100614: Model_Arena_bank_grond51
+    100616: Model_Arena_bank_grond52
+    100618: Model_Arena_bank_grond53
+    100620: Model_Arena_bank_grond54
+    100622: Model_Arena_bank_grond55
+    100624: Model_Arena_bank_grond56
+    100626: Model_Arena_bank_grond57
+    100628: Model_Arena_bank_grond58
+    100630: Model_Arena_bank_grond59
+    100632: Model_Arena_bank_grond60
+    100634: Model_Arena_bank_grond61
+    100636: Model_Arena_bank_grond62
+    100638: Model_Arena_bank_grond63
+    100640: Model_Arena_bank_grond64
+    100642: Model_Arena_bank_grond65
+    100644: Model_Arena_bank_grond66
+    100646: Model_Arena_bank_grond67
+    100648: Model_Arena_bank_grond68
+    100650: Model_Arena_bank_grond69
+    100652: Model_Arena_bank_grond70
+    100654: Model_Arena_bank_grond71
+    100656: Model_Arena_bank_grond72
+    100658: Model_Arena_bank_grond73
+    100660: Model_Arena_bank_grond74
+    100662: Model_Arena_bank_grond75
+    100664: Model_Arena_Muur 2
+    100666: Model_Arena_Muur 3
+    100668: Model_Arena_Muur1 2
+    100670: Model_Arena_Muur1 3
+    100672: Model_Arena_Muur10 2
+    100674: Model_Arena_Muur10 3
+    100676: Model_Arena_Muur11 2
+    100678: Model_Arena_Muur11 3
+    100680: Model_Arena_Muur12 2
+    100682: Model_Arena_Muur12 3
+    100684: Model_Arena_Muur13 1
+    100686: Model_Arena_Muur14 1
+    100688: Model_Arena_Muur15 1
+    100690: Model_Arena_Muur16 1
+    100692: Model_Arena_Muur17 1
+    100694: Model_Arena_Muur18 1
+    100696: Model_Arena_Muur19 1
+    100698: Model_Arena_Muur2 2
+    100700: Model_Arena_Muur2 3
+    100702: Model_Arena_Muur20 1
+    100704: Model_Arena_Muur21 1
+    100706: Model_Arena_Muur22 1
+    100708: Model_Arena_Muur23 1
+    100710: Model_Arena_Muur24 1
+    100712: Model_Arena_Muur25 1
+    100714: Model_Arena_Muur26 1
+    100716: Model_Arena_Muur27 1
+    100718: Model_Arena_Muur28 1
+    100720: Model_Arena_Muur3 2
+    100722: Model_Arena_Muur3 3
+    100724: Model_Arena_Muur4 2
+    100726: Model_Arena_Muur4 3
+    100728: Model_Arena_Muur6 2
+    100730: Model_Arena_Muur6 3
+    100732: Model_Arena_Muur7 2
+    100734: Model_Arena_Muur7 3
+    100736: Model_Arena_Muur8 2
+    100738: Model_Arena_Muur8 3
+    100740: Model_Arena_Muur9 2
+    100742: Model_Arena_Muur9 3
+    100744: Model_Arena_Muur_Boog 1
+    100746: Model_Arena_Muur_Boog1 1
+    100748: Model_Arena_Muur_Boog2 1
+    100750: Model_Arena_Muur_Boog3 1
+    100752: Model_Arena_Muur_Boog4 1
+    100754: Model_Arena_Muur_Boog5 1
+    100756: Model_Arena_Muur_Boog6 1
+    100758: Model_Arena_Muur_Boog7 1
+    100760: Model_Arena_Muur_pilaar 2
+    100762: Model_Arena_Muur_pilaar 3
+    100764: Model_Arena_Muur_pilaar1 2
+    100766: Model_Arena_Muur_pilaar1 3
+    100768: Model_Arena_Muur_pilaar10 2
+    100770: Model_Arena_Muur_pilaar10 3
+    100772: Model_Arena_Muur_pilaar11 2
+    100774: Model_Arena_Muur_pilaar11 3
+    100776: Model_Arena_Muur_pilaar12 2
+    100778: Model_Arena_Muur_pilaar12 3
+    100780: Model_Arena_Muur_pilaar13 2
+    100782: Model_Arena_Muur_pilaar13 3
+    100784: Model_Arena_Muur_pilaar14 2
+    100786: Model_Arena_Muur_pilaar14 3
+    100788: Model_Arena_Muur_pilaar15 2
+    100790: Model_Arena_Muur_pilaar15 3
+    100792: Model_Arena_Muur_pilaar19 1
+    100794: Model_Arena_Muur_pilaar2 2
+    100796: Model_Arena_Muur_pilaar2 3
+    100798: Model_Arena_Muur_pilaar20 1
+    100800: Model_Arena_Muur_pilaar21 1
+    100802: Model_Arena_Muur_pilaar22 1
+    100804: Model_Arena_Muur_pilaar23 1
+    100806: Model_Arena_Muur_pilaar24 1
+    100808: Model_Arena_Muur_pilaar25 1
+    100810: Model_Arena_Muur_pilaar26 1
+    100812: Model_Arena_Muur_pilaar27 1
+    100814: Model_Arena_Muur_pilaar28 1
+    100816: Model_Arena_Muur_pilaar29 1
+    100818: Model_Arena_Muur_pilaar3 2
+    100820: Model_Arena_Muur_pilaar3 3
+    100822: Model_Arena_Muur_pilaar30 1
+    100824: Model_Arena_Muur_pilaar31 1
+    100826: Model_Arena_Muur_pilaar32 1
+    100828: Model_Arena_Muur_pilaar33 1
+    100830: Model_Arena_Muur_pilaar34 1
+    100832: Model_Arena_Muur_pilaar35 1
+    100834: Model_Arena_Muur_pilaar36 1
+    100836: Model_Arena_Muur_pilaar37 1
+    100838: Model_Arena_Muur_pilaar38 1
+    100840: Model_Arena_Muur_pilaar39 1
+    100842: Model_Arena_Muur_pilaar4 2
+    100844: Model_Arena_Muur_pilaar4 3
+    100846: Model_Arena_Muur_pilaar40 1
+    100848: Model_Arena_Muur_pilaar41 1
+    100850: Model_Arena_Muur_pilaar42 1
+    100852: Model_Arena_Muur_pilaar43 1
+    100854: Model_Arena_Muur_pilaar44 1
+    100856: Model_Arena_Muur_pilaar45 1
+    100858: Model_Arena_Muur_pilaar46 1
+    100860: Model_Arena_Muur_pilaar47 1
+    100862: Model_Arena_Muur_pilaar48 1
+    100864: Model_Arena_Muur_pilaar49 1
+    100866: Model_Arena_Muur_pilaar5 2
+    100868: Model_Arena_Muur_pilaar5 3
+    100870: Model_Arena_Muur_pilaar50 1
+    100872: Model_Arena_Muur_pilaar6 2
+    100874: Model_Arena_Muur_pilaar6 3
+    100876: Model_Arena_Muur_pilaar7 2
+    100878: Model_Arena_Muur_pilaar7 3
+    100880: Model_Arena_Muur_pilaar8 2
+    100882: Model_Arena_Muur_pilaar8 3
+    100884: Model_Arena_Muur_pilaar9 2
+    100886: Model_Arena_Muur_pilaar9 3
+    100888: toches_field
+    100890: toches_field1
+    100892: torch10
+    100894: torch11
+    100896: torch12
+    100898: torch13
+    100900: torch14
+    100902: torch15
+    100904: torch16
+    100906: torch17
+    100908: torch18
+    100910: torch19
+    100912: torch20
+    100914: torch21
+    100916: torch22
+    100918: torch23
+    100920: torch24
+    100922: torch25
+    100924: torch26
+    100926: torch27
+    100928: torch28
+    100930: torch29
+    100932: torch3
+    100934: torch30
+    100936: torch31
+    100938: torch32
+    100940: torch33
+    100942: torch34
+    100944: torch35
+    100946: torch4
+    100948: torch5
+    100950: torch6
+    100952: torch7
+    100954: torch8
+    100956: torch9
+    100958: torch_v1
+    100960: torch_v1 1
+    100962: torch_v1 2
+    100964: torch_v1 3
+    100966: torch_v3
+    100968: torch_v3 1
+    100970: torch_v3 2
+    100972: torch_v3 3
+    100974: torch_v4
+    100976: torch_v4 1
+    100978: torch_v4 2
+    100980: torch_v4 3
+    100982: torch_v5
+    100984: torch_v5 1
+    100986: torch_v5 2
+    100988: torch_v5 3
+    100990: torches_dak
+    100992: torches_eerste_ring
+    100994: walls
+    100996: Walls_first_ring 1
+    100998: walls_first_ring 1
+    101000: walls_normals_reversed
+    101002: Walls_second_ring 1
     400000: //RootNode
     400002: polySurface1
     400004: polySurface2
@@ -575,6 +792,223 @@ ModelImporter:
     400564: Roof_sunscreens 1
     400566: Roof_sunscreens1 1
     400568: roof_sunscreens_reversed_normals_for_shadows
+    400570: base_stadium 1
+    400572: Base_Stadium 2
+    400574: Base_Stadium 3
+    400576: base_stadium_middle_pilar_ring 1
+    400578: base_stadium_ring1 1
+    400580: ground_for_seats_normals_reversed
+    400582: group1
+    400584: group1 1
+    400586: group2
+    400588: group2 1
+    400590: group3
+    400592: group3 1
+    400594: group4
+    400596: group4 1
+    400598: Model_Arena_bank_grond43
+    400600: Model_Arena_bank_grond44
+    400602: Model_Arena_bank_grond45
+    400604: Model_Arena_bank_grond46
+    400606: Model_Arena_bank_grond47
+    400608: Model_Arena_bank_grond48
+    400610: Model_Arena_bank_grond49
+    400612: Model_Arena_bank_grond50
+    400614: Model_Arena_bank_grond51
+    400616: Model_Arena_bank_grond52
+    400618: Model_Arena_bank_grond53
+    400620: Model_Arena_bank_grond54
+    400622: Model_Arena_bank_grond55
+    400624: Model_Arena_bank_grond56
+    400626: Model_Arena_bank_grond57
+    400628: Model_Arena_bank_grond58
+    400630: Model_Arena_bank_grond59
+    400632: Model_Arena_bank_grond60
+    400634: Model_Arena_bank_grond61
+    400636: Model_Arena_bank_grond62
+    400638: Model_Arena_bank_grond63
+    400640: Model_Arena_bank_grond64
+    400642: Model_Arena_bank_grond65
+    400644: Model_Arena_bank_grond66
+    400646: Model_Arena_bank_grond67
+    400648: Model_Arena_bank_grond68
+    400650: Model_Arena_bank_grond69
+    400652: Model_Arena_bank_grond70
+    400654: Model_Arena_bank_grond71
+    400656: Model_Arena_bank_grond72
+    400658: Model_Arena_bank_grond73
+    400660: Model_Arena_bank_grond74
+    400662: Model_Arena_bank_grond75
+    400664: Model_Arena_Muur 2
+    400666: Model_Arena_Muur 3
+    400668: Model_Arena_Muur1 2
+    400670: Model_Arena_Muur1 3
+    400672: Model_Arena_Muur10 2
+    400674: Model_Arena_Muur10 3
+    400676: Model_Arena_Muur11 2
+    400678: Model_Arena_Muur11 3
+    400680: Model_Arena_Muur12 2
+    400682: Model_Arena_Muur12 3
+    400684: Model_Arena_Muur13 1
+    400686: Model_Arena_Muur14 1
+    400688: Model_Arena_Muur15 1
+    400690: Model_Arena_Muur16 1
+    400692: Model_Arena_Muur17 1
+    400694: Model_Arena_Muur18 1
+    400696: Model_Arena_Muur19 1
+    400698: Model_Arena_Muur2 2
+    400700: Model_Arena_Muur2 3
+    400702: Model_Arena_Muur20 1
+    400704: Model_Arena_Muur21 1
+    400706: Model_Arena_Muur22 1
+    400708: Model_Arena_Muur23 1
+    400710: Model_Arena_Muur24 1
+    400712: Model_Arena_Muur25 1
+    400714: Model_Arena_Muur26 1
+    400716: Model_Arena_Muur27 1
+    400718: Model_Arena_Muur28 1
+    400720: Model_Arena_Muur3 2
+    400722: Model_Arena_Muur3 3
+    400724: Model_Arena_Muur4 2
+    400726: Model_Arena_Muur4 3
+    400728: Model_Arena_Muur6 2
+    400730: Model_Arena_Muur6 3
+    400732: Model_Arena_Muur7 2
+    400734: Model_Arena_Muur7 3
+    400736: Model_Arena_Muur8 2
+    400738: Model_Arena_Muur8 3
+    400740: Model_Arena_Muur9 2
+    400742: Model_Arena_Muur9 3
+    400744: Model_Arena_Muur_Boog 1
+    400746: Model_Arena_Muur_Boog1 1
+    400748: Model_Arena_Muur_Boog2 1
+    400750: Model_Arena_Muur_Boog3 1
+    400752: Model_Arena_Muur_Boog4 1
+    400754: Model_Arena_Muur_Boog5 1
+    400756: Model_Arena_Muur_Boog6 1
+    400758: Model_Arena_Muur_Boog7 1
+    400760: Model_Arena_Muur_pilaar 2
+    400762: Model_Arena_Muur_pilaar 3
+    400764: Model_Arena_Muur_pilaar1 2
+    400766: Model_Arena_Muur_pilaar1 3
+    400768: Model_Arena_Muur_pilaar10 2
+    400770: Model_Arena_Muur_pilaar10 3
+    400772: Model_Arena_Muur_pilaar11 2
+    400774: Model_Arena_Muur_pilaar11 3
+    400776: Model_Arena_Muur_pilaar12 2
+    400778: Model_Arena_Muur_pilaar12 3
+    400780: Model_Arena_Muur_pilaar13 2
+    400782: Model_Arena_Muur_pilaar13 3
+    400784: Model_Arena_Muur_pilaar14 2
+    400786: Model_Arena_Muur_pilaar14 3
+    400788: Model_Arena_Muur_pilaar15 2
+    400790: Model_Arena_Muur_pilaar15 3
+    400792: Model_Arena_Muur_pilaar19 1
+    400794: Model_Arena_Muur_pilaar2 2
+    400796: Model_Arena_Muur_pilaar2 3
+    400798: Model_Arena_Muur_pilaar20 1
+    400800: Model_Arena_Muur_pilaar21 1
+    400802: Model_Arena_Muur_pilaar22 1
+    400804: Model_Arena_Muur_pilaar23 1
+    400806: Model_Arena_Muur_pilaar24 1
+    400808: Model_Arena_Muur_pilaar25 1
+    400810: Model_Arena_Muur_pilaar26 1
+    400812: Model_Arena_Muur_pilaar27 1
+    400814: Model_Arena_Muur_pilaar28 1
+    400816: Model_Arena_Muur_pilaar29 1
+    400818: Model_Arena_Muur_pilaar3 2
+    400820: Model_Arena_Muur_pilaar3 3
+    400822: Model_Arena_Muur_pilaar30 1
+    400824: Model_Arena_Muur_pilaar31 1
+    400826: Model_Arena_Muur_pilaar32 1
+    400828: Model_Arena_Muur_pilaar33 1
+    400830: Model_Arena_Muur_pilaar34 1
+    400832: Model_Arena_Muur_pilaar35 1
+    400834: Model_Arena_Muur_pilaar36 1
+    400836: Model_Arena_Muur_pilaar37 1
+    400838: Model_Arena_Muur_pilaar38 1
+    400840: Model_Arena_Muur_pilaar39 1
+    400842: Model_Arena_Muur_pilaar4 2
+    400844: Model_Arena_Muur_pilaar4 3
+    400846: Model_Arena_Muur_pilaar40 1
+    400848: Model_Arena_Muur_pilaar41 1
+    400850: Model_Arena_Muur_pilaar42 1
+    400852: Model_Arena_Muur_pilaar43 1
+    400854: Model_Arena_Muur_pilaar44 1
+    400856: Model_Arena_Muur_pilaar45 1
+    400858: Model_Arena_Muur_pilaar46 1
+    400860: Model_Arena_Muur_pilaar47 1
+    400862: Model_Arena_Muur_pilaar48 1
+    400864: Model_Arena_Muur_pilaar49 1
+    400866: Model_Arena_Muur_pilaar5 2
+    400868: Model_Arena_Muur_pilaar5 3
+    400870: Model_Arena_Muur_pilaar50 1
+    400872: Model_Arena_Muur_pilaar6 2
+    400874: Model_Arena_Muur_pilaar6 3
+    400876: Model_Arena_Muur_pilaar7 2
+    400878: Model_Arena_Muur_pilaar7 3
+    400880: Model_Arena_Muur_pilaar8 2
+    400882: Model_Arena_Muur_pilaar8 3
+    400884: Model_Arena_Muur_pilaar9 2
+    400886: Model_Arena_Muur_pilaar9 3
+    400888: toches_field
+    400890: toches_field1
+    400892: torch10
+    400894: torch11
+    400896: torch12
+    400898: torch13
+    400900: torch14
+    400902: torch15
+    400904: torch16
+    400906: torch17
+    400908: torch18
+    400910: torch19
+    400912: torch20
+    400914: torch21
+    400916: torch22
+    400918: torch23
+    400920: torch24
+    400922: torch25
+    400924: torch26
+    400926: torch27
+    400928: torch28
+    400930: torch29
+    400932: torch3
+    400934: torch30
+    400936: torch31
+    400938: torch32
+    400940: torch33
+    400942: torch34
+    400944: torch35
+    400946: torch4
+    400948: torch5
+    400950: torch6
+    400952: torch7
+    400954: torch8
+    400956: torch9
+    400958: torch_v1
+    400960: torch_v1 1
+    400962: torch_v1 2
+    400964: torch_v1 3
+    400966: torch_v3
+    400968: torch_v3 1
+    400970: torch_v3 2
+    400972: torch_v3 3
+    400974: torch_v4
+    400976: torch_v4 1
+    400978: torch_v4 2
+    400980: torch_v4 3
+    400982: torch_v5
+    400984: torch_v5 1
+    400986: torch_v5 2
+    400988: torch_v5 3
+    400990: torches_dak
+    400992: torches_eerste_ring
+    400994: walls
+    400996: Walls_first_ring 1
+    400998: walls_first_ring 1
+    401000: walls_normals_reversed
+    401002: Walls_second_ring 1
     2300000: polySurface8
     2300002: Model_Arena_Bank17
     2300004: Model_Arena_Bank18
@@ -822,6 +1256,200 @@ ModelImporter:
     2300488: pPlane9 1
     2300490: Roof_sunscreens 1
     2300492: Roof_sunscreens1 1
+    2300494: Model_Arena_bank_grond43
+    2300496: Model_Arena_bank_grond44
+    2300498: Model_Arena_bank_grond45
+    2300500: Model_Arena_bank_grond46
+    2300502: Model_Arena_bank_grond47
+    2300504: Model_Arena_bank_grond48
+    2300506: Model_Arena_bank_grond49
+    2300508: Model_Arena_bank_grond50
+    2300510: Model_Arena_bank_grond51
+    2300512: Model_Arena_bank_grond52
+    2300514: Model_Arena_bank_grond53
+    2300516: Model_Arena_bank_grond54
+    2300518: Model_Arena_bank_grond55
+    2300520: Model_Arena_bank_grond56
+    2300522: Model_Arena_bank_grond57
+    2300524: Model_Arena_bank_grond58
+    2300526: Model_Arena_bank_grond59
+    2300528: Model_Arena_bank_grond60
+    2300530: Model_Arena_bank_grond61
+    2300532: Model_Arena_bank_grond62
+    2300534: Model_Arena_bank_grond63
+    2300536: Model_Arena_bank_grond64
+    2300538: Model_Arena_bank_grond65
+    2300540: Model_Arena_bank_grond66
+    2300542: Model_Arena_bank_grond67
+    2300544: Model_Arena_bank_grond68
+    2300546: Model_Arena_bank_grond69
+    2300548: Model_Arena_bank_grond70
+    2300550: Model_Arena_bank_grond71
+    2300552: Model_Arena_bank_grond72
+    2300554: Model_Arena_bank_grond73
+    2300556: Model_Arena_bank_grond74
+    2300558: Model_Arena_bank_grond75
+    2300560: Model_Arena_Muur 2
+    2300562: Model_Arena_Muur 3
+    2300564: Model_Arena_Muur1 2
+    2300566: Model_Arena_Muur1 3
+    2300568: Model_Arena_Muur10 2
+    2300570: Model_Arena_Muur10 3
+    2300572: Model_Arena_Muur11 2
+    2300574: Model_Arena_Muur11 3
+    2300576: Model_Arena_Muur12 2
+    2300578: Model_Arena_Muur12 3
+    2300580: Model_Arena_Muur13 1
+    2300582: Model_Arena_Muur14 1
+    2300584: Model_Arena_Muur15 1
+    2300586: Model_Arena_Muur16 1
+    2300588: Model_Arena_Muur17 1
+    2300590: Model_Arena_Muur18 1
+    2300592: Model_Arena_Muur19 1
+    2300594: Model_Arena_Muur2 2
+    2300596: Model_Arena_Muur2 3
+    2300598: Model_Arena_Muur20 1
+    2300600: Model_Arena_Muur21 1
+    2300602: Model_Arena_Muur22 1
+    2300604: Model_Arena_Muur23 1
+    2300606: Model_Arena_Muur24 1
+    2300608: Model_Arena_Muur25 1
+    2300610: Model_Arena_Muur26 1
+    2300612: Model_Arena_Muur27 1
+    2300614: Model_Arena_Muur28 1
+    2300616: Model_Arena_Muur3 2
+    2300618: Model_Arena_Muur3 3
+    2300620: Model_Arena_Muur4 2
+    2300622: Model_Arena_Muur4 3
+    2300624: Model_Arena_Muur6 2
+    2300626: Model_Arena_Muur6 3
+    2300628: Model_Arena_Muur7 2
+    2300630: Model_Arena_Muur7 3
+    2300632: Model_Arena_Muur8 2
+    2300634: Model_Arena_Muur8 3
+    2300636: Model_Arena_Muur9 2
+    2300638: Model_Arena_Muur9 3
+    2300640: Model_Arena_Muur_Boog 1
+    2300642: Model_Arena_Muur_Boog1 1
+    2300644: Model_Arena_Muur_Boog2 1
+    2300646: Model_Arena_Muur_Boog3 1
+    2300648: Model_Arena_Muur_Boog4 1
+    2300650: Model_Arena_Muur_Boog5 1
+    2300652: Model_Arena_Muur_Boog6 1
+    2300654: Model_Arena_Muur_Boog7 1
+    2300656: Model_Arena_Muur_pilaar 2
+    2300658: Model_Arena_Muur_pilaar 3
+    2300660: Model_Arena_Muur_pilaar1 2
+    2300662: Model_Arena_Muur_pilaar1 3
+    2300664: Model_Arena_Muur_pilaar10 2
+    2300666: Model_Arena_Muur_pilaar10 3
+    2300668: Model_Arena_Muur_pilaar11 2
+    2300670: Model_Arena_Muur_pilaar11 3
+    2300672: Model_Arena_Muur_pilaar12 2
+    2300674: Model_Arena_Muur_pilaar12 3
+    2300676: Model_Arena_Muur_pilaar13 2
+    2300678: Model_Arena_Muur_pilaar13 3
+    2300680: Model_Arena_Muur_pilaar14 2
+    2300682: Model_Arena_Muur_pilaar14 3
+    2300684: Model_Arena_Muur_pilaar15 2
+    2300686: Model_Arena_Muur_pilaar15 3
+    2300688: Model_Arena_Muur_pilaar19 1
+    2300690: Model_Arena_Muur_pilaar2 2
+    2300692: Model_Arena_Muur_pilaar2 3
+    2300694: Model_Arena_Muur_pilaar20 1
+    2300696: Model_Arena_Muur_pilaar21 1
+    2300698: Model_Arena_Muur_pilaar22 1
+    2300700: Model_Arena_Muur_pilaar23 1
+    2300702: Model_Arena_Muur_pilaar24 1
+    2300704: Model_Arena_Muur_pilaar25 1
+    2300706: Model_Arena_Muur_pilaar26 1
+    2300708: Model_Arena_Muur_pilaar27 1
+    2300710: Model_Arena_Muur_pilaar28 1
+    2300712: Model_Arena_Muur_pilaar29 1
+    2300714: Model_Arena_Muur_pilaar3 2
+    2300716: Model_Arena_Muur_pilaar3 3
+    2300718: Model_Arena_Muur_pilaar30 1
+    2300720: Model_Arena_Muur_pilaar31 1
+    2300722: Model_Arena_Muur_pilaar32 1
+    2300724: Model_Arena_Muur_pilaar33 1
+    2300726: Model_Arena_Muur_pilaar34 1
+    2300728: Model_Arena_Muur_pilaar35 1
+    2300730: Model_Arena_Muur_pilaar36 1
+    2300732: Model_Arena_Muur_pilaar37 1
+    2300734: Model_Arena_Muur_pilaar38 1
+    2300736: Model_Arena_Muur_pilaar39 1
+    2300738: Model_Arena_Muur_pilaar4 2
+    2300740: Model_Arena_Muur_pilaar4 3
+    2300742: Model_Arena_Muur_pilaar40 1
+    2300744: Model_Arena_Muur_pilaar41 1
+    2300746: Model_Arena_Muur_pilaar42 1
+    2300748: Model_Arena_Muur_pilaar43 1
+    2300750: Model_Arena_Muur_pilaar44 1
+    2300752: Model_Arena_Muur_pilaar45 1
+    2300754: Model_Arena_Muur_pilaar46 1
+    2300756: Model_Arena_Muur_pilaar47 1
+    2300758: Model_Arena_Muur_pilaar48 1
+    2300760: Model_Arena_Muur_pilaar49 1
+    2300762: Model_Arena_Muur_pilaar5 2
+    2300764: Model_Arena_Muur_pilaar5 3
+    2300766: Model_Arena_Muur_pilaar50 1
+    2300768: Model_Arena_Muur_pilaar6 2
+    2300770: Model_Arena_Muur_pilaar6 3
+    2300772: Model_Arena_Muur_pilaar7 2
+    2300774: Model_Arena_Muur_pilaar7 3
+    2300776: Model_Arena_Muur_pilaar8 2
+    2300778: Model_Arena_Muur_pilaar8 3
+    2300780: Model_Arena_Muur_pilaar9 2
+    2300782: Model_Arena_Muur_pilaar9 3
+    2300784: torch10
+    2300786: torch11
+    2300788: torch12
+    2300790: torch13
+    2300792: torch14
+    2300794: torch15
+    2300796: torch16
+    2300798: torch17
+    2300800: torch18
+    2300802: torch19
+    2300804: torch20
+    2300806: torch21
+    2300808: torch22
+    2300810: torch23
+    2300812: torch24
+    2300814: torch25
+    2300816: torch26
+    2300818: torch27
+    2300820: torch28
+    2300822: torch29
+    2300824: torch3
+    2300826: torch30
+    2300828: torch31
+    2300830: torch32
+    2300832: torch33
+    2300834: torch34
+    2300836: torch35
+    2300838: torch4
+    2300840: torch5
+    2300842: torch6
+    2300844: torch7
+    2300846: torch8
+    2300848: torch9
+    2300850: torch_v1
+    2300852: torch_v1 1
+    2300854: torch_v1 2
+    2300856: torch_v1 3
+    2300858: torch_v3
+    2300860: torch_v3 1
+    2300862: torch_v3 2
+    2300864: torch_v3 3
+    2300866: torch_v4
+    2300868: torch_v4 1
+    2300870: torch_v4 2
+    2300872: torch_v4 3
+    2300874: torch_v5
+    2300876: torch_v5 1
+    2300878: torch_v5 2
+    2300880: torch_v5 3
     3300000: polySurface8
     3300002: Model_Arena_Bank17
     3300004: Model_Arena_Bank18
@@ -1069,6 +1697,200 @@ ModelImporter:
     3300488: pPlane9 1
     3300490: Roof_sunscreens 1
     3300492: Roof_sunscreens1 1
+    3300494: Model_Arena_bank_grond43
+    3300496: Model_Arena_bank_grond44
+    3300498: Model_Arena_bank_grond45
+    3300500: Model_Arena_bank_grond46
+    3300502: Model_Arena_bank_grond47
+    3300504: Model_Arena_bank_grond48
+    3300506: Model_Arena_bank_grond49
+    3300508: Model_Arena_bank_grond50
+    3300510: Model_Arena_bank_grond51
+    3300512: Model_Arena_bank_grond52
+    3300514: Model_Arena_bank_grond53
+    3300516: Model_Arena_bank_grond54
+    3300518: Model_Arena_bank_grond55
+    3300520: Model_Arena_bank_grond56
+    3300522: Model_Arena_bank_grond57
+    3300524: Model_Arena_bank_grond58
+    3300526: Model_Arena_bank_grond59
+    3300528: Model_Arena_bank_grond60
+    3300530: Model_Arena_bank_grond61
+    3300532: Model_Arena_bank_grond62
+    3300534: Model_Arena_bank_grond63
+    3300536: Model_Arena_bank_grond64
+    3300538: Model_Arena_bank_grond65
+    3300540: Model_Arena_bank_grond66
+    3300542: Model_Arena_bank_grond67
+    3300544: Model_Arena_bank_grond68
+    3300546: Model_Arena_bank_grond69
+    3300548: Model_Arena_bank_grond70
+    3300550: Model_Arena_bank_grond71
+    3300552: Model_Arena_bank_grond72
+    3300554: Model_Arena_bank_grond73
+    3300556: Model_Arena_bank_grond74
+    3300558: Model_Arena_bank_grond75
+    3300560: Model_Arena_Muur 2
+    3300562: Model_Arena_Muur 3
+    3300564: Model_Arena_Muur1 2
+    3300566: Model_Arena_Muur1 3
+    3300568: Model_Arena_Muur10 2
+    3300570: Model_Arena_Muur10 3
+    3300572: Model_Arena_Muur11 2
+    3300574: Model_Arena_Muur11 3
+    3300576: Model_Arena_Muur12 2
+    3300578: Model_Arena_Muur12 3
+    3300580: Model_Arena_Muur13 1
+    3300582: Model_Arena_Muur14 1
+    3300584: Model_Arena_Muur15 1
+    3300586: Model_Arena_Muur16 1
+    3300588: Model_Arena_Muur17 1
+    3300590: Model_Arena_Muur18 1
+    3300592: Model_Arena_Muur19 1
+    3300594: Model_Arena_Muur2 2
+    3300596: Model_Arena_Muur2 3
+    3300598: Model_Arena_Muur20 1
+    3300600: Model_Arena_Muur21 1
+    3300602: Model_Arena_Muur22 1
+    3300604: Model_Arena_Muur23 1
+    3300606: Model_Arena_Muur24 1
+    3300608: Model_Arena_Muur25 1
+    3300610: Model_Arena_Muur26 1
+    3300612: Model_Arena_Muur27 1
+    3300614: Model_Arena_Muur28 1
+    3300616: Model_Arena_Muur3 2
+    3300618: Model_Arena_Muur3 3
+    3300620: Model_Arena_Muur4 2
+    3300622: Model_Arena_Muur4 3
+    3300624: Model_Arena_Muur6 2
+    3300626: Model_Arena_Muur6 3
+    3300628: Model_Arena_Muur7 2
+    3300630: Model_Arena_Muur7 3
+    3300632: Model_Arena_Muur8 2
+    3300634: Model_Arena_Muur8 3
+    3300636: Model_Arena_Muur9 2
+    3300638: Model_Arena_Muur9 3
+    3300640: Model_Arena_Muur_Boog 1
+    3300642: Model_Arena_Muur_Boog1 1
+    3300644: Model_Arena_Muur_Boog2 1
+    3300646: Model_Arena_Muur_Boog3 1
+    3300648: Model_Arena_Muur_Boog4 1
+    3300650: Model_Arena_Muur_Boog5 1
+    3300652: Model_Arena_Muur_Boog6 1
+    3300654: Model_Arena_Muur_Boog7 1
+    3300656: Model_Arena_Muur_pilaar 2
+    3300658: Model_Arena_Muur_pilaar 3
+    3300660: Model_Arena_Muur_pilaar1 2
+    3300662: Model_Arena_Muur_pilaar1 3
+    3300664: Model_Arena_Muur_pilaar10 2
+    3300666: Model_Arena_Muur_pilaar10 3
+    3300668: Model_Arena_Muur_pilaar11 2
+    3300670: Model_Arena_Muur_pilaar11 3
+    3300672: Model_Arena_Muur_pilaar12 2
+    3300674: Model_Arena_Muur_pilaar12 3
+    3300676: Model_Arena_Muur_pilaar13 2
+    3300678: Model_Arena_Muur_pilaar13 3
+    3300680: Model_Arena_Muur_pilaar14 2
+    3300682: Model_Arena_Muur_pilaar14 3
+    3300684: Model_Arena_Muur_pilaar15 2
+    3300686: Model_Arena_Muur_pilaar15 3
+    3300688: Model_Arena_Muur_pilaar19 1
+    3300690: Model_Arena_Muur_pilaar2 2
+    3300692: Model_Arena_Muur_pilaar2 3
+    3300694: Model_Arena_Muur_pilaar20 1
+    3300696: Model_Arena_Muur_pilaar21 1
+    3300698: Model_Arena_Muur_pilaar22 1
+    3300700: Model_Arena_Muur_pilaar23 1
+    3300702: Model_Arena_Muur_pilaar24 1
+    3300704: Model_Arena_Muur_pilaar25 1
+    3300706: Model_Arena_Muur_pilaar26 1
+    3300708: Model_Arena_Muur_pilaar27 1
+    3300710: Model_Arena_Muur_pilaar28 1
+    3300712: Model_Arena_Muur_pilaar29 1
+    3300714: Model_Arena_Muur_pilaar3 2
+    3300716: Model_Arena_Muur_pilaar3 3
+    3300718: Model_Arena_Muur_pilaar30 1
+    3300720: Model_Arena_Muur_pilaar31 1
+    3300722: Model_Arena_Muur_pilaar32 1
+    3300724: Model_Arena_Muur_pilaar33 1
+    3300726: Model_Arena_Muur_pilaar34 1
+    3300728: Model_Arena_Muur_pilaar35 1
+    3300730: Model_Arena_Muur_pilaar36 1
+    3300732: Model_Arena_Muur_pilaar37 1
+    3300734: Model_Arena_Muur_pilaar38 1
+    3300736: Model_Arena_Muur_pilaar39 1
+    3300738: Model_Arena_Muur_pilaar4 2
+    3300740: Model_Arena_Muur_pilaar4 3
+    3300742: Model_Arena_Muur_pilaar40 1
+    3300744: Model_Arena_Muur_pilaar41 1
+    3300746: Model_Arena_Muur_pilaar42 1
+    3300748: Model_Arena_Muur_pilaar43 1
+    3300750: Model_Arena_Muur_pilaar44 1
+    3300752: Model_Arena_Muur_pilaar45 1
+    3300754: Model_Arena_Muur_pilaar46 1
+    3300756: Model_Arena_Muur_pilaar47 1
+    3300758: Model_Arena_Muur_pilaar48 1
+    3300760: Model_Arena_Muur_pilaar49 1
+    3300762: Model_Arena_Muur_pilaar5 2
+    3300764: Model_Arena_Muur_pilaar5 3
+    3300766: Model_Arena_Muur_pilaar50 1
+    3300768: Model_Arena_Muur_pilaar6 2
+    3300770: Model_Arena_Muur_pilaar6 3
+    3300772: Model_Arena_Muur_pilaar7 2
+    3300774: Model_Arena_Muur_pilaar7 3
+    3300776: Model_Arena_Muur_pilaar8 2
+    3300778: Model_Arena_Muur_pilaar8 3
+    3300780: Model_Arena_Muur_pilaar9 2
+    3300782: Model_Arena_Muur_pilaar9 3
+    3300784: torch10
+    3300786: torch11
+    3300788: torch12
+    3300790: torch13
+    3300792: torch14
+    3300794: torch15
+    3300796: torch16
+    3300798: torch17
+    3300800: torch18
+    3300802: torch19
+    3300804: torch20
+    3300806: torch21
+    3300808: torch22
+    3300810: torch23
+    3300812: torch24
+    3300814: torch25
+    3300816: torch26
+    3300818: torch27
+    3300820: torch28
+    3300822: torch29
+    3300824: torch3
+    3300826: torch30
+    3300828: torch31
+    3300830: torch32
+    3300832: torch33
+    3300834: torch34
+    3300836: torch35
+    3300838: torch4
+    3300840: torch5
+    3300842: torch6
+    3300844: torch7
+    3300846: torch8
+    3300848: torch9
+    3300850: torch_v1
+    3300852: torch_v1 1
+    3300854: torch_v1 2
+    3300856: torch_v1 3
+    3300858: torch_v3
+    3300860: torch_v3 1
+    3300862: torch_v3 2
+    3300864: torch_v3 3
+    3300866: torch_v4
+    3300868: torch_v4 1
+    3300870: torch_v4 2
+    3300872: torch_v4 3
+    3300874: torch_v5
+    3300876: torch_v5 1
+    3300878: torch_v5 2
+    3300880: torch_v5 3
     4300000: polySurface8
     4300002: Model_Arena_bank_grond3
     4300004: Model_Arena_bank_grond4
@@ -1316,6 +2138,200 @@ ModelImporter:
     4300488: pPlane3
     4300490: pPlane2
     4300492: Roof_sunscreens
+    4300494: Model_Arena_bank_grond43
+    4300496: Model_Arena_bank_grond44
+    4300498: Model_Arena_bank_grond45
+    4300500: Model_Arena_bank_grond46
+    4300502: Model_Arena_bank_grond47
+    4300504: Model_Arena_bank_grond48
+    4300506: Model_Arena_bank_grond49
+    4300508: Model_Arena_bank_grond50
+    4300510: Model_Arena_bank_grond51
+    4300512: Model_Arena_bank_grond52
+    4300514: Model_Arena_bank_grond53
+    4300516: Model_Arena_bank_grond54
+    4300518: Model_Arena_bank_grond55
+    4300520: Model_Arena_bank_grond56
+    4300522: Model_Arena_bank_grond57
+    4300524: Model_Arena_bank_grond58
+    4300526: Model_Arena_bank_grond59
+    4300528: Model_Arena_bank_grond60
+    4300530: Model_Arena_bank_grond61
+    4300532: Model_Arena_bank_grond62
+    4300534: Model_Arena_bank_grond63
+    4300536: Model_Arena_bank_grond64
+    4300538: Model_Arena_bank_grond65
+    4300540: Model_Arena_bank_grond66
+    4300542: Model_Arena_bank_grond67
+    4300544: Model_Arena_bank_grond68
+    4300546: Model_Arena_bank_grond69
+    4300548: Model_Arena_bank_grond70
+    4300550: Model_Arena_bank_grond71
+    4300552: Model_Arena_bank_grond72
+    4300554: Model_Arena_bank_grond73
+    4300556: Model_Arena_bank_grond74
+    4300558: Model_Arena_bank_grond75
+    4300560: Model_Arena_Muur_pilaar19
+    4300562: Model_Arena_Muur_pilaar20
+    4300564: Model_Arena_Muur_pilaar21
+    4300566: Model_Arena_Muur_pilaar22
+    4300568: Model_Arena_Muur_pilaar23
+    4300570: Model_Arena_Muur_pilaar24
+    4300572: Model_Arena_Muur_pilaar25
+    4300574: Model_Arena_Muur_pilaar26
+    4300576: Model_Arena_Muur_pilaar27
+    4300578: Model_Arena_Muur_pilaar28
+    4300580: Model_Arena_Muur_pilaar29
+    4300582: Model_Arena_Muur_pilaar30
+    4300584: Model_Arena_Muur_pilaar31
+    4300586: Model_Arena_Muur_pilaar32
+    4300588: Model_Arena_Muur_pilaar33
+    4300590: Model_Arena_Muur_pilaar34
+    4300592: Model_Arena_Muur_pilaar15
+    4300594: Model_Arena_Muur_pilaar14
+    4300596: Model_Arena_Muur_pilaar13
+    4300598: Model_Arena_Muur12
+    4300600: Model_Arena_Muur11
+    4300602: Model_Arena_Muur_pilaar12
+    4300604: Model_Arena_Muur_pilaar11
+    4300606: Model_Arena_Muur_pilaar10
+    4300608: Model_Arena_Muur10
+    4300610: Model_Arena_Muur9
+    4300612: Model_Arena_Muur_pilaar9
+    4300614: Model_Arena_Muur_pilaar8
+    4300616: Model_Arena_Muur_pilaar7
+    4300618: Model_Arena_Muur_pilaar6
+    4300620: Model_Arena_Muur_Boog3
+    4300622: Model_Arena_Muur_Boog2
+    4300624: Model_Arena_Muur8
+    4300626: Model_Arena_Muur7
+    4300628: Model_Arena_Muur_pilaar5
+    4300630: Model_Arena_Muur_pilaar4
+    4300632: Model_Arena_Muur6
+    4300634: Model_Arena_Muur4
+    4300636: Model_Arena_Muur_pilaar3
+    4300638: Model_Arena_Muur3
+    4300640: Model_Arena_Muur_Boog1
+    4300642: Model_Arena_Muur_pilaar2
+    4300644: Model_Arena_Muur2
+    4300646: Model_Arena_Muur1
+    4300648: Model_Arena_Muur_pilaar1
+    4300650: Model_Arena_Muur_pilaar
+    4300652: Model_Arena_Muur_Boog
+    4300654: Model_Arena_Muur
+    4300656: Model_Arena_Muur_pilaar15
+    4300658: Model_Arena_Muur_pilaar14
+    4300660: Model_Arena_Muur_pilaar13
+    4300662: Model_Arena_Muur12
+    4300664: Model_Arena_Muur11
+    4300666: Model_Arena_Muur_pilaar12
+    4300668: Model_Arena_Muur_pilaar11
+    4300670: Model_Arena_Muur_pilaar10
+    4300672: Model_Arena_Muur10
+    4300674: Model_Arena_Muur9
+    4300676: Model_Arena_Muur_pilaar9
+    4300678: Model_Arena_Muur_pilaar8
+    4300680: Model_Arena_Muur_pilaar7
+    4300682: Model_Arena_Muur_pilaar6
+    4300684: Model_Arena_Muur8
+    4300686: Model_Arena_Muur7
+    4300688: Model_Arena_Muur_pilaar5
+    4300690: Model_Arena_Muur_pilaar4
+    4300692: Model_Arena_Muur6
+    4300694: Model_Arena_Muur4
+    4300696: Model_Arena_Muur_pilaar3
+    4300698: Model_Arena_Muur3
+    4300700: Model_Arena_Muur_pilaar2
+    4300702: Model_Arena_Muur2
+    4300704: Model_Arena_Muur1
+    4300706: Model_Arena_Muur_pilaar1
+    4300708: Model_Arena_Muur_pilaar
+    4300710: Model_Arena_Muur
+    4300712: Model_Arena_Muur13
+    4300714: Model_Arena_Muur14
+    4300716: Model_Arena_Muur15
+    4300718: Model_Arena_Muur16
+    4300720: Model_Arena_Muur_pilaar35
+    4300722: Model_Arena_Muur_Boog4
+    4300724: Model_Arena_Muur17
+    4300726: Model_Arena_Muur18
+    4300728: Model_Arena_Muur19
+    4300730: Model_Arena_Muur_Boog5
+    4300732: Model_Arena_Muur20
+    4300734: Model_Arena_Muur_pilaar36
+    4300736: Model_Arena_Muur_Boog6
+    4300738: Model_Arena_Muur_Boog7
+    4300740: Model_Arena_Muur21
+    4300742: Model_Arena_Muur22
+    4300744: Model_Arena_Muur23
+    4300746: Model_Arena_Muur24
+    4300748: Model_Arena_Muur25
+    4300750: Model_Arena_Muur26
+    4300752: Model_Arena_Muur27
+    4300754: Model_Arena_Muur28
+    4300756: Model_Arena_Muur_pilaar37
+    4300758: Model_Arena_Muur_pilaar38
+    4300760: Model_Arena_Muur_pilaar39
+    4300762: Model_Arena_Muur_pilaar40
+    4300764: Model_Arena_Muur_pilaar41
+    4300766: Model_Arena_Muur_pilaar42
+    4300768: Model_Arena_Muur_pilaar43
+    4300770: Model_Arena_Muur_pilaar44
+    4300772: Model_Arena_Muur_pilaar45
+    4300774: Model_Arena_Muur_pilaar46
+    4300776: Model_Arena_Muur_pilaar47
+    4300778: Model_Arena_Muur_pilaar48
+    4300780: Model_Arena_Muur_pilaar49
+    4300782: Model_Arena_Muur_pilaar50
+    4300784: torch_v4
+    4300786: torch_v5
+    4300788: torch_v1
+    4300790: torch_v3
+    4300792: torch_v1
+    4300794: torch_v3
+    4300796: torch_v4
+    4300798: torch_v5
+    4300800: torch_v4
+    4300802: torch_v5
+    4300804: torch_v1
+    4300806: torch_v3
+    4300808: torch_v1
+    4300810: torch_v3
+    4300812: torch_v4
+    4300814: torch_v5
+    4300816: torch3
+    4300818: torch5
+    4300820: torch6
+    4300822: torch7
+    4300824: torch8
+    4300826: torch9
+    4300828: torch10
+    4300830: torch11
+    4300832: torch12
+    4300834: torch13
+    4300836: torch14
+    4300838: torch15
+    4300840: torch16
+    4300842: torch17
+    4300844: torch18
+    4300846: torch19
+    4300848: torch20
+    4300850: torch4
+    4300852: torch21
+    4300854: torch22
+    4300856: torch23
+    4300858: torch24
+    4300860: torch25
+    4300862: torch26
+    4300864: torch27
+    4300866: torch28
+    4300868: torch29
+    4300870: torch30
+    4300872: torch31
+    4300874: torch32
+    4300876: torch33
+    4300878: torch34
+    4300880: torch35
     9500000: //RootNode
   materials:
     importMaterials: 1
