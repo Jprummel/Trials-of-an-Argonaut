@@ -3,11 +3,15 @@ using System.Collections;
 
 public class OpenGate : MonoBehaviour {
 
-    [SerializeField]
-    private float _gateSpeed;
-    [SerializeField]
-    private bool _isOpen = false;
+    [SerializeField]private float _gateSpeed;
+    [SerializeField]private bool _isOpen = false;
+    [SerializeField]private ParticleSystem _smoke;
 	
+    void Awake ()
+    {
+        _smoke.Stop();
+    }
+
 	void Update () 
     {
         if (_isOpen)
@@ -29,5 +33,6 @@ public class OpenGate : MonoBehaviour {
     public void Open()
     {
         _isOpen = true;
+        _smoke.Play();
     }
 }
