@@ -57,7 +57,7 @@ public class BullBehaviour : MonoBehaviour {
 		_stateMachine.AddState (StateID.StaggerState, GetComponent<StateStagger> ());
 	}
 
-	void Update () 
+	void Update ()
 	{
 		RotatingSmooth ();
 
@@ -73,10 +73,9 @@ public class BullBehaviour : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision col)
 	{
-		Debug.Log (col.gameObject.tag + "Holla holla dikke dolla");
+
 		if (_isCharging && col.gameObject.tag == Tags.PILLAR) 
 		{
-			Debug.Log ("Hallo ik ben stom..");
 			GetComponent<StateMachine>().SetState(StateID.StaggerState);
 		}
 	}

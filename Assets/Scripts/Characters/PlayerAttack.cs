@@ -58,10 +58,10 @@ public class PlayerAttack : MonoBehaviour {
     IEnumerator AttackState(float cooldown)
     {
         _isAttacking = true;
-        Debug.Log(_isAttacking);
+
         yield return new WaitForSeconds(cooldown);
         _isAttacking = false;
-        Debug.Log(_isAttacking);
+
         AnimStateHandler.AnimStateOverride(0);
     }
 

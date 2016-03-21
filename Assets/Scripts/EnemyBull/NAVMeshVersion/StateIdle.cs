@@ -38,7 +38,7 @@ public class StateIdle : StateParent {
 	public override void Act ()
 	{
 		_agent.CalculatePath (_newPos, _path);
-		Debug.Log (_path.status);
+
 		if (_path.status == NavMeshPathStatus.PathPartial) 
 		{
 			GetComponent<StateMachine> ().SetState (StateID.IdleState);

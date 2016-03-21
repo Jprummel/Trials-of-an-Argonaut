@@ -28,7 +28,7 @@ public class StateCharge : StateParent {
 	public override void Enter ()
 	{
 		
-		Debug.Log ("Charge");
+
 		bullBehaviour = GetComponent<BullBehaviour> ();
 		prepare = GetComponent<StatePrepare> ();
 

@@ -27,7 +27,7 @@ public class ChangeWeapon : MonoBehaviour
 
         _shieldEquipped.SetActive(true);
         _shieldNotEquipped.SetActive(false);
-        Debug.Log("Switched to Sword and Shield!");
+
     }
 
     public void EquipSpear()
@@ -40,6 +40,6 @@ public class ChangeWeapon : MonoBehaviour
 
         _shieldEquipped.SetActive(false);
         _shieldNotEquipped.SetActive(true);
-        Debug.Log("Switched to Spear!");
+
     }
 }

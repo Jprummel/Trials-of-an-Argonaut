@@ -21,10 +21,10 @@ public class ChangeNavObs : MonoBehaviour {
 	{
 		if (_Charge.isCharging) {			
 			_MeshObstakels.carving = false;
-			Debug.Log ("I turned off");
+
 		} else {
 			_MeshObstakels.carving = true;
-			Debug.Log ("I turned on");
+
 		}
 	}
 }

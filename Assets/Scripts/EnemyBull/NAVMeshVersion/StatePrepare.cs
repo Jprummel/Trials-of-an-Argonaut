@@ -51,14 +51,14 @@ public class StatePrepare : StateParent {
 		{
 			if (bullBehaviour.canICharge) {
 				GetComponent<StateMachine> ().SetState (StateID.ChargeState);
-				Debug.Log (" >= 30f");
+
 			} else {
 				GetComponent<StateMachine> ().SetState (StateID.IdleState);
 			}
 		}
 		else if (DistanceTo () < 10f) 
 		{
-			Debug.Log (" > 10f");
+
             GetComponent<StateMachine>().SetState(StateID.FlameState);
 		}
 

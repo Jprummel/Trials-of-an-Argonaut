@@ -7,7 +7,8 @@ public class CollisionHandler : MonoBehaviour {
     private AdjustHealth    _adjustHealth;
     private PlayerMovement  _movement;
     private HealthPickup    _pickUp;
-	
+
+	TowerDamage towerDamage;
     // Use this for initialization
 	void Start () {
         if (this.tag == Tags.PLAYER)
@@ -33,7 +34,7 @@ public class CollisionHandler : MonoBehaviour {
         //Player attacking bull
         if (other.tag == Tags.PLAYERWEAPON && this.tag == Tags.BULL)
         {
-            Debug.Log("Ik hit");
+
             PlayerAttack checkAttack = other.GetComponentInParent<PlayerAttack>();
             if (checkAttack.IsAttacking())
             {
@@ -52,12 +53,24 @@ public class CollisionHandler : MonoBehaviour {
 		if (other.tag == Tags.BULLHORNS && this.tag == Tags.PLAYER) 
 		{
 			BullBehaviour bullBehaviour = other.GetComponentInParent<BullBehaviour> ();
-			Debug.Log ("Ayylmaokai");
+
 			if (bullBehaviour.isCharging == true) 
 			{
 				_adjustHealth.CalculateNewHealth (other);
-				Debug.Log ("It happend");
+
                 _adjustHealth.Knockback(250);
+			}
+		}
+
+		if(other.gameObject.tag == Tags.PILLAR && this.tag == Tags.BULL)
+		{
+			
+			towerDamage = other.gameObject.GetComponentInParent<TowerDamage> ();
+			BullBehaviour bullBehaviour = this.GetComponentInParent<BullBehaviour> ();
+			if (towerDamage.doDamage == true && bullBehaviour.isCharging == true) {
+				towerDamage.CheckForPlay ();
+				_adjustHealth.CalculateNewHealth (other);
+
 			}
 		}
 
@@ -72,11 +85,18 @@ public class CollisionHandler : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter(Collision other) 
+
+	/*void OnTriggerEnter(Collider other) 
     {
         if(other.gameObject.tag == Tags.PILLAR && this.tag == Tags.BULL)
         {
-            //Damage bull
+			towerDamage = other.gameObject.GetComponentInParent<TowerDamage> ();
+
+			if (towerDamage.doDamage == true) {
+				towerDamage.CheckForPlay ();
+				_adjustHealth.CalculateNewHealth (other);
+
+			}
         }
-    }
+    }*/
 }
