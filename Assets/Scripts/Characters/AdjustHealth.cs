@@ -6,6 +6,7 @@ public class AdjustHealth : MonoBehaviour {
     [SerializeField]private float           _deathTimer;
                     private Rigidbody       _rigidbody;
                     private bool            _canUseInput;
+                    private Vector3         _direction;
 
     void Start()
     {
@@ -42,11 +43,12 @@ public class AdjustHealth : MonoBehaviour {
         return _canUseInput;
     }
 
-    public void Knockback(float value)
+    public void Knockback(float value , Collider other)
     {
         StartCoroutine(DisablePlayer(3));
-        _rigidbody.AddForce(Vector3.up * value);
-        _rigidbody.AddForce(Vector3.left * value);
+        _direction = transform.position - other.transform.position;
+        _rigidbody.AddForce(Vector3.up * value * 5);
+        _rigidbody.AddForce(_direction * value);
         //AnimStateHandler.AnimStateGeneral();
 
     }

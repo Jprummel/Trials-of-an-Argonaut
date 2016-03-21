@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CollisionHandler : MonoBehaviour {
+public class CollisionHandler : MonoBehaviour 
+{
 
     private PlayerInputs    _input;
     private AdjustHealth    _adjustHealth;
@@ -42,23 +43,24 @@ public class CollisionHandler : MonoBehaviour {
             }
         }
 
-        if(other.tag == Tags.BULLFIRE && this.tag == Tags.PLAYER)
+        /*if(other.tag == Tags.BULLFIRE && this.tag == Tags.PLAYER)
         {
             PlayerBlock checkBlock = GetComponent<PlayerBlock>();
-            if (!checkBlock.IsBlocking())
-            {
+            //if (!checkBlock.IsBlocking())
+            //{
                 _adjustHealth.CalculateNewHealth(other);
-            }
-        }
+            //}
+        }*/
+
 		if (other.tag == Tags.BULLHORNS && this.tag == Tags.PLAYER) 
 		{
 			BullBehaviour bullBehaviour = other.GetComponentInParent<BullBehaviour> ();
 
 			if (bullBehaviour.isCharging == true) 
 			{
-				_adjustHealth.CalculateNewHealth (other);
+				_adjustHealth.CalculateNewHealth(other);
 
-                _adjustHealth.Knockback(250);
+                _adjustHealth.Knockback(20,other);
 			}
 		}
 
@@ -85,6 +87,21 @@ public class CollisionHandler : MonoBehaviour {
         }
     }
 
+    void OnTriggerStay(Collider other)
+    {
+        if(other.tag == Tags.BULLFIRE && this.tag == Tags.PLAYER)
+        {
+            PlayerBlock checkBlock = GetComponent<PlayerBlock>();
+            if (!checkBlock.IsBlocking())
+            {
+                _adjustHealth.CalculateNewHealth(other);
+            }
+        }
+    }
+    
+
+}
+
 
 	/*void OnTriggerEnter(Collider other) 
     {
@@ -99,4 +116,3 @@ public class CollisionHandler : MonoBehaviour {
 			}
         }
     }*/
-}

@@ -19,6 +19,6 @@ public class PlayerBlock : MonoBehaviour {
 
     public bool IsBlocking()
     {
-        return _isBlocking = true;
+        return _isBlocking;
     }
 }
