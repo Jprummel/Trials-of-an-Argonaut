@@ -4,21 +4,20 @@ using System.Collections;
 public class ScreenShake : MonoBehaviour
 {
     private Vector3 _originalPos;
-
-    [SerializeField]private bool _shaking = false;
-    [Range(0f,0.1f)]
-    [SerializeField]private float _shakeAmount;
+    private BullBehaviour _bullBehaviour;
 
     void Awake()
     {
         //Save original position of the camera.
         _originalPos = Camera.main.gameObject.transform.localPosition;
+        _bullBehaviour = GameObject.FindGameObjectWithTag(Tags.BULL).GetComponent<BullBehaviour>();
     }
     
     void Update()
     {
-        Shake(_shaking,_shakeAmount);
+        Shake(_bullBehaviour.isCharging,0.1f);
     }
+	
     public void Shake(bool isShaking,float shakeAmount)
     {
         if(isShaking)
