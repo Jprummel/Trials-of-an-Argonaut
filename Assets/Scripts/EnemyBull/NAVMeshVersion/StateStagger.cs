@@ -8,6 +8,7 @@ public class StateStagger : StateParent {
 	public override void Enter()
 	{
 		bullbehaviour = GetComponent<BullBehaviour> ();
+		bullbehaviour.isCharging = false;
 		bullbehaviour.acceleration (1000f);
 		bullbehaviour.setSpeed (0f);
 		StartCoroutine (WaitAndRecover (4.0f));

@@ -23,7 +23,7 @@ public class WallChecker : MonoBehaviour {
 		Collider[] col = Physics.OverlapSphere (transform.position, _AggroRange,_layerMasks);
 
 		if (col.Length > 0) {
-			Debug.Log (col);
+
 			bullBehaviour.canICharge = false;
 		} else {
 			bullBehaviour.canICharge = true;
