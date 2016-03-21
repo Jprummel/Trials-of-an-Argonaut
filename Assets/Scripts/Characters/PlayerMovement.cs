@@ -3,16 +3,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-    [SerializeField]private float _movementSpeed;
-    [SerializeField]private float _jumpHeight;
-    private bool _isGrounded;
-    private Rigidbody _rigidBody;
-    
-
-    void Start()
-    {
-        _rigidBody = GetComponent<Rigidbody>();
-    }
+    [SerializeField]private float _movementSpeed;    
 
     public void MoveY(float value)
     {
