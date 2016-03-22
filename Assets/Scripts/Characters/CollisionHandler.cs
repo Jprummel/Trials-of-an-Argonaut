@@ -53,7 +53,6 @@ public class CollisionHandler : MonoBehaviour
 			{
 				_adjustHealth.CalculateNewHealth(other);
                 _adjustHealth.Knockback(20,other);
-                AnimStateHandler.AnimStateGeneral(8);
 			}
 		}
 

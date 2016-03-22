@@ -27,7 +27,7 @@ public class AdjustHealth : MonoBehaviour {
         {
             StartCoroutine(DeathTimer());
         }
-        else
+        else if (currentHealth > 0)
         {
             AnimStateHandler.AnimStateGeneral(8);
         }
@@ -36,7 +36,6 @@ public class AdjustHealth : MonoBehaviour {
     IEnumerator DeathTimer()
     {
         _canUseInput = false;
-
         AnimStateHandler.AnimStateGeneral(9);
         yield return new WaitForSeconds(_deathTimer);
         Destroy(this.gameObject);        
