@@ -27,13 +27,17 @@ public class AdjustHealth : MonoBehaviour {
         {
             StartCoroutine(DeathTimer());
         }
+        else
+        {
+            AnimStateHandler.AnimStateGeneral(8);
+        }
     }
 
     IEnumerator DeathTimer()
     {
         _canUseInput = false;
 
-        //AnimStateHandler.AnimState(11);
+        AnimStateHandler.AnimStateGeneral(9);
         yield return new WaitForSeconds(_deathTimer);
         Destroy(this.gameObject);        
     }
@@ -49,8 +53,6 @@ public class AdjustHealth : MonoBehaviour {
         _direction = transform.position - other.transform.position;
         _rigidbody.AddForce(Vector3.up * value * 5);
         _rigidbody.AddForce(_direction * value);
-        //AnimStateHandler.AnimStateGeneral();
-
     }
 
     IEnumerator DisablePlayer(float disableTimer)

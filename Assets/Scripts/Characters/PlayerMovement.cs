@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-    [SerializeField]private float _movementSpeed;    
+    [SerializeField]private float _movementSpeed;
 
     public void MoveY(float value)
     {

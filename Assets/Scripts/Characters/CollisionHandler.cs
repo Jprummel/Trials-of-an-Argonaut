@@ -4,17 +4,18 @@ using System.Collections;
 public class CollisionHandler : MonoBehaviour 
 {
 
-    private PlayerInputs    _input;
+    //private PlayerInputs    _input;
     private AdjustHealth    _adjustHealth;
     private PlayerMovement  _movement;
     private HealthPickup    _pickUp;
 
-	TowerDamage towerDamage;
+	private TowerDamage towerDamage;
     // Use this for initialization
+
 	void Start () {
         if (this.tag == Tags.PLAYER)
         {
-            _input      = GetComponent<PlayerInputs>();
+            //_input      = GetComponent<PlayerInputs>();
             _movement   = GetComponent<PlayerMovement>();
         }
 
@@ -43,15 +44,7 @@ public class CollisionHandler : MonoBehaviour
             }
         }
 
-        /*if(other.tag == Tags.BULLFIRE && this.tag == Tags.PLAYER)
-        {
-            PlayerBlock checkBlock = GetComponent<PlayerBlock>();
-            //if (!checkBlock.IsBlocking())
-            //{
-                _adjustHealth.CalculateNewHealth(other);
-            //}
-        }*/
-
+        //Bull's Charge attack
 		if (other.tag == Tags.BULLHORNS && this.tag == Tags.PLAYER) 
 		{
 			BullBehaviour bullBehaviour = other.GetComponentInParent<BullBehaviour> ();
@@ -59,11 +52,12 @@ public class CollisionHandler : MonoBehaviour
 			if (bullBehaviour.isCharging == true) 
 			{
 				_adjustHealth.CalculateNewHealth(other);
-
                 _adjustHealth.Knockback(20,other);
+                AnimStateHandler.AnimStateGeneral(8);
 			}
 		}
 
+        //Bull hitting pillar in his charge attack
 		if(other.gameObject.tag == Tags.PILLAR && this.tag == Tags.BULL)
 		{
 			
@@ -72,15 +66,16 @@ public class CollisionHandler : MonoBehaviour
 			if (towerDamage.doDamage == true && bullBehaviour.isCharging == true) {
 				towerDamage.CheckForPlay ();
 				_adjustHealth.CalculateNewHealth (other);
-
 			}
 		}
-
+        
+        //Player health pickup
         if(other.tag == Tags.PLAYER && this.tag == Tags.PICKUP)
         {
             _pickUp.AddHealth(1);
         }
 
+        //Bull health pickup
         if(other.tag == Tags.BULL && this.tag == Tags.PICKUP)
         {
             _pickUp.AddHealth(3);
@@ -89,12 +84,14 @@ public class CollisionHandler : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
+        //Bull's Firebreath attack
         if(other.tag == Tags.BULLFIRE && this.tag == Tags.PLAYER)
         {
             PlayerBlock checkBlock = GetComponent<PlayerBlock>();
             if (!checkBlock.IsBlocking())
             {
                 _adjustHealth.CalculateNewHealth(other);
+                AnimStateHandler.AnimStateGeneral(8);
             }
         }
     }

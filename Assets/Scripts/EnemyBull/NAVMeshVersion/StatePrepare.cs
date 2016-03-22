@@ -26,8 +26,10 @@ public class StatePrepare : StateParent {
 	}
 	public override void Act ()
 	{
-		bullBehaviour.targetPos = _targetPlayer.transform.position;
-
+        if (_targetPlayer != null)
+        {
+            bullBehaviour.targetPos = _targetPlayer.transform.position;
+        }
 	}
 
 	public override void Reason ()

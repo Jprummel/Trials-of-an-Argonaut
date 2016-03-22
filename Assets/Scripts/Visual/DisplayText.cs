@@ -6,7 +6,7 @@ public class DisplayText : MonoBehaviour
 {
     [SerializeField]private Text _text;
     [SerializeField]private float _fadeTime;
-    [SerializeField]private Transform _playerPos;
+    [SerializeField]private Transform _player;
     [SerializeField]private float _checkDistance;
     private bool _displayInfo;
 
@@ -26,15 +26,18 @@ public class DisplayText : MonoBehaviour
 
     void CheckForPlayer()
     {
-        _text.transform.LookAt(_playerPos);
-        float dist = Vector3.Distance(transform.position, _playerPos.position);
-        if(dist < _checkDistance)
+        if (_player != null)
         {
-            _displayInfo = true;
-        }
-        else
-        {
-            _displayInfo = false;
+            _text.transform.LookAt(_player);
+            float dist = Vector3.Distance(transform.position, _player.position);
+            if (dist < _checkDistance)
+            {
+                _displayInfo = true;
+            }
+            else
+            {
+                _displayInfo = false;
+            }
         }
     }
 

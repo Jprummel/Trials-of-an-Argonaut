@@ -64,12 +64,15 @@ public class StateFireBreath : StateParent
 		GetComponent<StateMachine>().SetState(StateID.IdleState);
 	}
 
-	private void LookAtPlayer()
-	{
-		Vector3 Botan = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
-		bullBehaviour.setSpeed(0);
-		bullBehaviour.acceleration(50000);
-		transform.LookAt(Botan);
-	}
+    private void LookAtPlayer()
+    {
+        if (Player != null)
+        {
+            Vector3 Botan = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
+            bullBehaviour.setSpeed(0);
+            bullBehaviour.acceleration(50000);
+            transform.LookAt(Botan);
+        }
+    }
 
 }

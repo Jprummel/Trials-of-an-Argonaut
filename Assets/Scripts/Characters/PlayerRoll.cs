@@ -5,7 +5,7 @@ public class PlayerRoll : MonoBehaviour {
 
     private Rigidbody _rigidBody;
     [SerializeField] private float _rollCooldown = 1.3f;
-    private bool _CanUsesDodge = true;
+    private bool _CanDodge = true;
     [SerializeField] private int _rollSpeed = 110;
     
 
@@ -17,7 +17,7 @@ public class PlayerRoll : MonoBehaviour {
 
     public void RollX(float value)
     {
-        if (_CanUsesDodge)
+        if (_CanDodge)
         {
             _rigidBody.AddForce(transform.right * _rollSpeed * value * 4);
             StartCoroutine(RollCooldown());
@@ -26,7 +26,7 @@ public class PlayerRoll : MonoBehaviour {
 
     public void RollY(float value)
     {
-        if (_CanUsesDodge)
+        if (_CanDodge)
         {
             AnimStateHandler.AnimStateGeneral(6);
             _rigidBody.AddForce(-transform.forward * _rollSpeed * value * 4);
@@ -36,8 +36,8 @@ public class PlayerRoll : MonoBehaviour {
 
     IEnumerator RollCooldown()
     {
-        _CanUsesDodge = false;
+        _CanDodge = false;
         yield return new WaitForSeconds(_rollCooldown);
-        _CanUsesDodge = true;
+        _CanDodge = true;
     }
 }
