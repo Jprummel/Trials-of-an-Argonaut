@@ -6,7 +6,7 @@ public class ScreenShake : MonoBehaviour
     private Vector3 _originalPos;
     private BullBehaviour _bullBehaviour;
 
-    void Awake()
+    void Start()
     {
         //Save original position of the camera.
         _originalPos = Camera.main.gameObject.transform.localPosition;
