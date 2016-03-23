@@ -12,8 +12,8 @@ public class PlayerAttack : MonoBehaviour {
 
     void Start()
     {
-        _damageAmount = GetComponentInChildren<Damage>();
-        _damageBase = _damageAmount.damage;
+        _damageAmount   = GetComponentInChildren<Damage>();
+        _damageBase     = _damageAmount.damage;
     }
 
     void Update()
@@ -26,42 +26,40 @@ public class PlayerAttack : MonoBehaviour {
 
     public void Attack()
     {
-        if(_attackState == 0 && _attackTimer >= _attackInterval)
+        if(_attackState == 0 && _attackTimer >= _attackInterval &&_isAttacking == false)
         {
-            _damageAmount.damage = _damageBase; // resets to base damage
+            _damageAmount.damage = _damageBase;                     // resets to base damage
             AnimStateHandler.AnimStateOverride(1);
             Debug.Log("Attack 1");
             _attackState++;
             TimerReset();
-            StartCoroutine(AttackState(1.5f));
+            StartCoroutine(AttackState(1));
         }
-        else if (_attackState == 1 && _attackTimer >= _attackInterval)
+        else if (_attackState == 1 && _attackTimer >= _attackInterval && _isAttacking == false)
         {
-            _damageAmount.damage = _damageAmount.damage * 1.5f; //increases power for hit 2
+            _damageAmount.damage = _damageAmount.damage * 1.5f;     //increases power for hit 2
             AnimStateHandler.AnimStateOverride(2);
             Debug.Log("Attack 2");
             _attackState++;
             TimerReset();
-            StartCoroutine(AttackState(1));
+            StartCoroutine(AttackState(0.7f));
         }
-        else if (_attackState == 2 && _attackTimer >= _attackInterval)
+        else if (_attackState == 2 && _attackTimer >= _attackInterval && _isAttacking == false)
         {
-            _damageAmount.damage = _damageAmount.damage * 2f; //increases power for hit 3
+            _damageAmount.damage = _damageAmount.damage * 2f;       //increases power for hit 3
             AnimStateHandler.AnimStateOverride(3);
             Debug.Log("Attack 3");
             _attackState = 0;
             TimerReset();
-            StartCoroutine(AttackState(1));
+            StartCoroutine(AttackState(0.7f));
         }
     }
 
     IEnumerator AttackState(float cooldown)
     {
         _isAttacking = true;
-
         yield return new WaitForSeconds(cooldown);
         _isAttacking = false;
-
         AnimStateHandler.AnimStateOverride(0);
     }
 

@@ -15,17 +15,16 @@ public class CollisionHandler : MonoBehaviour
 	void Start () {
         if (this.tag == Tags.PLAYER)
         {
-            //_input      = GetComponent<PlayerInputs>();
-            _movement   = GetComponent<PlayerMovement>();
+            _movement       = GetComponent<PlayerMovement>();
         }
 
         if(this.tag == Tags.BULL || this.tag == Tags.PLAYER)
         {
-            _adjustHealth = GetComponent<AdjustHealth>();
+            _adjustHealth   = GetComponent<AdjustHealth>();
         }
         if (this.tag == Tags.PICKUP)
         {
-            _pickUp = GetComponent<HealthPickup>();
+            _pickUp         = GetComponent<HealthPickup>();
             
         }
 	}
@@ -94,21 +93,8 @@ public class CollisionHandler : MonoBehaviour
             }
         }
     }
-    
+
+    void OnCollisionEnter() { 
 
 }
-
-
-	/*void OnTriggerEnter(Collider other) 
-    {
-        if(other.gameObject.tag == Tags.PILLAR && this.tag == Tags.BULL)
-        {
-			towerDamage = other.gameObject.GetComponentInParent<TowerDamage> ();
-
-			if (towerDamage.doDamage == true) {
-				towerDamage.CheckForPlay ();
-				_adjustHealth.CalculateNewHealth (other);
-
-			}
-        }
-    }*/
+}

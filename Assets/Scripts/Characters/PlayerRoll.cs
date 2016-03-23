@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class PlayerRoll : MonoBehaviour {
-
-    private Rigidbody _rigidBody;
-    [SerializeField] private float _rollCooldown = 1.3f;
-    private bool _CanDodge = true;
-    [SerializeField] private int _rollSpeed = 110;
+    [SerializeField]private int         _rollSpeed = 110;
+    [SerializeField]private float       _rollCooldown = 1.3f;
+                    private Rigidbody   _rigidBody;
+                    private bool        _CanDodge = true;
+    
     
 
 
@@ -19,6 +19,14 @@ public class PlayerRoll : MonoBehaviour {
     {
         if (_CanDodge)
         {
+            
+                AnimStateHandler.AnimStateGeneral(6);
+            
+            /*else if (value < 0)
+            {
+                AnimStateHandler.AnimStateGeneral(7);
+            }*/
+
             _rigidBody.AddForce(transform.right * _rollSpeed * value * 4);
             StartCoroutine(RollCooldown());
         }

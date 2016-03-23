@@ -3,14 +3,14 @@ using System.Collections;
 
 public class WallChecker : MonoBehaviour {
 
-	[SerializeField] private int _AggroRange;
-	private int _layerMasks;
+	[SerializeField]private int _AggroRange;
+	                private int _layerMasks;
 
 	BullBehaviour bullBehaviour; 
 	// Use this for initialization
 	void Start () {
-		bullBehaviour = GameObject.FindGameObjectWithTag (Tags.BULL).GetComponent<BullBehaviour> ();
-		_layerMasks = LayerMask.GetMask (Tags.WALLS);
+		bullBehaviour   = GameObject.FindGameObjectWithTag (Tags.BULL).GetComponent<BullBehaviour> ();
+		_layerMasks     = LayerMask.GetMask (Tags.WALLS);
 	}
 	
 	// Update is called once per frame
