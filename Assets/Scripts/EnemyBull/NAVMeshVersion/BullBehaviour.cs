@@ -98,5 +98,9 @@ public class BullBehaviour : MonoBehaviour {
 		transform.rotation = Quaternion.RotateTowards (transform.rotation, lookRotation, _navComponent.angularSpeed * Time.deltaTime);
 	}
 
+    public void stoppingDistance(float distance)
+    {
+        _navComponent.stoppingDistance = distance;
+    }
 
 }
