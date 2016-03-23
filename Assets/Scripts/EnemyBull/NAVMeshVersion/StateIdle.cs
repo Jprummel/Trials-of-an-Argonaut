@@ -54,6 +54,7 @@ public class StateIdle : StateParent {
 
 			GetComponent<StateMachine> ().SetState (StateID.PrepareState);
 		}
+
 	}
 	public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask) //zoekt een random lokatie binnen de range.
 	{

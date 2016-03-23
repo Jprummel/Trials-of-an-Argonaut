@@ -10,7 +10,8 @@ public enum StateID
 	FlameState = 4,
 	RecoverState = 5,
 	PrepareState = 6,
-	StaggerState = 7
+	StaggerState = 7,
+    RunAwayState = 8
 
 }
 public class BullBehaviour : MonoBehaviour {
@@ -36,6 +37,8 @@ public class BullBehaviour : MonoBehaviour {
 
 	private NavMeshAgent _navComponent;
 
+    public bool canIFire = true;
+
 
 	void Start () 
 	{
@@ -55,7 +58,8 @@ public class BullBehaviour : MonoBehaviour {
 		_stateMachine.AddState (StateID.PrepareState, GetComponent<StatePrepare> ());
         _stateMachine.AddState(StateID.FlameState, GetComponent <StateFireBreath>());
 		_stateMachine.AddState (StateID.StaggerState, GetComponent<StateStagger> ());
-	}
+        _stateMachine.AddState(StateID.RunAwayState, GetComponent<StateRunAway>());
+    }
 
 	void Update ()
 	{
@@ -68,7 +72,11 @@ public class BullBehaviour : MonoBehaviour {
 			_targetObject.transform.position = _targetPos;
 		}
 
-
+       // if (canIFire == false)
+       // {
+       //     StartCoroutine(waitForFire(10f));
+       // }
+        //Debug.Log(canIFire);
 
 	}
 	void OnCollisionEnter(Collision col)
@@ -101,6 +109,17 @@ public class BullBehaviour : MonoBehaviour {
     public void stoppingDistance(float distance)
     {
         _navComponent.stoppingDistance = distance;
+    }
+    public IEnumerator waitForFire(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        Debug.Log("iets");
+        canIFire = true;
+    }
+
+    public void StartCourotine()
+    {
+        StartCoroutine(waitForFire(10f));
     }
 
 }

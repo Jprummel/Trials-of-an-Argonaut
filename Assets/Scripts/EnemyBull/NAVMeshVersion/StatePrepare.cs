@@ -60,9 +60,17 @@ public class StatePrepare : StateParent {
 		}
 		else if (DistanceTo () < 8f) 
 		{
+            Debug.Log(bullBehaviour.canIFire);
             bullBehaviour.setSpeed(0);
-            GetComponent<StateMachine>().SetState(StateID.FlameState);
-		}
+            if (bullBehaviour.canIFire)
+            {
+                bullBehaviour.canIFire = false;
+                GetComponent<StateMachine>().SetState(StateID.FlameState);
+
+            } else {
+                GetComponent<StateMachine>().SetState(StateID.RunAwayState);
+            }
+        }
 
 	}
 

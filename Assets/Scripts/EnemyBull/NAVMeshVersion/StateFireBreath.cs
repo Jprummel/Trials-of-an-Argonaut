@@ -16,13 +16,17 @@ public class StateFireBreath : StateParent
 		StartCoroutine(ParticleEnd());
         bullBehaviour.stoppingDistance(1f);
         //Debug.Log("Im Leaving");
+        bullBehaviour.StartCourotine();
+        //bullBehaviour.canIFire = false;
     }
 
 	public override void Enter()
 	{
 		bullBehaviour = GetComponent<BullBehaviour> ();
-		//Debug.Log("Im hot");
-		//stand still
+        //Debug.Log("Im hot");
+        //stand still
+
+        
 		bullBehaviour.setSpeed(_stop);
         bullBehaviour.stoppingDistance(20f);
         //look at player
