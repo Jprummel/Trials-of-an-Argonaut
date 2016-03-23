@@ -26,32 +26,32 @@ public class PlayerAttack : MonoBehaviour {
 
     public void Attack()
     {
-        if(_attackState == 0 && _attackTimer >= _attackInterval &&_isAttacking == false)
+        if(_attackState == 0 && _attackTimer >= _attackInterval)
         {
             _damageAmount.damage = _damageBase;                     // resets to base damage
             AnimStateHandler.AnimStateOverride(1);
             Debug.Log("Attack 1");
             _attackState++;
             TimerReset();
-            StartCoroutine(AttackState(1));
+            StartCoroutine(AttackState(2));
         }
-        else if (_attackState == 1 && _attackTimer >= _attackInterval && _isAttacking == false)
+        else if (_attackState == 1 && _attackTimer >= _attackInterval)
         {
             _damageAmount.damage = _damageAmount.damage * 1.5f;     //increases power for hit 2
             AnimStateHandler.AnimStateOverride(2);
             Debug.Log("Attack 2");
             _attackState++;
             TimerReset();
-            StartCoroutine(AttackState(0.7f));
+            StartCoroutine(AttackState(1));
         }
-        else if (_attackState == 2 && _attackTimer >= _attackInterval && _isAttacking == false)
+        else if (_attackState == 2 && _attackTimer >= _attackInterval)
         {
             _damageAmount.damage = _damageAmount.damage * 2f;       //increases power for hit 3
             AnimStateHandler.AnimStateOverride(3);
             Debug.Log("Attack 3");
             _attackState = 0;
             TimerReset();
-            StartCoroutine(AttackState(0.7f));
+            StartCoroutine(AttackState(1));
         }
     }
 
