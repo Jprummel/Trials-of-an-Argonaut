@@ -2,48 +2,20 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class UnitHealthBar : MonoBehaviour 
+public class UnitHealthBar : MonoBehaviour
 {
-    [SerializeField]private Image _healthBar;
-    [SerializeField]private float _fadeTime;
-    [SerializeField]private Transform _playerPos;
-    [SerializeField]private float _checkDistance;
-    private bool _displayInfo;
+    [SerializeField]
+    private Image _healthBar;
+    private float _fillAmount;
 
-	void Start () 
+    public void HandleBar(float currentHealth, float maxHealth)
     {
-        _healthBar.color = Color.clear;
-	}
-
-	void Update () 
-    {
-        FadeHealthBar();
-        CheckForPlayer();
-	}
-
-    void CheckForPlayer()
-    {
-        _healthBar.transform.LookAt(_playerPos);
-        float dist = Vector3.Distance(transform.position, _playerPos.position);
-        if (dist < _checkDistance)
-        {
-            _displayInfo = true;
-        }
-        else
-        {
-            _displayInfo = false;
-        }
+        _fillAmount = Map(currentHealth, 0, maxHealth, 0, 1);
+        _healthBar.fillAmount = _fillAmount;
     }
 
-    void FadeHealthBar()
+    private float Map(float value, float inMin, float inMax, float outMin, float outMax)
     {
-        if (_displayInfo)
-        {
-            _healthBar.color = Color.Lerp(_healthBar.color, Color.white, _fadeTime * Time.deltaTime);
-        }
-        else
-        {
-            _healthBar.color = Color.Lerp(_healthBar.color, Color.clear, _fadeTime * Time.deltaTime);
-        }
+        return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
     }
 }
