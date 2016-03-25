@@ -8,8 +8,8 @@ public class CollisionHandler : MonoBehaviour
     private AdjustHealth    _adjustHealth;
     private PlayerMovement  _movement;
     private HealthPickup    _pickUp;
-    public XInputTestCS    _vibration;
-	private TowerDamage     towerDamage;
+
+	private TowerDamage towerDamage;
     // Use this for initialization
 
 	void Start () {
@@ -24,7 +24,8 @@ public class CollisionHandler : MonoBehaviour
         }
         if (this.tag == Tags.PICKUP)
         {
-            _pickUp         = GetComponent<HealthPickup>();            
+            _pickUp         = GetComponent<HealthPickup>();
+            
         }
 	}
 	
@@ -39,7 +40,6 @@ public class CollisionHandler : MonoBehaviour
             if (checkAttack.IsAttacking())
             {
                 _adjustHealth.CalculateNewHealth(other);
-                _vibration.Vibrate(1, .25f,"Light");
             }
         }
 
@@ -52,7 +52,6 @@ public class CollisionHandler : MonoBehaviour
 			{
 				_adjustHealth.CalculateNewHealth(other);
                 _adjustHealth.Knockback(20,other);
-                _vibration.Vibrate(1, 0.3f, "Light");
 			}
 		}
 
@@ -65,7 +64,6 @@ public class CollisionHandler : MonoBehaviour
 			if (towerDamage.doDamage == true && bullBehaviour.isCharging == true) {
 				towerDamage.CheckForPlay ();
 				_adjustHealth.CalculateNewHealth (other);
-                _vibration.Vibrate(1, 1, "Heavy");
 			}
 		}
         
@@ -87,7 +85,6 @@ public class CollisionHandler : MonoBehaviour
         //Bull's Firebreath attack
         if(other.tag == Tags.BULLFIRE && this.tag == Tags.PLAYER)
         {
-            _vibration.Vibrate(0.5f, 1,"Light");
             PlayerBlock checkBlock = GetComponent<PlayerBlock>();
             if (!checkBlock.IsBlocking())
             {
