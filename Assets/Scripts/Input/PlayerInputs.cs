@@ -110,12 +110,12 @@ public class PlayerInputs : MonoBehaviour {
         
         if (rightX != 0) //Y Axis Camera Rotation (X Axis on stick)
         {
-            _rotation.RotateY(150f,rightX);
+            //_rotation.RotateY(150f,rightX);
         }
 
         if (rightY != 0) //X Axis Camera Rotation (Y Axis on stick)
         {
-            _rotation.RotateX(100f,rightY);
+           // _rotation.RotateX(100f,rightY);
         }
 
         if (Input.GetButtonDown(InputAxes.L3))
