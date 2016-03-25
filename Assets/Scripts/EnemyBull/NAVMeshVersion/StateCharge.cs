@@ -33,8 +33,6 @@ public class StateCharge : StateParent {
 		prepare = GetComponent<StatePrepare> ();
 
 		_CurrentTarget = prepare.targetPlayer.transform.position;
-		bullBehaviour.setSpeed (_chargeSpeed);
-		bullBehaviour.acceleration (50);
 		bullBehaviour.isCharging = true;
 
 	}
@@ -47,6 +45,16 @@ public class StateCharge : StateParent {
 	public override void Act ()
 	{
 		//Running ();
+		float dot = Vector3.Dot(transform.forward,(_CurrentTarget - transform.position).normalized);
+		Debug.Log (dot);
+		if (dot > 0.985f) {
+			bullBehaviour.setSpeed (_chargeSpeed);
+			bullBehaviour.acceleration (50);
+			Debug.Log (dot);
+		} else {
+			bullBehaviour.setSpeed (20f);
+		}
+	
 	}
 
 	public override void Reason ()

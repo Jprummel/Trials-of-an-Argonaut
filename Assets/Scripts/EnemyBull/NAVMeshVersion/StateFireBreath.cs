@@ -8,22 +8,41 @@ public class StateFireBreath : StateParent
 	private bool _particle = false;
 	[SerializeField]private ParticleSystem FX_fire;
 	[SerializeField]private GameObject Player;
+    private Vector3 _CurBullPos;
 
 	public override void Leave()
 	{
 		// on exit
 		StartCoroutine(ParticleEnd());
+<<<<<<< HEAD
 		////Debug.Log"Im Leaving");
 	}
+=======
+        bullBehaviour.stoppingDistance(1f);
+        //Debug.Log("Im Leaving");
+        bullBehaviour.StartCourotine();
+        //bullBehaviour.canIFire = false;
+    }
+>>>>>>> origin/master
 
 	public override void Enter()
 	{
 		bullBehaviour = GetComponent<BullBehaviour> ();
+<<<<<<< HEAD
 		////Debug.Log"Im hot");
 		//stand still
 		bullBehaviour.setSpeed(_stop);
 		//look at player
+=======
+        //Debug.Log("Im hot");
+        //stand still
+>>>>>>> origin/master
 
+        
+		bullBehaviour.setSpeed(_stop);
+        bullBehaviour.stoppingDistance(20f);
+        //look at player
+        _CurBullPos = this.gameObject.transform.position;
 		//particle fire system
 		StartCoroutine(ParticleStart());
 		//Player damage zone
@@ -36,7 +55,8 @@ public class StateFireBreath : StateParent
 	{
 		//update
 		LookAtPlayer(); // stop if in range
-	}
+        this.gameObject.transform.position = _CurBullPos;
+    }
 
 	public override void Reason()
 	{
@@ -70,8 +90,9 @@ public class StateFireBreath : StateParent
         {
             Vector3 Botan = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
             bullBehaviour.setSpeed(0);
-            bullBehaviour.acceleration(50000);
+            bullBehaviour.acceleration(101);
             transform.LookAt(Botan);
+
         }
     }
 

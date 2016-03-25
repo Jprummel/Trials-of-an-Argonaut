@@ -35,7 +35,7 @@ public class StatePrepare : StateParent {
 	public override void Reason ()
 	{
 		float distanceToBeginPoint = (this.transform.position - _startZone).magnitude;
-		if (distanceToBeginPoint >= 6f) 
+		if (distanceToBeginPoint >= 4f) 
 		{
 			DistanceChecker ();
 		}
@@ -58,11 +58,19 @@ public class StatePrepare : StateParent {
 				GetComponent<StateMachine> ().SetState (StateID.IdleState);
 			}
 		}
-		else if (DistanceTo () < 10f) 
+		else if (DistanceTo () < 8f) 
 		{
+            Debug.Log(bullBehaviour.canIFire);
+            bullBehaviour.setSpeed(0);
+            if (bullBehaviour.canIFire)
+            {
+                bullBehaviour.canIFire = false;
+                GetComponent<StateMachine>().SetState(StateID.FlameState);
 
-            GetComponent<StateMachine>().SetState(StateID.FlameState);
-		}
+            } else {
+                GetComponent<StateMachine>().SetState(StateID.RunAwayState);
+            }
+        }
 
 	}
 
