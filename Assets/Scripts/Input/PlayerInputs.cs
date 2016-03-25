@@ -9,6 +9,7 @@ public class PlayerInputs : MonoBehaviour {
     private Rotation        _rotation;
     private PlayerRoll      _dodge;
     private AdjustHealth    _health;
+    private PauseGame _pause;
 
     void Start()
     {
@@ -18,8 +19,9 @@ public class PlayerInputs : MonoBehaviour {
         _rotation       = GetComponent<Rotation>();
         _dodge          = GetComponent<PlayerRoll>();
         _health         = GetComponent<AdjustHealth>();
+        _pause          = GetComponent<PauseGame>();
 
-        Cursor.visible  = false;
+        //Cursor.visible  = false;
     }
   	// Update is called once per frame
 	void Update () {
@@ -31,14 +33,14 @@ public class PlayerInputs : MonoBehaviour {
         if (_health.CanUseInput())
         {
             XboxControllerInput();
-            PCInput();
+            //PCInput();
         }       
     }
 
     void PCInput()
     {
 
-        float leftX = Input.GetAxis(InputAxes.KEYX); //Keyboard X
+      /*  float leftX = Input.GetAxis(InputAxes.KEYX); //Keyboard X
         float leftY = Input.GetAxis(InputAxes.KEYY); //Keyboard Y
 
         if (leftX != 0)  //X Axis Movement
@@ -63,7 +65,7 @@ public class PlayerInputs : MonoBehaviour {
         {
             _rotation.RotateY(50f,rightY);
             
-        }
+        }*/
     }
 
     void XboxControllerInput()
@@ -92,24 +94,20 @@ public class PlayerInputs : MonoBehaviour {
         }
 
         //ANALOG STICKS
-
         float leftX = Input.GetAxis(InputAxes.LEFTX); //LEFT ANALOG X AXIS
         float leftY = Input.GetAxis(InputAxes.LEFTY); //LEFT ANALOG Y AXIS
 
-        if (leftX != 0)  //X Axis Movement
+        Vector3 inputVector = new Vector3(Input.GetAxis(InputAxes.LEFTX),0, -Input.GetAxis(InputAxes.LEFTY));
+        if (leftX != 0 || leftY != 0)
         {
-            _movement.MoveX(leftX);
-        }
+            _movement.Move(inputVector);
 
-        if (leftY != 0)  //Y Axis Movement
-        {
-            _movement.MoveY(leftY);
+            _movement.handleAnimations(inputVector);
         }
-
 
         float rightX = Input.GetAxis(InputAxes.RIGHTX); //RIGHT ANALOG X AXIS
         float rightY = Input.GetAxis(InputAxes.RIGHTY); //RIGHT ANALOG X AXIS
-
+        
         if (rightX != 0) //Y Axis Camera Rotation (X Axis on stick)
         {
             _rotation.RotateY(150f,rightX);
@@ -182,7 +180,7 @@ public class PlayerInputs : MonoBehaviour {
         //START & BACK
         if (Input.GetButtonDown(InputAxes.START))
         {
-
+            _pause.Pause();
         }
         if (Input.GetButtonDown(InputAxes.BACK))
         {

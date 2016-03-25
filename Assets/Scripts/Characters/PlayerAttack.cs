@@ -30,7 +30,7 @@ public class PlayerAttack : MonoBehaviour {
         {
             _damageAmount.damage = _damageBase;                     // resets to base damage
             AnimStateHandler.AnimStateOverride(1);
-            Debug.Log("Attack 1");
+            //Debug.Log"Attack 1");
             _attackState++;
             TimerReset();
             StartCoroutine(AttackState(2));
@@ -39,7 +39,7 @@ public class PlayerAttack : MonoBehaviour {
         {
             _damageAmount.damage = _damageAmount.damage * 1.5f;     //increases power for hit 2
             AnimStateHandler.AnimStateOverride(2);
-            Debug.Log("Attack 2");
+            //Debug.Log"Attack 2");
             _attackState++;
             TimerReset();
             StartCoroutine(AttackState(1));
@@ -48,7 +48,7 @@ public class PlayerAttack : MonoBehaviour {
         {
             _damageAmount.damage = _damageAmount.damage * 2f;       //increases power for hit 3
             AnimStateHandler.AnimStateOverride(3);
-            Debug.Log("Attack 3");
+            //Debug.Log"Attack 3");
             _attackState = 0;
             TimerReset();
             StartCoroutine(AttackState(1));

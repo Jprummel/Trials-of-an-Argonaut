@@ -13,13 +13,13 @@ public class StateFireBreath : StateParent
 	{
 		// on exit
 		StartCoroutine(ParticleEnd());
-		//Debug.Log("Im Leaving");
+		////Debug.Log"Im Leaving");
 	}
 
 	public override void Enter()
 	{
 		bullBehaviour = GetComponent<BullBehaviour> ();
-		//Debug.Log("Im hot");
+		////Debug.Log"Im hot");
 		//stand still
 		bullBehaviour.setSpeed(_stop);
 		//look at player

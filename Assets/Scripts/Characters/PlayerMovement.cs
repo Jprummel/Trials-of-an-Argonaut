@@ -4,49 +4,24 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
     [SerializeField]private float _movementSpeed;
-    
-    public void MoveY(float value)
+    public float _turnspeed;
+
+    public void Move(Vector3 vector) 
     {
-        if (value < 0 && value > -0.5f)
-        {
-            AnimStateHandler.AnimStateGeneral(1);   //Walk Forward
-        }
-        else if (value < -0.5f)
-        {
-            AnimStateHandler.AnimStateGeneral(10);  //Run Forward
-        }
-        
-        if(value > 0  && value < 0.5f)
-        {
-            AnimStateHandler.AnimStateGeneral(2);   //Walk Backward
-        }
-        else if (value > 0.5f)
-        {
-            AnimStateHandler.AnimStateGeneral(11);  //Run Backward
-        }
-        
-        transform.Translate(-Vector3.forward * _movementSpeed * Time.deltaTime * value);
+        transform.Translate(Vector3.forward * _movementSpeed * Time.deltaTime ); // Moves character forward
+
+        transform.forward = Vector3.Normalize(new Vector3(vector.x,0,vector.z) * _turnspeed * Time.deltaTime); //Rotates character to face the direcction of the analog stick
     }
 
-    public void MoveX(float value)
+    public void handleAnimations(Vector3 vector)
     {
-        if (value < 0 && value > -0.5f)
+        if (vector.magnitude > 0 && vector.magnitude < 0.5f || vector.magnitude < 0 && vector.magnitude > 0.5f)
         {
-            AnimStateHandler.AnimStateGeneral(3);   //Walk Left
-        }else if (value < -0.5f)
-        {
-            AnimStateHandler.AnimStateGeneral(12);  //Run Left
+            AnimStateHandler.AnimStateGeneral(1);   //Walk
         }
-        
-        if(value > 0 && value < 0.5f)
+        else if (vector.magnitude > 0.5f || vector.magnitude < -0.5f)
         {
-            AnimStateHandler.AnimStateGeneral(4);   //Walk Right
+            AnimStateHandler.AnimStateGeneral(10);  //Run
         }
-        else if (value > 0.5)
-        {
-            AnimStateHandler.AnimStateGeneral(13);  //Run Right
-        }
-       
-        transform.Translate(-Vector3.left * _movementSpeed * Time.deltaTime * value);
     }
 }
