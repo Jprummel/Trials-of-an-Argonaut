@@ -42,9 +42,10 @@ public class StateRunAway : StateParent
     public override void Reason()
     {
         float distanceTo = (this.transform.position - bullBehaviour.targetPos).magnitude;
-
-        if (distanceTo < 1f)
+		Debug.Log (distanceTo);
+        if (distanceTo <6f)
         {
+
             GetComponent<StateMachine>().SetState(StateID.IdleState);
         }
     }
