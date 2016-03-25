@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraAnimation : MonoBehaviour 
+public class CameraAnimation : MonoBehaviour
 {
     private OpenGate _gate;
     private FadeScreen _fade;
+
 
     void Start()
     {
@@ -15,18 +16,20 @@ public class CameraAnimation : MonoBehaviour
     public void MenuToCredits()
     {
         AnimStateHandler.AnimStateGeneral(1);
+        PlaySoundButton();
     }
 
     public void CreditsToMenu()
     {
         AnimStateHandler.AnimStateGeneral(2);
+        PlaySoundButton();
     }
 
     public void MenuToPlay()
     {
         AnimStateHandler.AnimStateGeneral(3);
         StartCoroutine(PlayAnimation());
-        
+        PlaySoundButton();
     }
 
     IEnumerator PlayAnimation()
@@ -37,5 +40,11 @@ public class CameraAnimation : MonoBehaviour
         _fade.EndScene();
         yield return new WaitForSeconds(1f);
         Application.LoadLevel(1);
+    }
+
+    private void PlaySoundButton()
+    {
+        AudioSource audio1 = GetComponent<AudioSource>();
+        audio1.Play();
     }
 }
