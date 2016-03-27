@@ -19,17 +19,14 @@ public class PlayerRoll : MonoBehaviour {
     {
         if (_CanDodge)
         {
-            
-                AnimStateHandler.AnimStateGeneral(6);
-            
-            /*else if (value < 0)
-            {
-                AnimStateHandler.AnimStateGeneral(7);
-            }*/
+            AnimStateHandler.AnimStateGeneral(3);
+        }else if (value < 0)
+        {
+            AnimStateHandler.AnimStateGeneral(4);
+        }
 
             _rigidBody.AddForce(transform.right * _rollSpeed * value * 4);
             StartCoroutine(RollCooldown());
-        }
     }
 
     public void RollY(float value)

@@ -27,16 +27,16 @@ public class AdjustHealth : MonoBehaviour {
         }
         else if (currentHealth > 0)
         {
-            AnimStateHandler.AnimStateGeneral(8);
+            AnimStateHandler.AnimStateGeneral(5);
         }
     }
 
     IEnumerator DeathTimer()
     {
         _canUseInput = false;
-        AnimStateHandler.AnimStateGeneral(8);
+        AnimStateHandler.AnimStateGeneral(5);
         yield return new WaitForSeconds(_deathTimer);
-        AnimStateHandler.AnimStateGeneral(9);
+        AnimStateHandler.AnimStateGeneral(6);
         //Destroy(this.gameObject);        
     }
 
@@ -50,7 +50,7 @@ public class AdjustHealth : MonoBehaviour {
         float currenthealth = this.GetComponent<Health>().health;
         if (currenthealth > 0)
         {
-            StartCoroutine(DisablePlayer(2));
+           // StartCoroutine(DisablePlayer(2));
         }
         _direction = transform.position - other.transform.position;
         _rigidbody.AddForce(Vector3.up * value * 50);

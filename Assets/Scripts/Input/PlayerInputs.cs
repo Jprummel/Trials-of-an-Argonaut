@@ -9,7 +9,7 @@ public class PlayerInputs : MonoBehaviour {
     private Rotation        _rotation;
     private PlayerRoll      _dodge;
     private AdjustHealth    _health;
-    private PauseGame _pause;
+    public PauseGame _pause;
 
     void Start()
     {
@@ -19,8 +19,6 @@ public class PlayerInputs : MonoBehaviour {
         _rotation       = GetComponent<Rotation>();
         _dodge          = GetComponent<PlayerRoll>();
         _health         = GetComponent<AdjustHealth>();
-        _pause          = GetComponent<PauseGame>();
-
         //Cursor.visible  = false;
     }
   	// Update is called once per frame
@@ -180,7 +178,7 @@ public class PlayerInputs : MonoBehaviour {
         //START & BACK
         if (Input.GetButtonDown(InputAxes.START))
         {
-            _pause.Pause();
+            _pause.PauseToggle();
         }
         if (Input.GetButtonDown(InputAxes.BACK))
         {

@@ -10,12 +10,14 @@ public class CollisionHandler : MonoBehaviour
     private HealthPickup    _pickUp;
     public Vibration _vibration;
 	private TowerDamage towerDamage;
+    private ToggleEnableInput _inputToggle;
     // Use this for initialization
 
 	void Start () {
         if (this.tag == Tags.PLAYER)
         {
             _movement       = GetComponent<PlayerMovement>();
+            _inputToggle = GetComponent<ToggleEnableInput>();
         }
 
         if(this.tag == Tags.BULL || this.tag == Tags.PLAYER)
@@ -54,6 +56,7 @@ public class CollisionHandler : MonoBehaviour
 				_adjustHealth.CalculateNewHealth(other);
                 _adjustHealth.Knockback(20,other);
                 _vibration.Vibrate(0.8f, 0.3f, "Heavy");
+                StartCoroutine(_inputToggle.ToggleAllInput(1));
 			}
 		}
 
@@ -93,7 +96,8 @@ public class CollisionHandler : MonoBehaviour
             if (!checkBlock.IsBlocking())
             {
                 _adjustHealth.CalculateNewHealth(other);
-                AnimStateHandler.AnimStateGeneral(8);
+                AnimStateHandler.AnimStateGeneral(5);
+                StartCoroutine(_inputToggle.ToggleAllInput(1));
             }
         }
     }
