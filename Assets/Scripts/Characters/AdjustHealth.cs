@@ -28,6 +28,7 @@ public class AdjustHealth : MonoBehaviour {
         else if (currentHealth > 0)
         {
             AnimStateHandler.AnimStateGeneral(5);
+            AnimStateHandler.AnimStateOverride(6);
         }
     }
 
@@ -35,8 +36,10 @@ public class AdjustHealth : MonoBehaviour {
     {
         _canUseInput = false;
         AnimStateHandler.AnimStateGeneral(5);
+        AnimStateHandler.AnimStateOverride(5);
         yield return new WaitForSeconds(_deathTimer);
         AnimStateHandler.AnimStateGeneral(6);
+        AnimStateHandler.AnimStateOverride(6);
         //Destroy(this.gameObject);        
     }
 

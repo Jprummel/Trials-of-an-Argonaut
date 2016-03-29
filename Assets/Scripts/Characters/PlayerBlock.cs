@@ -7,7 +7,7 @@ public class PlayerBlock : MonoBehaviour {
 
 	public void Block()
     {
-        AnimStateHandler.AnimStateOverride(4);
+        AnimStateHandler.AnimStateOverride(10);
         _isBlocking = true;
     }
 

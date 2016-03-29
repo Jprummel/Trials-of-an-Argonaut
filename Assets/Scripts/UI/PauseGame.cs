@@ -19,7 +19,6 @@ public class PauseGame : MonoBehaviour {
 
     public void Unpause()
     {
-        Debug.Log("Wollah kill");
         _pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }

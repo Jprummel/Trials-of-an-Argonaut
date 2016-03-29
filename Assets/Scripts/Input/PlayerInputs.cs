@@ -3,13 +3,13 @@ using System.Collections;
 
 public class PlayerInputs : MonoBehaviour {
 
-    private PlayerAttack    _attack;
-    private PlayerBlock     _block;
-    private PlayerMovement  _movement;
-    private Rotation        _rotation;
-    private PlayerRoll      _dodge;
-    private AdjustHealth    _health;
-    public PauseGame _pause;
+    private PlayerAttack        _attack;
+    private PlayerBlock         _block;
+    private PlayerMovement      _movement;
+    private Rotation            _rotation;
+    private PlayerRoll          _dodge;
+    private AdjustHealth        _health;
+    public PauseGame            _pause;
 
     void Start()
     {
@@ -23,48 +23,9 @@ public class PlayerInputs : MonoBehaviour {
     }
   	// Update is called once per frame
 	void Update () {
-        Inputs();
+        XboxControllerInput();
     }
 
-    void Inputs()
-    {
-        if (_health.CanUseInput())
-        {
-            XboxControllerInput();
-            //PCInput();
-        }       
-    }
-
-    void PCInput()
-    {
-
-      /*  float leftX = Input.GetAxis(InputAxes.KEYX); //Keyboard X
-        float leftY = Input.GetAxis(InputAxes.KEYY); //Keyboard Y
-
-        if (leftX != 0)  //X Axis Movement
-        {
-            _movement.MoveX(leftX);
-        }
-
-        if (leftY != 0)  //Y Axis Movement
-        {
-            _movement.MoveY(leftY);
-        }
-
-        float rightX = Input.GetAxis(InputAxes.MOUSEX); //RIGHT ANALOG X AXIS
-        float rightY = Input.GetAxis(InputAxes.MOUSEY); //RIGHT ANALOG X AXIS
-
-        if (rightX != 0) //Y Axis Camera Rotation (X Axis on stick)
-        {
-            _rotation.RotateX(20f,rightX);
-        }
-
-        if (rightY != 0) //X Axis Camera Rotation (Y Axis on stick)
-        {
-            _rotation.RotateY(50f,rightY);
-            
-        }*/
-    }
 
     void XboxControllerInput()
     {
@@ -175,15 +136,6 @@ public class PlayerInputs : MonoBehaviour {
 
         }
 
-        //START & BACK
-        if (Input.GetButtonDown(InputAxes.START))
-        {
-            _pause.PauseToggle();
-        }
-        if (Input.GetButtonDown(InputAxes.BACK))
-        {
-
-        }
 
         //Combined Inputs
         if(Input.GetButtonDown(InputAxes.A)&& leftX != 0)
@@ -196,10 +148,22 @@ public class PlayerInputs : MonoBehaviour {
             _dodge.RollY(leftY);
         }
 
+
+        //START & BACK
+        if (Input.GetButtonDown(InputAxes.START))
+        {
+            _pause.PauseToggle();
+        }
+        if (Input.GetButtonDown(InputAxes.BACK))
+        {
+
+        }
+
         //Idle
         if (!Input.anyKeyDown && leftY == 0 && leftX == 0)
         {
             AnimStateHandler.AnimStateGeneral(0);
+            AnimStateHandler.AnimStateOverride(0);
         }
     }
 }

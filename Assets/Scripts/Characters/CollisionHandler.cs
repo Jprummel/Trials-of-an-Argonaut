@@ -5,12 +5,13 @@ public class CollisionHandler : MonoBehaviour
 {
 
     //private PlayerInputs    _input;
-    private AdjustHealth    _adjustHealth;
-    private PlayerMovement  _movement;
-    private HealthPickup    _pickUp;
-    public Vibration _vibration;
-	private TowerDamage towerDamage;
-    private ToggleEnableInput _inputToggle;
+    private AdjustHealth        _adjustHealth;
+    private PlayerMovement      _movement;
+    private HealthPickup        _pickUp;
+    private TowerDamage         _towerDamage;
+    private ToggleEnableInput   _inputToggle;
+    public  Vibration           _vibration;
+	
     // Use this for initialization
 
 	void Start () {
@@ -37,7 +38,17 @@ public class CollisionHandler : MonoBehaviour
         //Player attacking bull
         if (other.tag == Tags.PLAYERWEAPON && this.tag == Tags.BULL)
         {
+            Debug.Log(other.transform);
+            PlayerAttack checkAttack = other.GetComponentInParent<PlayerAttack>();
+            if (checkAttack.IsAttacking())
+            {
+                _adjustHealth.CalculateNewHealth(other);
+                _vibration.Vibrate(1, .25f, "Light");
+            }
+        }
 
+        if (other.tag == Tags.PLAYERWEAPON && this.tag == Tags.BULLHORNS)
+        {
             PlayerAttack checkAttack = other.GetComponentInParent<PlayerAttack>();
             if (checkAttack.IsAttacking())
             {
@@ -64,10 +75,10 @@ public class CollisionHandler : MonoBehaviour
 		if(other.gameObject.tag == Tags.PILLAR && this.tag == Tags.BULL)
 		{
 			
-			towerDamage = other.gameObject.GetComponentInParent<TowerDamage> ();
+			_towerDamage = other.gameObject.GetComponentInParent<TowerDamage> ();
 			BullBehaviour bullBehaviour = this.GetComponentInParent<BullBehaviour> ();
-			if (towerDamage.doDamage == true && bullBehaviour.isCharging == true) {
-				towerDamage.CheckForPlay ();
+			if (_towerDamage.doDamage == true && bullBehaviour.isCharging == true) {
+				_towerDamage.CheckForPlay ();
 				_adjustHealth.CalculateNewHealth (other);
                 _vibration.Vibrate(1, 1, "Heavy");
 			}
@@ -97,6 +108,7 @@ public class CollisionHandler : MonoBehaviour
             {
                 _adjustHealth.CalculateNewHealth(other);
                 AnimStateHandler.AnimStateGeneral(5);
+                AnimStateHandler.AnimStateOverride(5);
                 StartCoroutine(_inputToggle.ToggleAllInput(1));
             }
         }
