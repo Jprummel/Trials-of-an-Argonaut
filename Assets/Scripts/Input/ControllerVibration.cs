@@ -41,7 +41,7 @@ public class ControllerVibration : MonoBehaviour
         prevState = state;
         state = GamePad.GetState(playerIndex);
 
-        ControllerVibration();
+        Vibration();
     }
 
     public void Vibrate(float newVibrationStrength, float newVibrationLength, string newVibrationType)
@@ -51,7 +51,7 @@ public class ControllerVibration : MonoBehaviour
         vibrationType = newVibrationType;
     }
 
-    private void ControllerVibration()
+    private void Vibration()
     {
 
 
