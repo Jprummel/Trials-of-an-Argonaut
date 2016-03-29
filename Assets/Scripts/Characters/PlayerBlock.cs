@@ -15,6 +15,7 @@ public class PlayerBlock : MonoBehaviour {
     {
         StartCoroutine(_inputToggle.ToggleMovementInput(1));
         AnimStateHandler.AnimStateOverride(10);
+        AnimStateHandler.AnimStateGeneral(0);
         _isBlocking = true;
     }
 
