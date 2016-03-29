@@ -3,13 +3,15 @@ using System.Collections;
 
 public class AdjustHealth : MonoBehaviour {
 
-    [SerializeField]private float           _deathTimer;
-                    private Rigidbody       _rigidbody;
-                    private bool            _canUseInput;
-                    private Vector3         _direction;
+                    private ToggleEnableInput   _inputToggle;
+    [SerializeField]private float               _deathTimer;
+                    private Rigidbody           _rigidbody;
+                    private bool                _canUseInput;
+                    private Vector3             _direction;
 
     void Start()
     {
+        _inputToggle    = GetComponent<ToggleEnableInput>();
         _rigidbody      = GetComponent<Rigidbody>();
         _canUseInput    = true;
     }
@@ -34,7 +36,7 @@ public class AdjustHealth : MonoBehaviour {
 
     IEnumerator DeathTimer()
     {
-        _canUseInput = false;
+        StartCoroutine(_inputToggle.ToggleAllInput(999));
         AnimStateHandler.AnimStateGeneral(5);
         AnimStateHandler.AnimStateOverride(5);
         yield return new WaitForSeconds(_deathTimer);
@@ -53,17 +55,10 @@ public class AdjustHealth : MonoBehaviour {
         float currenthealth = this.GetComponent<Health>().health;
         if (currenthealth > 0)
         {
-           // StartCoroutine(DisablePlayer(2));
+           StartCoroutine(_inputToggle.ToggleAllInput(1.5f));
         }
         _direction = transform.position - other.transform.position;
         _rigidbody.AddForce(Vector3.up * value * 50);
         _rigidbody.AddForce(_direction * value);
-    }
-
-    IEnumerator DisablePlayer(float disableTimer)
-    {
-        _canUseInput = false;
-        yield return new WaitForSeconds(disableTimer);
-        _canUseInput = true;
     }
 }
