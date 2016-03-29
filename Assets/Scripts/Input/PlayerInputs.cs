@@ -163,7 +163,6 @@ public class PlayerInputs : MonoBehaviour {
         if (!Input.anyKeyDown && leftY == 0 && leftX == 0)
         {
             AnimStateHandler.AnimStateGeneral(0);
-            AnimStateHandler.AnimStateOverride(0);
         }
     }
 }
