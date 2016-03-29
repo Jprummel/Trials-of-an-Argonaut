@@ -10,7 +10,7 @@ public class CollisionHandler : MonoBehaviour
     private HealthPickup        _pickUp;
     private TowerDamage         _towerDamage;
     private ToggleEnableInput   _inputToggle;
-    public  Vibration           _vibration;
+    public  ControllerVibration _vibration;
 	
     // Use this for initialization
 
