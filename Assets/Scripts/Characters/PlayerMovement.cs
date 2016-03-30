@@ -18,8 +18,8 @@ public class PlayerMovement : MonoBehaviour {
         if (_inputToggle.CanMove()) { 
         transform.Translate(Vector3.forward * _movementSpeed * Time.deltaTime ); // Moves character forward
 
-        _newForward = Vector3.Normalize(new Vector3(vector.x,0,vector.z) * _turnspeed * Time.deltaTime); //Rotates character to face the direcction of the analog stick
-        transform.forward = _newForward;
+        _newForward         = Vector3.Normalize(new Vector3(vector.x,0,vector.z) * _turnspeed * Time.deltaTime); //Rotates character to face the direcction of the analog stick
+        transform.forward   = _newForward;
         }
     }
 
