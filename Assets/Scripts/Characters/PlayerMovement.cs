@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour {
             transform.Translate(_newForward * _movementSpeed * Time.deltaTime); // Moves character forward
 
             transform.forward = _cameraMovement.cameraForward;
-    
         }
     }
 
