@@ -1,16 +1,12 @@
 using UnityEngine;
 using XInputDotNetPure; // Required in C#
 
-public class Vibration : MonoBehaviour
+public class XInputTestCS : MonoBehaviour
 {
     bool playerIndexSet = false;
     PlayerIndex playerIndex;
     GamePadState state;
     GamePadState prevState;
-    private float vibrationStrength;
-    private float vibrationLength;
-    private string vibrationType;
-    private bool isVibrating;
 
     // Use this for initialization
     void Start()
@@ -41,38 +37,34 @@ public class Vibration : MonoBehaviour
         prevState = state;
         state = GamePad.GetState(playerIndex);
 
-        ControllerVibration();
-    }
-
-    public void Vibrate(float newVibrationStrength, float newVibrationLength, string newVibrationType)
-    {
-        vibrationLength = newVibrationLength;
-        vibrationStrength = newVibrationStrength;
-        vibrationType = newVibrationType;
-    }
-
-    private void ControllerVibration()
-    {
-
-
-        if (vibrationStrength > 0)
+        // Detect if a button was pressed this frame
+        if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
         {
-            if (vibrationType == "Heavy")
-            {
-
-                GamePad.SetVibration(playerIndex, vibrationStrength, 0);
-                vibrationStrength -= Time.deltaTime / vibrationLength;
-            }
-            else if (vibrationType == "Light")
-            {
-                GamePad.SetVibration(playerIndex, 0, vibrationStrength);
-                vibrationStrength -= Time.deltaTime / vibrationLength;
-            }
-            else if (vibrationType == "Both")
-            {
-                GamePad.SetVibration(playerIndex, vibrationStrength, vibrationStrength);
-                vibrationStrength -= Time.deltaTime / vibrationLength;
-            }
+            GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
         }
+        // Detect if a button was released this frame
+        if (prevState.Buttons.A == ButtonState.Pressed && state.Buttons.A == ButtonState.Released)
+        {
+            GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        }
+
+        // Set vibration according to triggers
+        GamePad.SetVibration(playerIndex, state.Triggers.Left, state.Triggers.Right);
+
+        // Make the current object turn
+        transform.localRotation *= Quaternion.Euler(0.0f, state.ThumbSticks.Left.X * 25.0f * Time.deltaTime, 0.0f);
+    }
+
+    void OnGUI()
+    {
+        string text = "Use left stick to turn the cube, hold A to change color\n";
+        text += string.Format("IsConnected {0} Packet #{1}\n", state.IsConnected, state.PacketNumber);
+        text += string.Format("\tTriggers {0} {1}\n", state.Triggers.Left, state.Triggers.Right);
+        text += string.Format("\tD-Pad {0} {1} {2} {3}\n", state.DPad.Up, state.DPad.Right, state.DPad.Down, state.DPad.Left);
+        text += string.Format("\tButtons Start {0} Back {1} Guide {2}\n", state.Buttons.Start, state.Buttons.Back, state.Buttons.Guide);
+        text += string.Format("\tButtons LeftStick {0} RightStick {1} LeftShoulder {2} RightShoulder {3}\n", state.Buttons.LeftStick, state.Buttons.RightStick, state.Buttons.LeftShoulder, state.Buttons.RightShoulder);
+        text += string.Format("\tButtons A {0} B {1} X {2} Y {3}\n", state.Buttons.A, state.Buttons.B, state.Buttons.X, state.Buttons.Y);
+        text += string.Format("\tSticks Left {0} {1} Right {2} {3}\n", state.ThumbSticks.Left.X, state.ThumbSticks.Left.Y, state.ThumbSticks.Right.X, state.ThumbSticks.Right.Y);
+        GUI.Label(new Rect(0, 0, Screen.width, Screen.height), text);
     }
 }
