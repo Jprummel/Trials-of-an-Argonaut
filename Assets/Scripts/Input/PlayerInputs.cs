@@ -6,7 +6,7 @@ public class PlayerInputs : MonoBehaviour {
     private PlayerAttack        _attack;
     private PlayerBlock         _block;
     private PlayerMovement      _movement;
-    private Rotation            _rotation;
+    private CameraMovement      _rotation;
     private PlayerRoll          _dodge;
     private AdjustHealth        _health;
     public PauseGame            _pause;
@@ -16,7 +16,7 @@ public class PlayerInputs : MonoBehaviour {
         _attack         = GetComponent<PlayerAttack>();
         _block          = GetComponent<PlayerBlock>();
         _movement       = GetComponent<PlayerMovement>();
-        _rotation       = GetComponent<Rotation>();
+        _rotation       = GameObject.Find("CameraController").GetComponent<CameraMovement>();
         _dodge          = GetComponent<PlayerRoll>();
         _health         = GetComponent<AdjustHealth>();
         //Cursor.visible  = false;
@@ -57,6 +57,7 @@ public class PlayerInputs : MonoBehaviour {
         float leftY = Input.GetAxis(InputAxes.LEFTY); //LEFT ANALOG Y AXIS
 
         Vector3 inputVector = new Vector3(Input.GetAxis(InputAxes.LEFTX),0, -Input.GetAxis(InputAxes.LEFTY));
+
         if (leftX != 0 || leftY != 0)
         {
             _movement.Move(inputVector);
@@ -67,14 +68,15 @@ public class PlayerInputs : MonoBehaviour {
         float rightX = Input.GetAxis(InputAxes.RIGHTX); //RIGHT ANALOG X AXIS
         float rightY = Input.GetAxis(InputAxes.RIGHTY); //RIGHT ANALOG X AXIS
         
-        if (rightX != 0) //Y Axis Camera Rotation (X Axis on stick)
+        if (rightX != 0)
         {
-            _rotation.RotateY(150f,rightX);
+            _rotation.RotateX(150f, rightX);
         }
 
-        if (rightY != 0) //X Axis Camera Rotation (Y Axis on stick)
+        if (rightY != 0)
         {
-            _rotation.RotateX(100f,rightY);
+            //_rotation.RotateX(100f,rightY);
+            _rotation.RotateY(100f, rightY);
         }
 
         if (Input.GetButtonDown(InputAxes.L3))
@@ -84,7 +86,7 @@ public class PlayerInputs : MonoBehaviour {
 
         if (Input.GetButtonDown(InputAxes.R3))
         {
-            _rotation.CenterCamera();
+
         }
 
         //FACE BUTTONS

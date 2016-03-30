@@ -21,7 +21,7 @@ public class CameraFollow : MonoBehaviour {
             float desiredAngle = _target.transform.eulerAngles.y;
             Quaternion playerRotation = Quaternion.Euler(0, desiredAngle, 0);
             transform.position = _target.transform.position - (playerRotation * _offset);
-
+            
             //Look at and dampen the rotation
             Quaternion cameraRotation = Quaternion.LookRotation(_target.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, cameraRotation, Time.deltaTime * _damping);
