@@ -3,25 +3,20 @@ using System.Collections;
 
 public class StateRecover : StateParent {
 
-	[SerializeField] private float _maxSpeed = 18f;
-	[SerializeField] private GameObject _rotatePos1;
-	[SerializeField] private GameObject _rotatePos2;
-
-
-	private Vector3 _startPos;
-
-	private Vector3 _mainTarget;
-	private Vector3 _newTarget;
-
-	private bool _Zside;
-	BullBehaviour bullbehaviour;
-
-	StateCharge stateCharge;
+	[SerializeField]private float           _maxSpeed = 18f;
+	[SerializeField]private GameObject      _rotatePos1;
+	[SerializeField]private GameObject      _rotatePos2;
+                    private Vector3         _startPos;
+	                private Vector3         _mainTarget;
+	                private Vector3         _newTarget;
+	                private bool            _Zside;
+	                        BullBehaviour   bullbehaviour;
+	                        StateCharge     stateCharge;
 
 	public override void Enter ()
 	{
-		bullbehaviour = GetComponent<BullBehaviour> ();
-		stateCharge = GetComponent<StateCharge>();
+		bullbehaviour   = GetComponent<BullBehaviour> ();
+		stateCharge     = GetComponent<StateCharge>();
 
 		_startPos = stateCharge.recoverLocation;
 
@@ -36,7 +31,6 @@ public class StateRecover : StateParent {
 
 	public override void Leave ()
 	{
-
 	} 
 
 	public override void Act ()
@@ -49,7 +43,6 @@ public class StateRecover : StateParent {
 
 		_newTarget.y = 2;
 		bullbehaviour.targetPos = _newTarget;
-
 	}
 
 	public override void Reason ()
@@ -59,6 +52,5 @@ public class StateRecover : StateParent {
 		{
 			GetComponent<StateMachine> ().SetState (StateID.IdleState);
 		}
-
 	}
 }

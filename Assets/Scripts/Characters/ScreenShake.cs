@@ -3,14 +3,14 @@ using System.Collections;
 
 public class ScreenShake : MonoBehaviour
 {
-    private Vector3 _originalPos;
-    private BullBehaviour _bullBehaviour;
+    private Vector3         _originalPos;
+    private BullBehaviour   _bullBehaviour;
 
     void Start()
     {
         //Save original position of the camera.
-        _originalPos = Camera.main.gameObject.transform.localPosition;
-        _bullBehaviour = GameObject.FindGameObjectWithTag(Tags.BULL).GetComponent<BullBehaviour>();
+        _originalPos    = Camera.main.gameObject.transform.localPosition;
+        _bullBehaviour  = GameObject.FindGameObjectWithTag(Tags.BULL).GetComponent<BullBehaviour>();
     }
     
     void Update()

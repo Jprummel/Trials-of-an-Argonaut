@@ -3,24 +3,19 @@ using System.Collections;
 
 public class NavFollower : MonoBehaviour {
 
-	[SerializeField]private Transform _targetPos;
-	private NavMeshAgent _navComponent;
+	[SerializeField]private Transform       _targetPos;
+	                private NavMeshAgent    _navComponent;
 
-
-	// Use this for initialization
-	void Start () {
-
+	void Start () 
+    {
 		_navComponent = this.transform.GetComponent<NavMeshAgent> ();
 	}
 
-	// Update is called once per frame
-	void Update () {
-
+	void Update () 
+    {
 		if(_targetPos)
 		{
 		_navComponent.SetDestination(_targetPos.position);
 		}
-
-
 	}
 }

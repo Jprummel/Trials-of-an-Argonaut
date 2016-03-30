@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class StateParent : MonoBehaviour {
-	
+public abstract class StateParent : MonoBehaviour {	
 	
 	public virtual void Enter ()
 	{

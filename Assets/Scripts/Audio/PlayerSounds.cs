@@ -2,18 +2,19 @@
 using System.Collections;
 
 public class PlayerSounds : MonoBehaviour {
-    AdjustHealth ajusthealth;
-    PlayerRoll playerroll;
+                    
+                    private AdjustHealth adjustHealth;
+                    private PlayerRoll playerRoll;
 
     [SerializeField]private AudioSource _audio;
-    [SerializeField]private AudioClip _damage;
-    [SerializeField]private AudioClip _death;
-    [SerializeField]private AudioClip _dodge;
+    [SerializeField]private AudioClip   _damage;
+    [SerializeField]private AudioClip   _death;
+    [SerializeField]private AudioClip   _dodge;
 
     void Start () {
-        ajusthealth = GetComponent<AdjustHealth>();
-        playerroll = GetComponent<PlayerRoll>();
-        _audio = GetComponent<AudioSource>();
+        adjustHealth    = GetComponent<AdjustHealth>();
+        playerRoll      = GetComponent<PlayerRoll>();
+        _audio          = GetComponent<AudioSource>();
 
     }
 	

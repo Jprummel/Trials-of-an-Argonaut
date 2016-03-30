@@ -4,7 +4,7 @@ using System.Collections;
 public class BullSound : MonoBehaviour {
 
     [SerializeField]private AudioSource _audio;
-    [SerializeField]private AudioClip _hitbull;
+    [SerializeField]private AudioClip   _hitbull;
     // Use this for initialization
     void Start () {
         _audio = GetComponent<AudioSource>();

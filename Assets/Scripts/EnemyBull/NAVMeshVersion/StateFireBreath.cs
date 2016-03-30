@@ -3,32 +3,27 @@ using System.Collections;
 
 public class StateFireBreath : StateParent
 {
-	BullBehaviour bullBehaviour;
-	private int _stop = 0;
-	private bool _particle = false;
-	[SerializeField]private ParticleSystem FX_fire;
-	[SerializeField]private GameObject Player;
-    private Vector3 _CurBullPos;
+    [SerializeField]private ParticleSystem  FX_fire;
+    [SerializeField]private GameObject      Player;
+	                        BullBehaviour   bullBehaviour;
+	                private int             _stop = 0;
+	                private bool            _particle = false;
+	                private Vector3         _CurBullPos;
 
 	public override void Leave()
 	{
 		// on exit
 		StartCoroutine(ParticleEnd());
-		////Debug.Log"Im Leaving")
         bullBehaviour.stoppingDistance(1f);
-        //Debug.Log("Im Leaving");
         bullBehaviour.StartCourotine();
-        //bullBehaviour.canIFire = false;
     }
 
 	public override void Enter()
 	{
 		bullBehaviour = GetComponent<BullBehaviour> ();
-		////Debug.Log"Im hot");
 		//stand still
 		bullBehaviour.setSpeed(_stop);
 		//look at player
-
 		bullBehaviour.setSpeed(_stop);
         bullBehaviour.stoppingDistance(20f);
         //look at player
@@ -36,7 +31,6 @@ public class StateFireBreath : StateParent
 		//particle fire system
 		StartCoroutine(ParticleStart());
 		//Player damage zone
-
 		//leave
 		StartCoroutine(EndBehaviour());
 	}
@@ -55,19 +49,18 @@ public class StateFireBreath : StateParent
 
 	IEnumerator ParticleStart()
 	{
-
 		var par = transform.Find("FX_fire").gameObject;
 		par.gameObject.SetActive(true);
 		yield return new WaitForSeconds(4);
-
-
 	}
+
 	IEnumerator ParticleEnd()
 	{
 		yield return new WaitForSeconds(0.1f);
 		var par = transform.Find("FX_fire").gameObject;
 		par.gameObject.SetActive(false);
 	}
+
 	IEnumerator EndBehaviour()
 	{
 		yield return new WaitForSeconds(3);
@@ -85,5 +78,4 @@ public class StateFireBreath : StateParent
 
         }
     }
-
 }

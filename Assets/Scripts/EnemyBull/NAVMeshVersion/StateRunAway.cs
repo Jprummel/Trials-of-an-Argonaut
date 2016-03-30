@@ -3,39 +3,34 @@ using System.Collections;
 
 public class StateRunAway : StateParent
 {
-    BullBehaviour bullBehaviour;
-    [SerializeField]
-    private GameObject way1;
-    [SerializeField]
-    private GameObject way2;
-    [SerializeField]
-    private GameObject Player;
-    private float PlayerX;
+                            BullBehaviour   bullBehaviour;
+    [SerializeField]private GameObject      _way1;
+    [SerializeField]private GameObject      _way2;
+    [SerializeField]private GameObject      _Player;
+                    private float           _PlayerX;
 
     public override void Enter()
     {
-        Debug.Log("Je moeder");
-        bullBehaviour = GetComponent<BullBehaviour>();
-        PlayerX = Player.transform.position.x;
+        bullBehaviour   = GetComponent<BullBehaviour>();
+        _PlayerX        = _Player.transform.position.x;
         bullBehaviour.setSpeed(20f);
     }
 
     public override void Leave()
     {
-
-
     }
+
     public override void Act()
     {
-        if (PlayerX > 0)
+        if (_PlayerX > 0)
         {
             //move to way 2
-            bullBehaviour.targetPos = way2.transform.position;
+            bullBehaviour.targetPos = _way2.transform.position;
         }
         else
         {
             //move to way 1
-            bullBehaviour.targetPos = way1.transform.position;
+            bullBehaviour.targetPos = _way1.transform.position;
         }
     }
 
@@ -45,7 +40,6 @@ public class StateRunAway : StateParent
 		Debug.Log (distanceTo);
         if (distanceTo <6f)
         {
-
             GetComponent<StateMachine>().SetState(StateID.IdleState);
         }
     }

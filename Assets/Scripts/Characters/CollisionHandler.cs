@@ -11,14 +11,12 @@ public class CollisionHandler : MonoBehaviour
     private TowerDamage         _towerDamage;
     private ToggleEnableInput   _inputToggle;
     public  ControllerVibration _vibration;
-	
-    // Use this for initialization
 
 	void Start () {
         if (this.tag == Tags.PLAYER)
         {
             _movement       = GetComponent<PlayerMovement>();
-            _inputToggle = GetComponent<ToggleEnableInput>();
+            _inputToggle    = GetComponent<ToggleEnableInput>();
         }
 
         if(this.tag == Tags.BULL || this.tag == Tags.PLAYER)
@@ -38,7 +36,6 @@ public class CollisionHandler : MonoBehaviour
         //Player attacking bull
         if (other.tag == Tags.PLAYERWEAPON && this.tag == Tags.BULL)
         {
-            Debug.Log(other.transform);
             PlayerAttack checkAttack = other.GetComponentInParent<PlayerAttack>();
             if (checkAttack.IsAttacking())
             {

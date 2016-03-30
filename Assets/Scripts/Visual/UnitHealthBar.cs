@@ -4,9 +4,8 @@ using UnityEngine.UI;
 
 public class UnitHealthBar : MonoBehaviour
 {
-    [SerializeField]
-    private Image _healthBar;
-    private float _fillAmount;
+    [SerializeField]private Image _healthBar;
+                    private float _fillAmount;
 
     public void HandleBar(float currentHealth, float maxHealth)
     {

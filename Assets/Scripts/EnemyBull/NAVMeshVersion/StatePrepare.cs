@@ -3,27 +3,26 @@ using System.Collections;
 
 public class StatePrepare : StateParent {
 
-	[SerializeField] private GameObject _targetPlayer;
-	public GameObject targetPlayer
+	[SerializeField]private GameObject      _targetPlayer;
+                    private Vector3         _startZone;               
+                            BullBehaviour   bullBehaviour;
+
+    public GameObject targetPlayer
 	{
 		get{ return _targetPlayer; }
-	}
-	private Vector3 _startZone;
-
-	BullBehaviour bullBehaviour;
+	}	
 
 	public override void Enter ()
 	{
 		_startZone = transform.position;
 
 		bullBehaviour = GetComponent<BullBehaviour> ();
-
 	}
+
 	public override void Leave()
 	{
-
-
 	}
+
 	public override void Act ()
 	{
         if (_targetPlayer != null)
@@ -44,10 +43,10 @@ public class StatePrepare : StateParent {
 	float DistanceTo()
 	{
 		float distanceToTarget = (this.transform.position - _targetPlayer.transform.position).magnitude;
-		return distanceToTarget; //checked de distanced naar de target.
+		return distanceToTarget; //Checks distance to target.
 	}
 		
-	void DistanceChecker() //checked welke state hij moet gaan
+	void DistanceChecker() //Checks which state he should enter
 	{
 		if (DistanceTo () >= 30f) 
 		{
@@ -71,7 +70,5 @@ public class StatePrepare : StateParent {
                 GetComponent<StateMachine>().SetState(StateID.RunAwayState);
             }
         }
-
 	}
-
 }

@@ -24,10 +24,10 @@ public class CameraMovement : MonoBehaviour {
 
     private void FollowPlayer()
     {
-        transform.position = _playerPos.position;
-        cameraForward = transform.TransformDirection(Vector3.forward);
-        cameraForward.y = 0f;
-        cameraForward = cameraForward.normalized;
+        transform.position  = _playerPos.position;
+        cameraForward       = transform.TransformDirection(Vector3.forward);
+        cameraForward.y     = 0f;
+        cameraForward       = cameraForward.normalized;
     }
 
     public void RotateX(float rotationSpeed, float value)
@@ -37,9 +37,9 @@ public class CameraMovement : MonoBehaviour {
 
     public void RotateY(float camSensitivity, float value)
     {
-        _rotationY = Mathf.Clamp(_rotationY, _minY, _maxY);
-        transform.eulerAngles = new Vector3(_rotationY, transform.localEulerAngles.y);
-        _rotationY += Time.deltaTime * camSensitivity * value;
+        _rotationY              = Mathf.Clamp(_rotationY, _minY, _maxY);
+        transform.eulerAngles   = new Vector3(_rotationY, transform.localEulerAngles.y);
+        _rotationY             += Time.deltaTime * camSensitivity * value;
 
     }
 }

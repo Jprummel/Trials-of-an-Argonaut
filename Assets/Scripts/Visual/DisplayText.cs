@@ -4,24 +4,21 @@ using UnityEngine.UI;
 
 public class DisplayText : MonoBehaviour 
 {
-    [SerializeField]private Text _text;
-    [SerializeField]private float _fadeTime;
-    [SerializeField]private Transform _player;
-    [SerializeField]private float _checkDistance;
-    private bool _displayInfo;
+    [SerializeField]private Text        _text;
+    [SerializeField]private float       _fadeTime;
+    [SerializeField]private Transform   _player;
+    [SerializeField]private float       _checkDistance;
+                    private bool        _displayInfo;
 
-	// Use this for initialization
 	void Start () 
     {
         _text.color = Color.clear;
 	}
 	
-	// Update is called once per frame
 	void Update () 
     {
         FadeText();
         CheckForPlayer();
-
 	}
 
     void CheckForPlayer()

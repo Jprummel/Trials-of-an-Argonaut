@@ -2,16 +2,17 @@
 using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
-
-    [SerializeField]private float _movementSpeed;
-    [SerializeField]private float _turnspeed;
-    private ToggleEnableInput _inputToggle;
-    private CameraMovement _cameraMovement;
-    public Vector3 _newForward;
+                    
+                    private ToggleEnableInput   _inputToggle;
+                    private CameraMovement      _cameraMovement;
+                    public Vector3              _newForward;
+    [SerializeField]private float               _movementSpeed;
+    [SerializeField]private float               _turnspeed;
+                    
 
     void Start()
     {
-        _inputToggle = GetComponent<ToggleEnableInput>();
+        _inputToggle    = GetComponent<ToggleEnableInput>();
         _cameraMovement = GameObject.Find("CameraController").GetComponent<CameraMovement>();
     }
 

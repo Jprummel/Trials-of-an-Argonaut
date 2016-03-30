@@ -3,15 +3,15 @@ using System.Collections;
 
 public class HealthPickup : MonoBehaviour 
 {
-    private Health _health;
-    [SerializeField]private float _healthToAdd;
-    [SerializeField]private float _timeToRespawn;
-    [SerializeField]private GameObject _pickUpObject;
-    private BoxCollider _pickUpCollider;
+                    private Health      _health;
+    [SerializeField]private float       _healthToAdd;
+    [SerializeField]private float       _timeToRespawn;
+    [SerializeField]private GameObject  _pickUpObject;
+                    private BoxCollider _pickUpCollider;
 
     void Start()
     {
-        _health = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        _health         = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         _pickUpCollider = GetComponent<BoxCollider>();
     }
 

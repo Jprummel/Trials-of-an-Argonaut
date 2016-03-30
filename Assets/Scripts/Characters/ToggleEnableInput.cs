@@ -29,6 +29,11 @@ public class ToggleEnableInput : MonoBehaviour {
         _canMove    = true;
     }
 
+    public bool IsDead()
+    {
+        return !_canAttack & !_canMove;
+    }
+
     public bool CanAttack()
     {
         return _canAttack;

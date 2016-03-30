@@ -19,9 +19,8 @@ public class PlayerInputs : MonoBehaviour {
         _rotation       = GameObject.Find("CameraController").GetComponent<CameraMovement>();
         _dodge          = GetComponent<PlayerRoll>();
         _health         = GetComponent<AdjustHealth>();
-        //Cursor.visible  = false;
     }
-  	// Update is called once per frame
+
 	void Update () {
         XboxControllerInput();
     }
@@ -61,7 +60,6 @@ public class PlayerInputs : MonoBehaviour {
         if (leftX != 0 || leftY != 0)
         {
             _movement.Move(inputVector);
-
             _movement.handleAnimations(inputVector);
         }
 

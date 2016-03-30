@@ -12,13 +12,6 @@ public class ControllerVibration : MonoBehaviour
     private string vibrationType;
     private bool isVibrating;
 
-    // Use this for initialization
-    void Start()
-    {
-        // No need to initialize anything for the plugin
-    }
-
-    // Update is called once per frame
     void Update()
     {
         // Find a PlayerIndex, for a single player game
@@ -28,7 +21,7 @@ public class ControllerVibration : MonoBehaviour
             for (int i = 0; i < 4; ++i)
             {
                 PlayerIndex testPlayerIndex = (PlayerIndex)i;
-                GamePadState testState = GamePad.GetState(testPlayerIndex);
+                GamePadState testState      = GamePad.GetState(testPlayerIndex);
                 if (testState.IsConnected)
                 {
                     Debug.Log(string.Format("GamePad found {0}", testPlayerIndex));
@@ -46,15 +39,13 @@ public class ControllerVibration : MonoBehaviour
 
     public void Vibrate(float newVibrationStrength, float newVibrationLength, string newVibrationType)
     {
-        vibrationLength = newVibrationLength;
-        vibrationStrength = newVibrationStrength;
-        vibrationType = newVibrationType;
+        vibrationLength     = newVibrationLength;
+        vibrationStrength   = newVibrationStrength;
+        vibrationType       = newVibrationType;
     }
 
     private void Vibration()
     {
-
-
         if (vibrationStrength > 0)
         {
             if (vibrationType == "Heavy")

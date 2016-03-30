@@ -3,8 +3,8 @@ using System.Collections;
 
 public class CameraAnimation : MonoBehaviour
 {
-    private OpenGate _gate;
-    private FadeScreen _fade;
+    private OpenGate    _gate;
+    private FadeScreen  _fade;
 
 
     void Start()

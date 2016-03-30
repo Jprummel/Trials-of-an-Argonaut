@@ -4,19 +4,18 @@ using UnityEngine.UI;
 
 public class FadeScreen : MonoBehaviour {
 
-    private Image _fadeScreen;
-    private float _fadeInSpeed = 0.6f;          // Speed that the screen fades to and from black.
-    private float _fadeOutSpeed = 3f;
-    private bool _sceneStarting = true;                      // Whether or not the scene is still fading in.
-    private bool _sceneEnding = false;
-	// Use this for initialization
+    private Image   _fadeScreen;
+    private float   _fadeInSpeed = 0.6f;    // Speed that the screen fades to and from black.
+    private float   _fadeOutSpeed = 3f;
+    private bool    _sceneStarting = true;  // Whether or not the scene is still fading in.
+    private bool    _sceneEnding = false;
+
 	void Start () 
     {
-        _fadeScreen = GetComponent<Image>();
-        _fadeScreen.color = Color.black;
+        _fadeScreen         = GetComponent<Image>();
+        _fadeScreen.color   = Color.black;
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate () 
     {
 	    // If the scene is starting...
@@ -63,15 +62,15 @@ public class FadeScreen : MonoBehaviour {
     public void EndScene ()
     {
         // Make sure the texture is enabled.
-        _fadeScreen.enabled = true;
-        
+        _fadeScreen.enabled = true;        
         // Start fading towards black.
-        _sceneEnding = true;
-        
+        _sceneEnding = true;        
         // If the screen is almost black...
-        if(_fadeScreen.color.a >= 0.95f)
+        if (_fadeScreen.color.a >= 0.95f)
+        {
             // ... reload the level.
             Application.LoadLevel(0);
+        }
     }
 }
 

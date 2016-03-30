@@ -2,26 +2,23 @@
 using System.Collections;
 
 public class Health : MonoBehaviour
-{
-
-    public float maxHealth;
-    public float health;
-    private UnitHealthBar _healthBarPlayer;
-    private UnitHealthBar _healthBarBull;
-    [SerializeField]
-    private bool _player = false;
-    [SerializeField]
-    private bool _bull = false;
+{    
+                    private UnitHealthBar   _healthBarPlayer;
+                    private UnitHealthBar   _healthBarBull;
+    [SerializeField]private bool            _player = false;
+    [SerializeField]private bool            _bull = false;
+                    public float            maxHealth;
+                    public float            health;
 
     void Awake()
     {
         if (_player)
         {
-            _healthBarPlayer = GameObject.Find("Healthbar Player").GetComponent<UnitHealthBar>();
+            _healthBarPlayer    = GameObject.Find("Healthbar Player").GetComponent<UnitHealthBar>();
         }
         if (_bull)
         {
-            _healthBarBull = GameObject.Find("Healthbar Bull").GetComponent<UnitHealthBar>();
+            _healthBarBull      = GameObject.Find("Healthbar Bull").GetComponent<UnitHealthBar>();
         }
         health = maxHealth;
     }

@@ -15,5 +15,5 @@ public class Tags : MonoBehaviour {
     public const string PILLAR          = "Pillar";
     public const string PICKUP          = "Pickup";
 
-	public const string WALLS = "Walls";
+	public const string WALLS           = "Walls";
 }

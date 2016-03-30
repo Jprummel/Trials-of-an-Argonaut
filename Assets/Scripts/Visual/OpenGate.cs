@@ -3,13 +3,9 @@ using System.Collections;
 
 public class OpenGate : MonoBehaviour
 {
-
-    [SerializeField]
-    private float _gateSpeed;
-    [SerializeField]
-    private bool _isOpen = false;
-    [SerializeField]
-    private ParticleSystem _smoke;
+    [SerializeField]private float           _gateSpeed;
+    [SerializeField]private bool            _isOpen = false;
+    [SerializeField]private ParticleSystem  _smoke;
 
     void Awake()
     {

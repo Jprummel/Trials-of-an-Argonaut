@@ -2,24 +2,27 @@
 using System.Collections;
 
 public class AdjustHealth : MonoBehaviour {
-
-    [SerializeField]private float           _deathTimer;
-                    private Rigidbody       _rigidbody;
-                    private bool            _canUseInput;
-                    private Vector3         _direction;
+                    private ToggleEnableInput   _inputToggle;
+    [SerializeField]private float               _deathTimer;
+                    private Rigidbody           _rigidbody;
+                    private bool                _canUseInput;
+                    private Vector3             _direction;
 
     void Start()
     {
-        _rigidbody      = GetComponent<Rigidbody>();
-        _canUseInput    = true;
+        _rigidbody          = GetComponent<Rigidbody>();
+        if (this.tag == Tags.PLAYER)
+        {
+            _inputToggle    = GetComponent<ToggleEnableInput>();
+        }
     }
 
     public void CalculateNewHealth(Collider coll)
     {
-        float Damage = coll.gameObject.GetComponent<Damage>().damage;
-        float currentHealth = this.GetComponent<Health>().health;
-        currentHealth -= Damage;
-        this.GetComponent<Health>().health = currentHealth;
+        float Damage                        = coll.gameObject.GetComponent<Damage>().damage;
+        float currentHealth                 = this.GetComponent<Health>().health;
+        currentHealth                      -= Damage;
+        this.GetComponent<Health>().health  = currentHealth;
 
         if (currentHealth <= 0)
         {
@@ -34,7 +37,7 @@ public class AdjustHealth : MonoBehaviour {
 
     IEnumerator DeathTimer()
     {
-        _canUseInput = false;
+        _inputToggle.IsDead();
         AnimStateHandler.AnimStateGeneral(5);
         AnimStateHandler.AnimStateOverride(5);
         yield return new WaitForSeconds(_deathTimer);
@@ -43,27 +46,15 @@ public class AdjustHealth : MonoBehaviour {
         //Destroy(this.gameObject);        
     }
 
-    public bool CanUseInput()
-    {
-        return _canUseInput;
-    }
-
     public void Knockback(float value , Collider other)
     {
         float currenthealth = this.GetComponent<Health>().health;
         if (currenthealth > 0)
         {
-           // StartCoroutine(DisablePlayer(2));
+            StartCoroutine(_inputToggle.ToggleAllInput(2));
         }
         _direction = transform.position - other.transform.position;
         _rigidbody.AddForce(Vector3.up * value * 50);
         _rigidbody.AddForce(_direction * value);
-    }
-
-    IEnumerator DisablePlayer(float disableTimer)
-    {
-        _canUseInput = false;
-        yield return new WaitForSeconds(disableTimer);
-        _canUseInput = true;
     }
 }
