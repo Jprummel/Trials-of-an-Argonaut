@@ -69,7 +69,7 @@ public class PlayerAttack : MonoBehaviour {
     {
         _isAttacking = true;
         StartCoroutine(_inputToggle.ToggleAllInput(cooldown));
-        _rigidBody.AddForce(_movement._newForward * forwardMovement,0);
+        _rigidBody.AddForce(transform.forward * forwardMovement,0);
         yield return new WaitForSeconds(cooldown);
         _isAttacking = false;
         AnimStateHandler.AnimStateOverride(0);

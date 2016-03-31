@@ -4,7 +4,6 @@ using System.Collections;
 public class CollisionHandler : MonoBehaviour 
 {
 
-    //private PlayerInputs    _input;
     private AdjustHealth        _adjustHealth;
     private PlayerMovement      _movement;
     private HealthPickup        _pickUp;

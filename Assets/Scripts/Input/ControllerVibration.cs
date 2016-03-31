@@ -3,14 +3,14 @@ using XInputDotNetPure; // Required in C#
 
 public class ControllerVibration : MonoBehaviour
 {
-    bool playerIndexSet = false;
-    PlayerIndex playerIndex;
-    GamePadState state;
-    GamePadState prevState;
-    private float vibrationStrength;
-    private float vibrationLength;
-    private string vibrationType;
-    private bool isVibrating;
+    bool            playerIndexSet = false;
+    PlayerIndex     playerIndex;
+    GamePadState    state;
+    GamePadState    prevState;
+    private float   vibrationStrength;
+    private float   vibrationLength;
+    private string  vibrationType;
+    private bool    isVibrating;
 
     void Update()
     {
