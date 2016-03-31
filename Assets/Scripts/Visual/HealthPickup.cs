@@ -19,12 +19,11 @@ public class HealthPickup : MonoBehaviour
 
     public void AddHealth(float value)
     {
-        StartCoroutine(PickupCooldown());
-        _playersounds.PickupSound();
-        _health.health += _healthToAdd * value;
-        if(_health.health > _health.maxHealth)
+        if (_health.health < _health.maxHealth)
         {
-            _health.health = _health.maxHealth;
+            StartCoroutine(PickupCooldown());
+            _playersounds.PickupSound();
+            _health.health += _healthToAdd * value;
         }
     }
 
