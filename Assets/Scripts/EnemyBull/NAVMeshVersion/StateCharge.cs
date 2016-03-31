@@ -7,6 +7,7 @@ public class StateCharge : StateParent {
     [SerializeField]private float   _chargeSpeed = 200f;
 	                private Vector3 _targetPosObject;
 	                BullBehaviour   bullBehaviour;
+                    BullSound _bullsound;
 
 	private Vector3 _CurrentTarget;
 	public Vector3 currentTarget
@@ -24,6 +25,7 @@ public class StateCharge : StateParent {
 
 	public override void Enter ()
 	{
+        _bullsound = GetComponent<BullSound>();
 		bullBehaviour = GetComponent<BullBehaviour> ();
 		prepare = GetComponent<StatePrepare> ();
 
@@ -53,7 +55,8 @@ public class StateCharge : StateParent {
 	{
 		if (bullBehaviour.isCharging) 
 		{
-			Charging ();
+            _bullsound.ChargeSound();
+            Charging ();
 		}
 	}
 
