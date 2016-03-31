@@ -5,6 +5,7 @@ public class BullSound : MonoBehaviour {
 
     [SerializeField]private AudioSource _audio;
     [SerializeField]private AudioClip   _hitbull;
+    [SerializeField]private AudioClip _pillar;
     // Use this for initialization
     void Start () {
         _audio = GetComponent<AudioSource>();
@@ -14,6 +15,11 @@ public class BullSound : MonoBehaviour {
     {
         _audio.clip = _hitbull;
         _audio.Play();
-        Debug.Log("IhItBull");
+    }
+
+    public void PillarHitSound()
+    {
+        _audio.clip = _pillar;
+        _audio.Play();
     }
 }

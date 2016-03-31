@@ -10,6 +10,7 @@ public class PlayerSounds : MonoBehaviour {
     [SerializeField]private AudioClip   _damage;
     [SerializeField]private AudioClip   _death;
     [SerializeField]private AudioClip   _dodge;
+    [SerializeField]private AudioClip _pickup;
 
     void Start () {
         adjustHealth    = GetComponent<AdjustHealth>();
@@ -33,6 +34,11 @@ public class PlayerSounds : MonoBehaviour {
     public void DodgeSound()
     {
         _audio.clip = _dodge;
+        _audio.Play();
+    }
+    public void PickupSound()
+    {
+        _audio.clip = _pickup;
         _audio.Play();
     }
 
