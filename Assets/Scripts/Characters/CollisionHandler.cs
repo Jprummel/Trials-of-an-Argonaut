@@ -11,8 +11,12 @@ public class CollisionHandler : MonoBehaviour
     private TowerDamage         _towerDamage;
     private ToggleEnableInput   _inputToggle;
     public  ControllerVibration _vibration;
+    PlayerSounds _playersounds;
+    BullSound _bullSound;
 
-	void Start () {
+    void Start () {
+        _playersounds = GetComponent<PlayerSounds>();
+        _bullSound = GetComponent<BullSound>();
         if (this.tag == Tags.PLAYER)
         {
             _movement       = GetComponent<PlayerMovement>();
@@ -39,6 +43,7 @@ public class CollisionHandler : MonoBehaviour
             PlayerAttack checkAttack = other.GetComponentInParent<PlayerAttack>();
             if (checkAttack.IsAttacking())
             {
+                _bullSound.HitBullSound();
                 _adjustHealth.CalculateNewHealth(other);
                 _vibration.Vibrate(1, .25f, "Light");
             }
@@ -61,7 +66,8 @@ public class CollisionHandler : MonoBehaviour
 
 			if (bullBehaviour.isCharging == true) 
 			{
-				_adjustHealth.CalculateNewHealth(other);
+                _playersounds.DamageSound();
+                _adjustHealth.CalculateNewHealth(other);
                 _adjustHealth.Knockback(20,other);
                 _vibration.Vibrate(0.8f, 0.3f, "Heavy");
                 StartCoroutine(_inputToggle.ToggleAllInput(1));

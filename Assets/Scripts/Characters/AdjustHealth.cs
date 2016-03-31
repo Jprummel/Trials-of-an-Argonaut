@@ -7,9 +7,11 @@ public class AdjustHealth : MonoBehaviour {
                     private Rigidbody           _rigidbody;
                     private bool                _canUseInput;
                     private Vector3             _direction;
+                    PlayerSounds _playersounds;
 
     void Start()
     {
+        _playersounds = GetComponent<PlayerSounds>();
         _rigidbody          = GetComponent<Rigidbody>();
         if (this.tag == Tags.PLAYER)
         {
@@ -38,6 +40,7 @@ public class AdjustHealth : MonoBehaviour {
     IEnumerator DeathTimer()
     {
         _inputToggle.IsDead();
+        _playersounds.DeathSound();
         AnimStateHandler.AnimStateGeneral(5);
         AnimStateHandler.AnimStateOverride(5);
         yield return new WaitForSeconds(_deathTimer);

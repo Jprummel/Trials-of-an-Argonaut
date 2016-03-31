@@ -7,12 +7,13 @@ public class PlayerRoll : MonoBehaviour {
                     private PlayerMovement  _movement;
                     private Rigidbody       _rigidBody;
                     private bool            _CanDodge = true;
-    
-    
+                    PlayerSounds _playersounds;
+
 
 
     void Start()
     {
+        _playersounds = GetComponent<PlayerSounds>();
         _movement   = GetComponent<PlayerMovement>();
         _rigidBody  = GetComponent<Rigidbody>();
     }
@@ -31,6 +32,7 @@ public class PlayerRoll : MonoBehaviour {
             }
 
             _rigidBody.AddForce(transform.right * _rollSpeed * value * 4);
+            _playersounds.DodgeSound();
             StartCoroutine(RollCooldown());
         }
     }
