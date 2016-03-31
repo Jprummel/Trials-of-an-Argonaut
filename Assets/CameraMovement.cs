@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
 
+    [SerializeField]
     private Transform _playerPos;
     [SerializeField]
     private float _minY;
@@ -10,11 +11,12 @@ public class CameraMovement : MonoBehaviour {
     private float _maxY;
     private float _cameraY;
     private float _rotationY;
+    private float _rotationX;
     public Vector3 cameraForward;
 
-    void Start()
+    void Update()
     {
-        _playerPos = GameObject.Find("CameraTarget").transform;
+        UpdateRotation();
     }
 
     void LateUpdate()
@@ -32,14 +34,22 @@ public class CameraMovement : MonoBehaviour {
 
     public void RotateX(float rotationSpeed, float value)
     {
-        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime * value);
+        //transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime * value);
+        _rotationX += Time.deltaTime * rotationSpeed * value;
+
     }
 
     public void RotateY(float camSensitivity, float value)
     {
-        _rotationY              = Mathf.Clamp(_rotationY, _minY, _maxY);
-        transform.eulerAngles   = new Vector3(_rotationY, transform.localEulerAngles.y);
-        _rotationY             += Time.deltaTime * camSensitivity * value;
 
+        //transform.eulerAngles   = new Vector3(_rotationY, transform.localEulerAngles.y);
+        _rotationY             += Time.deltaTime * camSensitivity * value;
+        _rotationY = Mathf.Clamp(_rotationY, _minY, _maxY);
+
+    }
+
+    private void UpdateRotation()
+    {
+        transform.eulerAngles = new Vector3(_rotationY, _rotationX);
     }
 }
