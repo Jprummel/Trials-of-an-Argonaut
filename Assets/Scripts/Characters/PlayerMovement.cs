@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour {
                     public Vector3              _newForward;
     [SerializeField]private float               _movementSpeed;
     [SerializeField]private float               _turnspeed;
+    [SerializeField]private Transform           _playerModel;
                     
 
     void Start()
@@ -21,10 +22,22 @@ public class PlayerMovement : MonoBehaviour {
         if (_inputToggle.CanMove()) { 
 
             _newForward = Vector3.Normalize(new Vector3(vector.x,0,vector.z) * _turnspeed * Time.deltaTime); //Rotates character to face the direcction of the analog stick
-
-            transform.Translate(_newForward * _movementSpeed * Time.deltaTime); // Moves character forward
-
+            
+            //Gets value of analog stick for movement speed
+            float vectorX = vector.x >= 0 ? vector.x : -vector.x;
+            float vectorZ = vector.z >= 0 ? vector.z : -vector.z;
+            float maxSpeed = vectorX >= vectorZ ? vectorX : vectorZ;
+            
+            //Moves character forward
+            transform.Translate(_newForward * (_movementSpeed * maxSpeed) * Time.deltaTime);
+            
+            //Set the foward to the camera forward
             transform.forward = _cameraMovement.cameraForward;
+
+            //Rotates the player towards the angle of the analog stick
+            float angle = (Mathf.Atan2(vector.x, vector.z) * 180 / Mathf.PI);
+            Quaternion playerRotation = Quaternion.Euler(0f, angle, 0f);
+            _playerModel.transform.localRotation = Quaternion.Lerp(_playerModel.transform.localRotation, playerRotation, Time.deltaTime * 7);
         }
     }
 

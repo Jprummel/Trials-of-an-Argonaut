@@ -8,11 +8,11 @@ public class HealthPickup : MonoBehaviour
     [SerializeField]private float       _timeToRespawn;
     [SerializeField]private GameObject  _pickUpObject;
                     private BoxCollider _pickUpCollider;
-                    PlayerSounds _playersounds;
+                    private PlayerSounds _playersounds;
 
     void Start()
     {
-        _playersounds = GetComponent<PlayerSounds>();
+        _playersounds = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSounds>();
         _health         = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         _pickUpCollider = GetComponent<BoxCollider>();
     }
