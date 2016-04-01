@@ -57,7 +57,7 @@ public class StatePrepare : StateParent {
 				GetComponent<StateMachine> ().SetState (StateID.IdleState);
 			}
 		}
-		else if (DistanceTo () < 8f) 
+		else if (DistanceTo () < 16f) 
 		{
             Debug.Log(bullBehaviour.canIFire);
             bullBehaviour.setSpeed(0);
