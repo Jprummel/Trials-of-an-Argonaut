@@ -10,6 +10,8 @@ public class CollisionHandler : MonoBehaviour
     private TowerDamage         _towerDamage;
     private ToggleEnableInput   _inputToggle;
     public  ControllerVibration _vibration;
+    [SerializeField]
+    private GameObject Sparks;
     PlayerSounds _playersounds;
     BullSound _bullSound;
 
@@ -45,6 +47,7 @@ public class CollisionHandler : MonoBehaviour
                 _bullSound.HitBullSound();
                 _adjustHealth.CalculateNewHealth(other);
                 _vibration.Vibrate(1, .25f, "Light");
+                StartCoroutine(SparkHit());
             }
         }
 
@@ -114,5 +117,12 @@ public class CollisionHandler : MonoBehaviour
                 StartCoroutine(_inputToggle.ToggleAllInput(1));
             }
         }
+    }
+    IEnumerator SparkHit()
+    {
+        Sparks.gameObject.SetActive(true);
+        Debug.Log("0ff at 20");
+        yield return new WaitForSeconds(1f);
+        Sparks.gameObject.SetActive(false);
     }
 }
