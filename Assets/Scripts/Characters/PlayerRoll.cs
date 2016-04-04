@@ -20,15 +20,14 @@ public class PlayerRoll : MonoBehaviour {
         _rigidBody      = GetComponent<Rigidbody>();
     }
 
-    public void RollX(Vector3 direction)
+    public void RollX()
     {
-        direction = Vector3.Normalize(new Vector3(direction.x, 0, direction.z) * _rollSpeed * Time.deltaTime);
         if (_CanDodge)
         {
             StartCoroutine(_inputToggle.ToggleAllInput(1));
             AnimStateHandler.AnimStateGeneral(3);
             AnimStateHandler.AnimStateOverride(3);
-            _rigidBody.AddForce(direction * _rollSpeed * 4);
+            _rigidBody.AddForce(_movement._playerModel.forward * _rollSpeed * 7);
             _rigidBody.AddForce(Vector3.up * 30);
             _playersounds.DodgeSound();
             StartCoroutine(RollCooldown());
