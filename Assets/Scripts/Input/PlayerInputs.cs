@@ -61,7 +61,7 @@ public class PlayerInputs : MonoBehaviour {
             _movement.handleAnimations(inputVector);
             if (Input.GetButtonDown(InputAxes.A))
             {
-                _dodge.RollX(inputVector);
+                _dodge.RollX();
             }
         }
 
