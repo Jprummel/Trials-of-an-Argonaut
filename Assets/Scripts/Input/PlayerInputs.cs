@@ -8,7 +8,6 @@ public class PlayerInputs : MonoBehaviour {
     private PlayerMovement      _movement;
     private CameraMovement      _rotation;
     private PlayerRoll          _dodge;
-    private AdjustHealth        _health;
     public PauseGame            _pause;
 
     void Start()
@@ -18,7 +17,6 @@ public class PlayerInputs : MonoBehaviour {
         _movement       = GetComponent<PlayerMovement>();
         _rotation       = GameObject.Find("CameraController").GetComponent<CameraMovement>();
         _dodge          = GetComponent<PlayerRoll>();
-        _health         = GetComponent<AdjustHealth>();
     }
 
 	void Update () {
@@ -61,6 +59,10 @@ public class PlayerInputs : MonoBehaviour {
         {
             _movement.Move(inputVector);
             _movement.handleAnimations(inputVector);
+            if (Input.GetButtonDown(InputAxes.A))
+            {
+                _dodge.RollX(inputVector);
+            }
         }
 
         float rightX = Input.GetAxis(InputAxes.RIGHTX); //RIGHT ANALOG X AXIS
@@ -135,19 +137,6 @@ public class PlayerInputs : MonoBehaviour {
         {
 
         }
-
-
-        //Combined Inputs
-        if(Input.GetButtonDown(InputAxes.A)&& leftX != 0)
-        {
-            _dodge.RollX(leftX);
-        }
-
-        if(Input.GetButtonDown(InputAxes.A)&& leftY != 0)
-        {
-            _dodge.RollY(leftY);
-        }
-
 
         //START & BACK
         if (Input.GetButtonDown(InputAxes.START))

@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour {
     private Damage              _damageAmount;
     private PlayerMovement      _movement;
     private int                 _attackState;
-    private float               _attackInterval = 1.2f;
+    private float               _attackInterval = 0.4f;
     private float               _attackTimer =0;
     private bool                _isAttacking;
     private float               _damageBase;
@@ -35,30 +35,30 @@ public class PlayerAttack : MonoBehaviour {
     {
         if (_inputToggle.CanAttack())
         {
-            if (_attackState == 0/* && _attackTimer >= _attackInterval*/)
+            if (_attackState == 0 && _attackTimer >= _attackInterval)
             {
                 _damageAmount.damage = _damageBase;                     // resets to base damage
                 AnimStateHandler.AnimStateOverride(7);
                 AnimStateHandler.AnimStateGeneral(7);
-                _attackState++;
+                //_attackState++;
                 TimerReset();
                 StartCoroutine(AttackState(1f,150));
             }
-            else if (_attackState == 1 /*&& _attackTimer >= _attackInterval*/)
+            else if (_attackState == 1 && _attackTimer >= _attackInterval)
             {
                 _damageAmount.damage = _damageAmount.damage * 1.5f;     //increases power for hit 2
                 AnimStateHandler.AnimStateOverride(8);
                 AnimStateHandler.AnimStateGeneral(8);
-                _attackState++;
+                //_attackState++;
                 TimerReset();
-                StartCoroutine(AttackState(0.4f,300));
+                StartCoroutine(AttackState(0.7f,300));
             }
-            else if (_attackState == 2/* && _attackTimer >= _attackInterval*/)
+            else if (_attackState == 2 && _attackTimer >= _attackInterval)
             {
                 _damageAmount.damage = _damageAmount.damage * 2f;       //increases power for hit 3
                 AnimStateHandler.AnimStateOverride(9);
                 AnimStateHandler.AnimStateGeneral(9);
-                _attackState = 0;
+                //_attackState = 0;
                 TimerReset();
                 StartCoroutine(AttackState(0.7f,15));
             }
@@ -68,10 +68,18 @@ public class PlayerAttack : MonoBehaviour {
     IEnumerator AttackState(float cooldown, float forwardMovement)
     {
         _isAttacking = true;
-        StartCoroutine(_inputToggle.ToggleAllInput(cooldown));
-        _rigidBody.AddForce(transform.forward * forwardMovement,0);
+        StartCoroutine(_inputToggle.ToggleAllInput(cooldown / 2));
+        _rigidBody.AddForce(_movement._playerModel.transform.forward * forwardMovement,0);
         yield return new WaitForSeconds(cooldown);
         _isAttacking = false;
+        if (_attackState < 2)
+        {
+            _attackState++;
+        }
+        else if (_attackState >= 2)
+        {
+            _attackState = 0;
+        }
         AnimStateHandler.AnimStateOverride(0);
     }
 

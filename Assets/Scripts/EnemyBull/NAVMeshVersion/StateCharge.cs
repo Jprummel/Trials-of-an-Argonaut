@@ -41,11 +41,9 @@ public class StateCharge : StateParent {
 	public override void Act ()
 	{
 		float dot = Vector3.Dot(transform.forward,(_CurrentTarget - transform.position).normalized);
-		Debug.Log (dot);
 		if (dot > 0.985f) {
 			bullBehaviour.setSpeed (_chargeSpeed);
 			bullBehaviour.acceleration (50);
-			Debug.Log (dot);
 		} else {
 			bullBehaviour.setSpeed (20f);
 		}	

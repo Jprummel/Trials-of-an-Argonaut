@@ -296,6 +296,7 @@ ModelImporter:
     7400052: RunRight
     7400054: RunBackward
     7400056: BlockDown
+    7400058: DodgeJump
     9500000: //RootNode
     13700000: Head
     13700002: L_foot
@@ -347,7 +348,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -3915,6 +3916,203 @@ ModelImporter:
       takeName: Take 001
       firstFrame: 382
       lastFrame: 390
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character1_Ctrl_Reference
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_ChestEndEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_ChestOriginEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_HeadEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_LeftUpLeg
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_LeftUpLeg/Character1_Ctrl_LeftLeg
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_LeftUpLeg/Character1_Ctrl_LeftLeg/Character1_Ctrl_LeftFoot
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_LeftUpLeg/Character1_Ctrl_LeftLeg/Character1_Ctrl_LeftFoot/Character1_Ctrl_LeftToeBase
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_RightUpLeg
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_RightUpLeg/Character1_Ctrl_RightLeg
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_RightUpLeg/Character1_Ctrl_RightLeg/Character1_Ctrl_RightFoot
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_RightUpLeg/Character1_Ctrl_RightLeg/Character1_Ctrl_RightFoot/Character1_Ctrl_RightToeBase
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Spine2
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Spine2/Character1_Ctrl_LeftShoulder
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Spine2/Character1_Ctrl_LeftShoulder/Character1_Ctrl_LeftArm
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Spine2/Character1_Ctrl_LeftShoulder/Character1_Ctrl_LeftArm/Character1_Ctrl_LeftForeArm
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Spine2/Character1_Ctrl_LeftShoulder/Character1_Ctrl_LeftArm/Character1_Ctrl_LeftForeArm/Character1_Ctrl_LeftHand
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Spine2/Character1_Ctrl_LeftShoulder/Character1_Ctrl_LeftArm/Character1_Ctrl_LeftForeArm/Character1_Ctrl_LeftHand/Character1_Ctrl_LeftFingerBase
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Spine2/Character1_Ctrl_Neck
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Spine2/Character1_Ctrl_Neck/Character1_Ctrl_Head
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Spine2/Character1_Ctrl_RightShoulder
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Spine2/Character1_Ctrl_RightShoulder/Character1_Ctrl_RightArm
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Spine2/Character1_Ctrl_RightShoulder/Character1_Ctrl_RightArm/Character1_Ctrl_RightForeArm
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Spine2/Character1_Ctrl_RightShoulder/Character1_Ctrl_RightArm/Character1_Ctrl_RightForeArm/Character1_Ctrl_RightHand
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_Hips/Character1_Ctrl_Spine/Character1_Ctrl_Spine1/Character1_Ctrl_Spine2/Character1_Ctrl_RightShoulder/Character1_Ctrl_RightArm/Character1_Ctrl_RightForeArm/Character1_Ctrl_RightHand/Character1_Ctrl_RightFingerBase
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_HipsEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_LeftAnkleEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_LeftElbowEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_LeftFootEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_LeftHandEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_LeftHipEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_LeftKneeEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_LeftShoulderEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_LeftWristEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_RightAnkleEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_RightElbowEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_RightFootEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_RightHandEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_RightHipEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_RightKneeEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_RightShoulderEffector
+        weight: 1
+      - path: Character1_Ctrl_Reference/Character1_Ctrl_RightWristEffector
+        weight: 1
+      - path: Character1_Reference
+        weight: 1
+      - path: Character1_Reference/CenterRoot
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/CenterNeck
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/CenterNeck/CenterHead
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/LeftCollar
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/LeftCollar/LeftShoulder
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/LeftCollar/LeftShoulder/LeftElbow
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/LeftCollar/LeftShoulder/LeftElbow/LeftHand
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/LeftCollar/LeftShoulder/LeftElbow/LeftHand/LeftFinger
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/LeftCollar/LeftShoulder/LeftElbow/LeftHand/LeftFinger/LeftShield
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/RightCollar
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/RightCollar/RightShoulder
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/RightCollar/RightShoulder/RightElbow
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/RightCollar/RightShoulder/RightElbow/RightHand
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/RightCollar/RightShoulder/RightElbow/RightHand/RightFinger
+        weight: 1
+      - path: Character1_Reference/CenterRoot/CenterSpine/CenterSpine 1/CenterSpine
+          2/RightCollar/RightShoulder/RightElbow/RightHand/RightFinger/RightSword
+        weight: 1
+      - path: Character1_Reference/CenterRoot/LeftHip
+        weight: 1
+      - path: Character1_Reference/CenterRoot/LeftHip/LeftKnee
+        weight: 1
+      - path: Character1_Reference/CenterRoot/LeftHip/LeftKnee/LeftFoot
+        weight: 1
+      - path: Character1_Reference/CenterRoot/LeftHip/LeftKnee/LeftFoot/LeftToe
+        weight: 1
+      - path: Character1_Reference/CenterRoot/RightHip
+        weight: 1
+      - path: Character1_Reference/CenterRoot/RightHip/RightKnee
+        weight: 1
+      - path: Character1_Reference/CenterRoot/RightHip/RightKnee/RightFoot
+        weight: 1
+      - path: Character1_Reference/CenterRoot/RightHip/RightKnee/RightFoot/RightToe
+        weight: 1
+      - path: Jason
+        weight: 1
+      - path: Jason/JasonModel
+        weight: 1
+      - path: Jason/Shield
+        weight: 1
+      - path: Jason/Sword
+        weight: 1
+      maskType: 0
+      maskSource: {fileID: 101100000, guid: 5311285a9365baa4bb6c268148bdef5c, type: 2}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: DodgeJump
+      takeName: Take 001
+      firstFrame: 480
+      lastFrame: 515
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

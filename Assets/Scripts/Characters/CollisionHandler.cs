@@ -109,7 +109,7 @@ public class CollisionHandler : MonoBehaviour
             if (!checkBlock.IsBlocking())
             {
                 _adjustHealth.CalculateNewHealth(other);
-                AnimStateHandler.AnimStateGeneral(5);
+                AnimStateHandler.AnimStateGeneral(0);
                 AnimStateHandler.AnimStateOverride(5);
                 StartCoroutine(_inputToggle.ToggleAllInput(1));
             }

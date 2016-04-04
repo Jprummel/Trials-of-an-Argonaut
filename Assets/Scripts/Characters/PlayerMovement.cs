@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
                     public Vector3              _newForward;
     [SerializeField]private float               _movementSpeed;
     [SerializeField]private float               _turnspeed;
-    [SerializeField]private Transform           _playerModel;
+                    public Transform           _playerModel;
                     
 
     void Start()
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (_inputToggle.CanMove()) { 
 
-            _newForward = Vector3.Normalize(new Vector3(vector.x,0,vector.z) * _turnspeed * Time.deltaTime); //Rotates character to face the direcction of the analog stick
+            _newForward = Vector3.Normalize(new Vector3(vector.x,0,vector.z) * _turnspeed * Time.deltaTime); //Gets the new forward of the transform from the analog inputs
             
             //Gets value of analog stick for movement speed
             float vectorX = vector.x >= 0 ? vector.x : -vector.x;

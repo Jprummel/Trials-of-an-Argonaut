@@ -2,36 +2,34 @@
 using System.Collections;
 
 public class PlayerRoll : MonoBehaviour {
-    [SerializeField]private int             _rollSpeed = 110;
-    [SerializeField]private float           _rollCooldown = 1.3f;
-                    private PlayerMovement  _movement;
-                    private Rigidbody       _rigidBody;
-                    private bool            _CanDodge = true;
-                    PlayerSounds _playersounds;
+                    private ToggleEnableInput   _inputToggle;
+    [SerializeField]private int                 _rollSpeed = 170;
+    [SerializeField]private float               _rollCooldown = 1.3f;
+                    private PlayerMovement      _movement;
+                    private Rigidbody           _rigidBody;
+                    private bool                _CanDodge = true;
+                    private PlayerSounds        _playersounds;
 
 
 
     void Start()
     {
-        _playersounds = GetComponent<PlayerSounds>();
-        _movement   = GetComponent<PlayerMovement>();
-        _rigidBody  = GetComponent<Rigidbody>();
+        _inputToggle    = GetComponent<ToggleEnableInput>();
+        _playersounds   = GetComponent<PlayerSounds>();
+        _movement       = GetComponent<PlayerMovement>();
+        _rigidBody      = GetComponent<Rigidbody>();
     }
 
-    public void RollX(float value)
+    public void RollX(Vector3 direction)
     {
+        direction = Vector3.Normalize(new Vector3(direction.x, 0, direction.z) * _rollSpeed * Time.deltaTime);
         if (_CanDodge)
         {
-            if (value > 0)
-            {
-                AnimStateHandler.AnimStateGeneral(3);
-            }
-            else if (value < 0)
-            {
-                AnimStateHandler.AnimStateGeneral(4);
-            }
-
-            _rigidBody.AddForce(transform.right * _rollSpeed * value * 4);
+            StartCoroutine(_inputToggle.ToggleAllInput(1));
+            AnimStateHandler.AnimStateGeneral(3);
+            AnimStateHandler.AnimStateOverride(3);
+            _rigidBody.AddForce(direction * _rollSpeed * 4);
+            _rigidBody.AddForce(Vector3.up * 30);
             _playersounds.DodgeSound();
             StartCoroutine(RollCooldown());
         }
@@ -42,7 +40,7 @@ public class PlayerRoll : MonoBehaviour {
         if (_CanDodge)
         {
             AnimStateHandler.AnimStateGeneral(6);
-            _rigidBody.AddForce(-_movement._newForward * _rollSpeed * value * 4);
+            _rigidBody.AddForce(_movement._playerModel.forward * _rollSpeed * value * 4);
             StartCoroutine(RollCooldown());
         }
     }
