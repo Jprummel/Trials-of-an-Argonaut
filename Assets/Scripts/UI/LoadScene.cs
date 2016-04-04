@@ -16,7 +16,6 @@ public class LoadScene : MonoBehaviour {
     IEnumerator LoadLevel()
     {
         yield return new WaitForSeconds(_delay);
-        //Application.LoadLevel(_sceneName);
         SceneManager.LoadScene(_sceneName);
     }
 }
