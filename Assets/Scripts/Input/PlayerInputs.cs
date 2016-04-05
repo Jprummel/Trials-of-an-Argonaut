@@ -9,9 +9,11 @@ public class PlayerInputs : MonoBehaviour {
     private CameraMovement      _rotation;
     private PlayerRoll          _dodge;
     public PauseGame            _pause;
+    private ToggleEnableInput   _inputToggle;
 
     void Start()
     {
+        _inputToggle    = GetComponent<ToggleEnableInput>();
         _attack         = GetComponent<PlayerAttack>();
         _block          = GetComponent<PlayerBlock>();
         _movement       = GetComponent<PlayerMovement>();

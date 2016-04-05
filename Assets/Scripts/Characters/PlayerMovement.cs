@@ -43,15 +43,18 @@ public class PlayerMovement : MonoBehaviour {
 
     public void handleAnimations(Vector3 vector)
     {
-        if (vector.magnitude > 0 && vector.magnitude < 0.5f || vector.magnitude < 0 && vector.magnitude > 0.5f)
+        if (_inputToggle.CanMove())
         {
-            AnimStateHandler.AnimStateGeneral(1);   //Walk
-            AnimStateHandler.AnimStateOverride(1);
-        }
-        else if (vector.magnitude > 0.5f || vector.magnitude < -0.5f)
-        {
-            AnimStateHandler.AnimStateGeneral(2);  //Run
-            AnimStateHandler.AnimStateOverride(2);
+            if (vector.magnitude > 0 && vector.magnitude < 0.5f || vector.magnitude < 0 && vector.magnitude > 0.5f)
+            {
+                AnimStateHandler.AnimStateGeneral(1);   //Walk
+                AnimStateHandler.AnimStateOverride(1);
+            }
+            else if (vector.magnitude > 0.5f || vector.magnitude < -0.5f)
+            {
+                AnimStateHandler.AnimStateGeneral(2);  //Run
+                AnimStateHandler.AnimStateOverride(2);
+            }
         }
     }
 }

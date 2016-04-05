@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerBlock : MonoBehaviour {
 
-    private bool _isBlocking;
+    private bool                _isBlocking;
 
 	public void Block()
     {

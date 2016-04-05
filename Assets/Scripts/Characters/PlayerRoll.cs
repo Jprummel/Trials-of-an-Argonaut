@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerRoll : MonoBehaviour {
                     private ToggleEnableInput   _inputToggle;
-    [SerializeField]private int                 _rollSpeed = 170;
+    [SerializeField]private int                 _rollSpeed = 100;
     [SerializeField]private float               _rollCooldown = 1.3f;
                     private PlayerMovement      _movement;
                     private Rigidbody           _rigidBody;
@@ -24,7 +24,7 @@ public class PlayerRoll : MonoBehaviour {
     {
         if (_CanDodge)
         {
-            StartCoroutine(_inputToggle.ToggleAllInput(1));
+            StartCoroutine(_inputToggle.ToggleAllInput(0.7f));
             AnimStateHandler.AnimStateGeneral(3);
             AnimStateHandler.AnimStateOverride(3);
             _rigidBody.AddForce(_movement._playerModel.forward * _rollSpeed * 7);

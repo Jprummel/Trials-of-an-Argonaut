@@ -10,15 +10,17 @@ public class AnimStateHandler : MonoBehaviour {
         _Animator = GetComponent<Animator>();
     }
 
-    public static void AnimStateGeneral(int whichState)//Sets the animation state for the Bottom Layer
+    public static void AnimStateOverride(int whichState)//Sets the animation state for the Top Layer (Attack and such)
+    {
+        _Animator.GetLayerName(0);
+        _Animator.SetInteger("OverrideState", whichState);
+    }
+
+    public static void AnimStateGeneral(int whichState)//Sets the animation state for general animations (Walking, idles , camera/enviroment)
     {
         _Animator.GetLayerName(1);
         _Animator.SetInteger("GeneralState", whichState);
     }
 
-    public static void AnimStateOverride(int whichState)//Sets the animation state for the Top Layer
-    {
-        _Animator.GetLayerName(0);
-        _Animator.SetInteger("OverrideState", whichState);
-    }
+    
 }
