@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerAttack : MonoBehaviour {
 
     private ToggleEnableInput   _inputToggle;
+    private PlayerBlock         _block;
     private Damage              _damageAmount;
     private PlayerMovement      _movement;
     private int                 _attackState;
@@ -16,6 +17,7 @@ public class PlayerAttack : MonoBehaviour {
 
     void Start()
     {
+        _block          = GetComponent<PlayerBlock>();
         _rigidBody      = GetComponent<Rigidbody>();
         _inputToggle    = GetComponent<ToggleEnableInput>();
         _movement       = GetComponent<PlayerMovement>();
@@ -33,7 +35,7 @@ public class PlayerAttack : MonoBehaviour {
 
     public void Attack()
     {
-        if (_inputToggle.CanAttack())
+        if (_inputToggle.CanAttack() && !_block.IsBlocking())
         {
             if (_attackState == 0 && /*_attackTimer >= _attackInterval*/ !_isAttacking)
             {

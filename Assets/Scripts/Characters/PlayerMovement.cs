@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour {
                     
                     private ToggleEnableInput   _inputToggle;
                     private CameraMovement      _cameraMovement;
+                    private PlayerBlock         _block;
                     public Vector3              _newForward;
     [SerializeField]private float               _movementSpeed;
     [SerializeField]private float               _turnspeed;
@@ -14,12 +15,13 @@ public class PlayerMovement : MonoBehaviour {
     void Start()
     {
         _inputToggle    = GetComponent<ToggleEnableInput>();
+        _block          = GetComponent<PlayerBlock>();
         _cameraMovement = GameObject.Find("CameraController").GetComponent<CameraMovement>();
     }
 
     public void Move(Vector3 vector) 
     {
-        if (_inputToggle.CanMove()) { 
+        if (_inputToggle.CanMove() && !_block.IsBlocking()) { 
 
             _newForward = Vector3.Normalize(new Vector3(vector.x,0,vector.z) * _turnspeed * Time.deltaTime); //Gets the new forward of the transform from the analog inputs
             
@@ -43,7 +45,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public void handleAnimations(Vector3 vector)
     {
-        if (_inputToggle.CanMove())
+        if (_inputToggle.CanMove() && !_block.IsBlocking())
         {
             if (vector.magnitude > 0 && vector.magnitude < 0.5f || vector.magnitude < 0 && vector.magnitude > 0.5f)
             {

@@ -3,12 +3,12 @@ using System.Collections;
 
 public class PlayerBlock : MonoBehaviour {
 
-    private bool                _isBlocking;
+    private bool _isBlocking;
 
 	public void Block()
     {
-        //StartCoroutine(_inputToggle.ToggleMovementInput(1));
         AnimStateHandler.AnimStateOverride(10);
+        AnimStateHandler.AnimStateGeneral(0);
         _isBlocking = true;
     }
 

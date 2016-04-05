@@ -108,7 +108,7 @@ public class PlayerInputs : MonoBehaviour {
         
         if (Input.GetButtonDown(InputAxes.X))
         {
-            _attack.Attack();
+            _attack.Attack();            
         }
         if (Input.GetButtonDown(InputAxes.Y))
         {
