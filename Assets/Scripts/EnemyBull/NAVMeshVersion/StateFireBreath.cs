@@ -23,8 +23,6 @@ public class StateFireBreath : StateParent
 		bullBehaviour = GetComponent<BullBehaviour> ();
 		//stand still
 		bullBehaviour.setSpeed(_stop);
-		//look at player
-		bullBehaviour.setSpeed(_stop);
         bullBehaviour.stoppingDistance(20f);
         //look at player
         _CurBullPos = this.gameObject.transform.position;
@@ -37,6 +35,7 @@ public class StateFireBreath : StateParent
 
 	public override void Act()
 	{
+		AnimStateHandler.AnimStateGeneral (3);
 		//update
 		LookAtPlayer(); // stop if in range
         this.gameObject.transform.position = _CurBullPos;
