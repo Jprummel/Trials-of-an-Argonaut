@@ -7,16 +7,23 @@ public class StoryIntro : MonoBehaviour {
     [SerializeField]private Text        _introText;
     [SerializeField]private AudioSource _introVoice;
     [SerializeField]private string      _levelToLoad;
+                    private bool        _isLoadingGame;
 	
-    void Start () {
-        StartCoroutine(Introduction());
+    void Start () 
+    {
+            StartCoroutine(Introduction());
 	}
 
     void Update()
     {
         SkipIntro();
+        if(_isLoadingGame)
+        {
+            _introText.text = "Loading...";
+            _introVoice.Stop();
+        }
     }
-	
+
     IEnumerator Introduction()
     {
         yield return new WaitForSeconds(2);
@@ -44,20 +51,31 @@ public class StoryIntro : MonoBehaviour {
         _introText.text = "Because of this, King Pelias arranged a fight between Jason and the Khalkotauroi bull to get rid of Jason forever.";
         yield return new WaitForSeconds(6.3f);
         _introText.text = "";
-        yield return new WaitForSeconds(2);
-        LoadGameLevel();
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(LoadLevel());
     }
 
-    void LoadGameLevel()
+    IEnumerator LoadLevel()
     {
-        SceneManager.LoadScene(_levelToLoad);
+        _introText.text = "Loading...";
+        yield return new WaitForSeconds(3f);
+        AsyncOperation async = Application.LoadLevelAsync(1);
+
+        // While the asynchronous operation to load the new scene is not yet complete, continue waiting until it's done.
+        while (!async.isDone)
+        {
+            yield return null;
+        }
     }
 
     void SkipIntro()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && !_isLoadingGame)
         {
-            LoadGameLevel();
+            _isLoadingGame = true;
+            _introVoice.Stop();
+            StopCoroutine(Introduction());
+            StartCoroutine(LoadLevel());
         }
     }
 }
