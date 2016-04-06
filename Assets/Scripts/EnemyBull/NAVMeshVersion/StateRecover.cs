@@ -35,6 +35,7 @@ public class StateRecover : StateParent {
 
 	public override void Act ()
 	{
+		AnimStateHandler.AnimStateGeneral (5);
 		if (_Zside) {
 			_newTarget = _rotatePos2.transform.position;
 		} else {

@@ -63,7 +63,7 @@ public class PlayerInputs : MonoBehaviour {
             _movement.handleAnimations(inputVector);
             if (Input.GetButtonDown(InputAxes.A))
             {
-                _dodge.RollX();
+                _dodge.DodgeJump();
             }
         }
 
@@ -108,7 +108,7 @@ public class PlayerInputs : MonoBehaviour {
         
         if (Input.GetButtonDown(InputAxes.X))
         {
-            _attack.Attack();
+            _attack.Attack();            
         }
         if (Input.GetButtonDown(InputAxes.Y))
         {

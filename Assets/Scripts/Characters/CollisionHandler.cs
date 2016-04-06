@@ -41,6 +41,7 @@ public class CollisionHandler : MonoBehaviour
         //Player attacking bull
         if (other.tag == Tags.PLAYERWEAPON && this.tag == Tags.BULL)
         {
+            Debug.Log(other.gameObject.name);
             PlayerAttack checkAttack = other.GetComponentInParent<PlayerAttack>();
             if (checkAttack.IsAttacking())
             {
@@ -70,7 +71,7 @@ public class CollisionHandler : MonoBehaviour
 			{
                 _playersounds.DamageSound();
                 _adjustHealth.CalculateNewHealth(other);
-                _adjustHealth.Knockback(20,other);
+                _adjustHealth.Knockback(50,other);
                 _vibration.Vibrate(0.8f, 0.3f, "Heavy");
                 StartCoroutine(_inputToggle.ToggleAllInput(1));
 			}

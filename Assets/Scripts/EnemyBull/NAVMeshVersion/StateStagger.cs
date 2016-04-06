@@ -20,6 +20,7 @@ public class StateStagger : StateParent {
    
 	public override void Act()
 	{
+		AnimStateHandler.AnimStateGeneral (4);
 	}
 
 	public override void Reason()
