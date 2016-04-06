@@ -25,7 +25,7 @@ public class StatePrepare : StateParent {
 
 	public override void Act ()
 	{
-        BullAnimator.BullAnimation(1);
+       
         if (_targetPlayer != null)
         {
             bullBehaviour.targetPos = _targetPlayer.transform.position;
@@ -51,24 +51,23 @@ public class StatePrepare : StateParent {
 	{
 		if (DistanceTo () >= 30f) 
 		{
-			if (bullBehaviour.canICharge) {
+				BullAnimator.BullAnimation(1);
 				GetComponent<StateMachine> ().SetState (StateID.ChargeState);
-
-			} else {
-				GetComponent<StateMachine> ().SetState (StateID.IdleState);
-			}
+	
 		}
 		else if (DistanceTo () < 16f) 
 		{
-            Debug.Log(bullBehaviour.canIFire);
+
             bullBehaviour.setSpeed(0);
             if (bullBehaviour.canIFire)
-            {
+			{
                 bullBehaviour.canIFire = false;
-                GetComponent<StateMachine>().SetState(StateID.FlameState);
 
+                GetComponent<StateMachine>().SetState(StateID.FlameState);
+	
             } else {
                 GetComponent<StateMachine>().SetState(StateID.RunAwayState);
+
             }
         }
 	}

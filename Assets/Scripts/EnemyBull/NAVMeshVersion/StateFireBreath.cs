@@ -31,11 +31,13 @@ public class StateFireBreath : StateParent
 		//Player damage zone
 		//leave
 		StartCoroutine(EndBehaviour());
+
 	}
 
 	public override void Act()
 	{
-        BullAnimator.BullAnimation(3);
+		BullAnimator.BullAnimation(2);
+        //BullAnimator.BullAnimation(3);
 		//update
 		LookAtPlayer(); // stop if in range
         this.gameObject.transform.position = _CurBullPos;
@@ -49,6 +51,7 @@ public class StateFireBreath : StateParent
 	IEnumerator ParticleStart()
 	{
 		var par = transform.Find("FX_fire").gameObject;
+		yield return new WaitForSeconds (1);
 		par.gameObject.SetActive(true);
 		yield return new WaitForSeconds(4);
 	}
@@ -62,7 +65,7 @@ public class StateFireBreath : StateParent
 
 	IEnumerator EndBehaviour()
 	{
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(5);
 		GetComponent<StateMachine>().SetState(StateID.IdleState);
 	}
 

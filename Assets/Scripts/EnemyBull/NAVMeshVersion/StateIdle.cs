@@ -23,13 +23,14 @@ public class StateIdle : StateParent {
 
 		_newPos = RandomNavSphere (transform.position, _wanderRadius, -1);
 		bullBehaviour.targetPos = _newPos;
-
+		BullAnimator.BullAnimation(8);
 		_path = new NavMeshPath ();
+
 	}
 
 	public override void Act ()
 	{
-        BullAnimator.BullAnimation(0);
+  
 		_agent.CalculatePath (_newPos, _path);
 
 		if (_path.status == NavMeshPathStatus.PathPartial) 
@@ -41,7 +42,7 @@ public class StateIdle : StateParent {
 	public override void Reason ()
 	{
 		float distanceTo = (this.transform.position - _newPos).magnitude;
-		Debug.Log (distanceTo);
+
 		if (distanceTo < 1.5f) 
 		{
 			GetComponent<StateMachine> ().SetState (StateID.PrepareState);

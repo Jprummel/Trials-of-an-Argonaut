@@ -11,6 +11,7 @@ public class StateStagger : StateParent {
 		bullbehaviour.isCharging = false;
 		bullbehaviour.acceleration (1000f);
 		bullbehaviour.setSpeed (0f);
+		BullAnimator.BullAnimation(5);
 		StartCoroutine (WaitAndRecover (4.0f));
 	}
 
@@ -20,7 +21,7 @@ public class StateStagger : StateParent {
    
 	public override void Act()
 	{
-        BullAnimator.BullAnimation(4);
+     
 	}
 
 	public override void Reason()
@@ -29,6 +30,8 @@ public class StateStagger : StateParent {
 
 	IEnumerator WaitAndRecover(float waitTime)
 	{
+		yield return new WaitForSeconds (waitTime);
+		BullAnimator.BullAnimation(6);
 		yield return new WaitForSeconds (waitTime);
 		GetComponent<StateMachine> ().SetState (StateID.IdleState);
 	}

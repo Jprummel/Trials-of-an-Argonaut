@@ -22,7 +22,7 @@ public class StateRunAway : StateParent
 
     public override void Act()
     {
-        BullAnimator.BullAnimation(1);
+
 		if (_PlayerX > 0)
         {
             //move to way 2
@@ -38,7 +38,7 @@ public class StateRunAway : StateParent
     public override void Reason()
     {
         float distanceTo = (this.transform.position - bullBehaviour.targetPos).magnitude;
-		Debug.Log (distanceTo);
+
         if (distanceTo <6f)
         {
             GetComponent<StateMachine>().SetState(StateID.IdleState);

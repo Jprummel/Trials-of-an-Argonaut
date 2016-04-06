@@ -35,8 +35,8 @@ public class StateRecover : StateParent {
 
 	public override void Act ()
 	{
-        BullAnimator.BullAnimation(5);
-		AnimStateHandler.AnimStateGeneral (5);
+        BullAnimator.BullAnimation(4);
+
 		if (_Zside) {
 			_newTarget = _rotatePos2.transform.position;
 		} else {

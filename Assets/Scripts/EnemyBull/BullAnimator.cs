@@ -13,4 +13,6 @@ public class BullAnimator : MonoBehaviour {
     {
         _Animator.SetInteger("BullState", whichState);
     }
+
+
 }

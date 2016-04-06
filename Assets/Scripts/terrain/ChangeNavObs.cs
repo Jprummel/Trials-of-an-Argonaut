@@ -3,14 +3,15 @@ using System.Collections;
 
 public class ChangeNavObs : MonoBehaviour {
 
-	private GameObject      _bull;
+	[SerializeField]private GameObject      _bull;
 	        BullBehaviour   _Charge;
 	        NavMeshObstacle _MeshObstakels;
 
 	void Start () {
-		_bull           = GameObject.FindGameObjectWithTag ("Bull");
-		_Charge         = _bull.GetComponent<BullBehaviour> ();
-		_MeshObstakels  = GetComponent<NavMeshObstacle> ();
+		if (_bull != null) {
+			_Charge = _bull.GetComponent<BullBehaviour> ();
+		}
+			_MeshObstakels  = GetComponent<NavMeshObstacle> ();
 	}
 
 	void Update () {
@@ -19,7 +20,7 @@ public class ChangeNavObs : MonoBehaviour {
 
 	void checkIfCharging()
 	{
-		if (_Charge.isCharging) {			
+		if (_Charge.isCharging && _bull != null) {			
 			_MeshObstakels.carving = false;
 
 		} else {
