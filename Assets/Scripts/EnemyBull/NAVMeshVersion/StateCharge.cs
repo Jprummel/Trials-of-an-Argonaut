@@ -40,6 +40,7 @@ public class StateCharge : StateParent {
 
 	public override void Act ()
 	{
+		AnimStateHandler.AnimStateGeneral (2);
 		float dot = Vector3.Dot(transform.forward,(_CurrentTarget - transform.position).normalized);
 		if (dot > 0.985f) {
 			bullBehaviour.setSpeed (_chargeSpeed);

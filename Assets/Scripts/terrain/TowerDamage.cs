@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TowerDamage : MonoBehaviour {
 
-	       Animator _animator;
+	Animator _animator;
 	[SerializeField] private GameObject _particles;
 	private AudioSource _audioCollapse;
     public bool     doDamage = true;
