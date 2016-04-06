@@ -29,7 +29,7 @@ public class StateIdle : StateParent {
 
 	public override void Act ()
 	{
-		AnimStateHandler.AnimStateGeneral (0);
+        BullAnimator.BullAnimation(0);
 		_agent.CalculatePath (_newPos, _path);
 
 		if (_path.status == NavMeshPathStatus.PathPartial) 
