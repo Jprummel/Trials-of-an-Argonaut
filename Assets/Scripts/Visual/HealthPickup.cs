@@ -7,6 +7,8 @@ public class HealthPickup : MonoBehaviour
     [SerializeField]private float       _healthToAdd;
     [SerializeField]private float       _timeToRespawn;
     [SerializeField]private GameObject  _pickUpObject;
+    [SerializeField]private GameObject _pickUpParticle;
+    [SerializeField]private GameObject _pickUpHearth;
                     private BoxCollider _pickUpCollider;
                     private PlayerSounds _playersounds;
 
@@ -31,6 +33,8 @@ public class HealthPickup : MonoBehaviour
     {
         _pickUpObject.SetActive(false);
         _pickUpCollider.enabled = false;
+        _pickUpParticle.SetActive(false);
+        _pickUpHearth.SetActive(false);
         yield return new WaitForSeconds(_timeToRespawn);
         RespawnPickup();
     }
@@ -38,6 +42,8 @@ public class HealthPickup : MonoBehaviour
     void RespawnPickup()
     {
         _pickUpObject.SetActive(true);
+        _pickUpParticle.SetActive(true);
+        _pickUpHearth.SetActive(false);
         _pickUpCollider.enabled = true;
     }
 }
