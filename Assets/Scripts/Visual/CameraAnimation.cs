@@ -32,6 +32,18 @@ public class CameraAnimation : MonoBehaviour
         PlaySoundButton();
     }
 
+    public void MenuToHowToPlay()
+    {
+        AnimStateHandler.AnimStateGeneral(4);
+        PlaySoundButton();
+    }
+
+    public void HowToPlayToMenu()
+    {
+        AnimStateHandler.AnimStateGeneral(5);
+        PlaySoundButton();
+    }
+
     IEnumerator PlayAnimation()
     {
         yield return new WaitForSeconds(1f);
