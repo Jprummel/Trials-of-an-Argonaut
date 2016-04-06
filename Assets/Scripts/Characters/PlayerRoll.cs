@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerRoll : MonoBehaviour {
                     private ToggleEnableInput   _inputToggle;
+                    private PlayerBlock         _block;
     [SerializeField]private int                 _dodgeSpeed;
     [SerializeField]private float               _dodgeCooldown = 1.3f;
                     private PlayerMovement      _movement;
@@ -14,6 +15,7 @@ public class PlayerRoll : MonoBehaviour {
 
     void Start()
     {
+        _block          = GetComponent<PlayerBlock>();
         _inputToggle    = GetComponent<ToggleEnableInput>();
         _playersounds   = GetComponent<PlayerSounds>();
         _movement       = GetComponent<PlayerMovement>();
@@ -22,7 +24,7 @@ public class PlayerRoll : MonoBehaviour {
 
     public void DodgeJump()
     {
-        if (_CanDodge)
+        if (_CanDodge && !_block.IsBlocking())
         {
             StartCoroutine(_inputToggle.ToggleAllInput(0.7f));
             AnimStateHandler.AnimStateGeneral(3);
