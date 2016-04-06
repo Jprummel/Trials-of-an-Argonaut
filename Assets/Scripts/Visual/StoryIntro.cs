@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class StoryIntro : MonoBehaviour {
     [SerializeField]private Text        _introText;
     [SerializeField]private AudioSource _introVoice;
-    [SerializeField]private string      _levelToLoad;
                     private bool        _isLoadingGame;
 	
     void Start () 
@@ -59,7 +58,7 @@ public class StoryIntro : MonoBehaviour {
     {
         _introText.text = "Loading...";
         yield return new WaitForSeconds(3f);
-        AsyncOperation async = Application.LoadLevelAsync(1);
+        AsyncOperation async = Application.LoadLevelAsync(2);
 
         // While the asynchronous operation to load the new scene is not yet complete, continue waiting until it's done.
         while (!async.isDone)
