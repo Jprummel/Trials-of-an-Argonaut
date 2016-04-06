@@ -22,8 +22,8 @@ public class StateRunAway : StateParent
 
     public override void Act()
     {
-		AnimStateHandler.AnimStateGeneral (1);
-        if (_PlayerX > 0)
+        BullAnimator.BullAnimation(1);
+		if (_PlayerX > 0)
         {
             //move to way 2
             bullBehaviour.targetPos = _way2.transform.position;

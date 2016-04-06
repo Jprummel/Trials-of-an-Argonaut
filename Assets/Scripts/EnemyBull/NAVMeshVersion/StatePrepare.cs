@@ -25,7 +25,7 @@ public class StatePrepare : StateParent {
 
 	public override void Act ()
 	{
-		AnimStateHandler.AnimStateGeneral (1);
+        BullAnimator.BullAnimation(1);
         if (_targetPlayer != null)
         {
             bullBehaviour.targetPos = _targetPlayer.transform.position;

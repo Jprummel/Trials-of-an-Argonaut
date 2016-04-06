@@ -30,7 +30,7 @@ public class BullBehaviour : MonoBehaviour {
 	private Vector3 _targetPos;
 	public Vector3 targetPos
 	{
-		get{return _targetPos;  } //target van waar hij nu naar toe moet.
+		get{return _targetPos;  } //target of destination
 		set{_targetPos = value; }
 	}
 		

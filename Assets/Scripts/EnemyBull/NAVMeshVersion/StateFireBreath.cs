@@ -35,7 +35,7 @@ public class StateFireBreath : StateParent
 
 	public override void Act()
 	{
-		AnimStateHandler.AnimStateGeneral (3);
+        BullAnimator.BullAnimation(3);
 		//update
 		LookAtPlayer(); // stop if in range
         this.gameObject.transform.position = _CurBullPos;
