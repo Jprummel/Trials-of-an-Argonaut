@@ -8,8 +8,6 @@ public class PlayerAttack : MonoBehaviour {
     private Damage              _damageAmount;
     private PlayerMovement      _movement;
     private int                 _attackState;
-    private float               _attackInterval;
-    private float               _attackTimer =0;
     private bool                _isAttacking;
     private float               _damageBase;
     private Rigidbody           _rigidBody;
@@ -25,46 +23,29 @@ public class PlayerAttack : MonoBehaviour {
         _damageBase     = _damageAmount.damage;
     }
 
-    void Update()
-    {
-        if(_attackTimer < _attackInterval)
-        {
-            _attackTimer += Time.deltaTime;
-        }
-    }
-
     public void Attack()
     {
         if (_inputToggle.CanAttack() && !_block.IsBlocking())
         {
-            if (_attackState == 0 && /*_attackTimer >= _attackInterval*/ !_isAttacking)
+            if (_attackState == 0 && !_isAttacking)
             {
                 _damageAmount.damage = _damageBase;                     // resets to base damage
                 AnimStateHandler.AnimStateOverride(7);
                 AnimStateHandler.AnimStateGeneral(7);
-                //_attackState++;
-                TimerReset();
-                //_attackInterval = 1.75f;
                 StartCoroutine(AttackState(1.25f,150));
             }
-            else if (_attackState == 1 && /*_attackTimer >= _attackInterval*/ !_isAttacking)
+            else if (_attackState == 1 && !_isAttacking)
             {
                 _damageAmount.damage = _damageAmount.damage * 1.5f;     //increases power for hit 2
                 AnimStateHandler.AnimStateOverride(8);
                 AnimStateHandler.AnimStateGeneral(8);
-                //_attackState++;
-                TimerReset();
-                _attackInterval = 0.8f;
                 StartCoroutine(AttackState(1.25f,300));
             }
-            else if (_attackState == 2 && /*_attackTimer >= _attackInterval*/ !_isAttacking)
+            else if (_attackState == 2 && !_isAttacking)
             {
                 _damageAmount.damage = _damageAmount.damage * 2f;       //increases power for hit 3
                 AnimStateHandler.AnimStateOverride(9);
                 AnimStateHandler.AnimStateGeneral(9);
-                //_attackState = 0;
-                TimerReset();
-                _attackInterval = 0.5f;
                 StartCoroutine(AttackState(1.2f,15));
             }
         }
@@ -91,10 +72,5 @@ public class PlayerAttack : MonoBehaviour {
     public bool IsAttacking()
     {
         return _isAttacking;
-    }
-
-    void TimerReset()
-    {
-        _attackTimer = 0;
     }
 }
