@@ -41,8 +41,8 @@ public class StateIdle : StateParent {
 	public override void Reason ()
 	{
 		float distanceTo = (this.transform.position - _newPos).magnitude;
-
-		if (distanceTo < 1f) 
+		Debug.Log (distanceTo);
+		if (distanceTo < 1.5f) 
 		{
 			GetComponent<StateMachine> ().SetState (StateID.PrepareState);
 		}

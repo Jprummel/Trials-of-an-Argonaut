@@ -64,6 +64,7 @@ public class BullBehaviour : MonoBehaviour {
 
 	void Update ()
 	{
+		_targetPos.y = 2f;
 		RotatingSmooth ();
 
 		if(_targetPos != null)
