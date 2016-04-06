@@ -3,8 +3,8 @@ using System.Collections;
 
 public class PlayerRoll : MonoBehaviour {
                     private ToggleEnableInput   _inputToggle;
-    [SerializeField]private int                 _rollSpeed = 170;
-    [SerializeField]private float               _rollCooldown = 1.3f;
+    [SerializeField]private int                 _dodgeSpeed;
+    [SerializeField]private float               _dodgeCooldown = 1.3f;
                     private PlayerMovement      _movement;
                     private Rigidbody           _rigidBody;
                     private bool                _CanDodge = true;
@@ -20,34 +20,24 @@ public class PlayerRoll : MonoBehaviour {
         _rigidBody      = GetComponent<Rigidbody>();
     }
 
-    public void RollX()
+    public void DodgeJump()
     {
         if (_CanDodge)
         {
-            StartCoroutine(_inputToggle.ToggleAllInput(1));
+            StartCoroutine(_inputToggle.ToggleAllInput(0.7f));
             AnimStateHandler.AnimStateGeneral(3);
             AnimStateHandler.AnimStateOverride(3);
-            _rigidBody.AddForce(_movement._playerModel.forward * _rollSpeed * 7);
+            _rigidBody.AddForce(_movement._playerModel.forward * _dodgeSpeed * 6);
             _rigidBody.AddForce(Vector3.up * 30);
             _playersounds.DodgeSound();
-            StartCoroutine(RollCooldown());
+            StartCoroutine(DodgeCooldown());
         }
     }
 
-    public void RollY(float value)
-    {
-        if (_CanDodge)
-        {
-            AnimStateHandler.AnimStateGeneral(6);
-            _rigidBody.AddForce(_movement._playerModel.forward * _rollSpeed * value * 4);
-            StartCoroutine(RollCooldown());
-        }
-    }
-
-    IEnumerator RollCooldown()
+    IEnumerator DodgeCooldown()
     {
         _CanDodge = false;
-        yield return new WaitForSeconds(_rollCooldown);
+        yield return new WaitForSeconds(_dodgeCooldown);
         _CanDodge = true;
     }
 }
