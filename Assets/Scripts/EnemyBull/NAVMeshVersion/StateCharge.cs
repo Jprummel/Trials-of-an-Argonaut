@@ -38,6 +38,7 @@ public class StateCharge : StateParent {
 	public override void Leave()
 	{
 		bullBehaviour.acceleration (60);
+		bullBehaviour.isCharging = false;
 	}
 
 	public override void Act ()

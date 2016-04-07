@@ -43,7 +43,7 @@ public class HealthPickup : MonoBehaviour
     {
         _pickUpObject.SetActive(true);
         _pickUpParticle.SetActive(true);
-        _pickUpHearth.SetActive(false);
+		_pickUpHearth.SetActive(true);
         _pickUpCollider.enabled = true;
     }
 }
