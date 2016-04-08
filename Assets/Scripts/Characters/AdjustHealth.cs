@@ -35,7 +35,7 @@ public class AdjustHealth : MonoBehaviour {
         else if (currentHealth > 0)
         {
             AnimStateHandler.AnimStateGeneral(5);
-            AnimStateHandler.AnimStateOverride(6);
+            AnimStateHandler.AnimStateOverride(5);
         }
     }
 

@@ -25,7 +25,11 @@ public class CameraMovement : MonoBehaviour {
     private void FollowPlayer()
     {
         //Move the camera smoothly to the position of the player and gives the normalized camera forward as a Vector3
-        transform.position  = Vector3.Lerp(transform.position, _playerPos.position, Time.deltaTime * _damping);
+        if(_playerPos.position != null)
+        {
+            transform.position  = Vector3.Lerp(transform.position, _playerPos.position, Time.deltaTime * _damping);
+        }
+
         cameraForward       = transform.TransformDirection(Vector3.forward);
         cameraForward.y     = 0f;
         cameraForward       = cameraForward.normalized;

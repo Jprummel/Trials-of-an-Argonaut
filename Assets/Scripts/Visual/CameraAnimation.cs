@@ -44,6 +44,11 @@ public class CameraAnimation : MonoBehaviour
         PlaySoundButton();
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     IEnumerator PlayAnimation()
     {
         yield return new WaitForSeconds(1f);
