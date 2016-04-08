@@ -8,11 +8,13 @@ public class AdjustHealth : MonoBehaviour {
                     private bool                _canUseInput;
                     private Vector3             _direction;
                     PlayerSounds _playersounds;
+                    BullSound _bullsound;
 
     void Start()
     {
         _playersounds = GetComponent<PlayerSounds>();
         _rigidbody          = GetComponent<Rigidbody>();
+        _bullsound = GetComponent<BullSound>();
         if (this.tag == Tags.PLAYER)
         {
             _inputToggle    = GetComponent<ToggleEnableInput>();
@@ -59,6 +61,8 @@ public class AdjustHealth : MonoBehaviour {
             Debug.Log("Bull Died");
             yield return new WaitForSeconds(1);
             Destroy(this.gameObject);
+            _bullsound.DeathSound();
+            
         }         
     }
 
