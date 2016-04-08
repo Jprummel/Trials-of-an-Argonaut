@@ -15,13 +15,9 @@ public class GameLostStory : MonoBehaviour {
     {
         _storyText.text = "The gods did not favor Jason on that day";
         yield return new WaitForSeconds(1);
-        _storyText.text = "Pelias was still the king and his people suffered under his reign";
+        _storyText.text = "Pelias remained the king and his people suffered under his reign";
         yield return new WaitForSeconds(1);
-        _storyText.text = "";
-        yield return new WaitForSeconds(1);
-        _storyText.text = "";
-        yield return new WaitForSeconds(1);
-        _storyText.text = "";
+        _storyText.text = "Maybe next time the gods will send a real hero.";
         yield return new WaitForSeconds(1);
         _buttons.SetActive(true);
     }
