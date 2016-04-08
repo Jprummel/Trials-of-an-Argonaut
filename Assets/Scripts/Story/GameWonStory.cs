@@ -17,11 +17,11 @@ public class GameWonStory : MonoBehaviour {
         yield return new WaitForSeconds(3f);
         _storyText.text = "After the fight Jason challenged King Pelias to a duel for the throne";
         yield return new WaitForSeconds(3f);
-        _storyText.text = "While King Pelias refused his people screamed and yelled at him 'Weak king, get into the arena'";
+        _storyText.text = "King Pelias did not feel much for the idea of a battle with Jason.";
         yield return new WaitForSeconds(3f);
-        _storyText.text = "He did not want to look like a weak king and before he knew it he was down there in front of Jason";
+        _storyText.text = "But after a hefty chant from the audience 'Finish him! show him who he is dealing with!' Pelias had no choice but to face Jason. ";
         yield return new WaitForSeconds(3f);
-        _storyText.text = "However King Pelias was not a warrior and as soon as the battle began his head was rolling over the floor";
+        _storyText.text = "The fight wasn't much of a spectacle as Jason almost instantly forced Pelias down to his knees and removed his head with a single swift cut";
         yield return new WaitForSeconds(3f);
         _storyText.text = "Iolcos now has a new king and his name is Jason";
         yield return new WaitForSeconds(1f);
