@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: aa18f56d42ec1754f86d2ed83b6290ee
+timeCreated: 1460123338
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bull
+    100002: //RootNode
+    100004: head_jntBull
+    100006: headEnd_jntBull
+    100008: ikHandle8
+    100010: joint1
+    100012: joint11
+    100014: joint12
+    100016: joint2
+    100018: neckStart_jnt1Bull
+    100020: neckStart_jnt2Bull
+    100022: R_B_leg_fetlock_jntBull
+    100024: R_B_leg_fetlock_jntBull 1
+    100026: R_B_leg_foot_jntBull
+    100028: R_B_leg_foot_jntBull 1
+    100030: R_B_leg_lowLeg_jntBull
+    100032: R_B_leg_lowLeg_jntBull 1
+    100034: R_B_leg_pastern_jntBull
+    100036: R_B_leg_pastern_jntBull 1
+    100038: R_B_leg_upLeg_jntBull
+    100040: R_B_leg_upLeg_jntBull1
+    100042: R_F_leg_fetlock_jntBull
+    100044: R_F_leg_fetlock_jntBull 1
+    100046: R_F_leg_foot_jntBull
+    100048: R_F_leg_foot_jntBull 1
+    100050: R_F_leg_lowLeg_jntBull
+    100052: R_F_leg_lowLeg_jntBull 1
+    100054: R_F_leg_pastern_jntBull
+    100056: R_F_leg_pastern_jntBull 1
+    100058: R_F_leg_shoulder_jntBull
+    100060: R_F_leg_shoulder_jntBull1
+    100062: R_F_leg_upLeg_jntBull
+    100064: R_F_leg_upLeg_jntBull 1
+    100066: Root
+    100068: spineStart_jnt1Bull
+    100070: spineStart_jnt2Bull
+    100072: spineStart_jnt3Bull
+    100074: spineStart_jnt4Bull
+    100076: spineStart_jnt5Bull
+    100078: spineStart_jnt6Bull
+    100080: TAIL
+    100082: tailStart_jnt2Bull
+    100084: tailStart_jnt3Bull
+    100086: tailStart_jnt4Bull
+    100088: tailStart_jnt5Bull
+    100090: tailStart_jnt6Bull
+    400000: bull
+    400002: //RootNode
+    400004: head_jntBull
+    400006: headEnd_jntBull
+    400008: ikHandle8
+    400010: joint1
+    400012: joint11
+    400014: joint12
+    400016: joint2
+    400018: neckStart_jnt1Bull
+    400020: neckStart_jnt2Bull
+    400022: R_B_leg_fetlock_jntBull
+    400024: R_B_leg_fetlock_jntBull 1
+    400026: R_B_leg_foot_jntBull
+    400028: R_B_leg_foot_jntBull 1
+    400030: R_B_leg_lowLeg_jntBull
+    400032: R_B_leg_lowLeg_jntBull 1
+    400034: R_B_leg_pastern_jntBull
+    400036: R_B_leg_pastern_jntBull 1
+    400038: R_B_leg_upLeg_jntBull
+    400040: R_B_leg_upLeg_jntBull1
+    400042: R_F_leg_fetlock_jntBull
+    400044: R_F_leg_fetlock_jntBull 1
+    400046: R_F_leg_foot_jntBull
+    400048: R_F_leg_foot_jntBull 1
+    400050: R_F_leg_lowLeg_jntBull
+    400052: R_F_leg_lowLeg_jntBull 1
+    400054: R_F_leg_pastern_jntBull
+    400056: R_F_leg_pastern_jntBull 1
+    400058: R_F_leg_shoulder_jntBull
+    400060: R_F_leg_shoulder_jntBull1
+    400062: R_F_leg_upLeg_jntBull
+    400064: R_F_leg_upLeg_jntBull 1
+    400066: Root
+    400068: spineStart_jnt1Bull
+    400070: spineStart_jnt2Bull
+    400072: spineStart_jnt3Bull
+    400074: spineStart_jnt4Bull
+    400076: spineStart_jnt5Bull
+    400078: spineStart_jnt6Bull
+    400080: TAIL
+    400082: tailStart_jnt2Bull
+    400084: tailStart_jnt3Bull
+    400086: tailStart_jnt4Bull
+    400088: tailStart_jnt5Bull
+    400090: tailStart_jnt6Bull
+    4300000: bull
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: bull
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
