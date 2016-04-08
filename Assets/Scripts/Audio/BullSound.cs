@@ -7,6 +7,7 @@ public class BullSound : MonoBehaviour {
     [SerializeField]private AudioClip   _hitbull;
     [SerializeField]private AudioClip _pillar;
     [SerializeField]private AudioClip _charge;
+    [SerializeField]private AudioClip _angry;
     // Use this for initialization
     void Start () {
         _audio = GetComponent<AudioSource>();
@@ -27,6 +28,11 @@ public class BullSound : MonoBehaviour {
     public void ChargeSound()
     {
         _audio.clip = _charge;
+        _audio.Play();
+    }
+    public void AngrySound()
+    {
+        _audio.clip = _angry;
         _audio.Play();
     }
 }

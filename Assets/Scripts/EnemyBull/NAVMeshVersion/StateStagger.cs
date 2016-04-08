@@ -4,10 +4,12 @@ using System.Collections;
 public class StateStagger : StateParent {
 	
     BullBehaviour bullbehaviour;
+    BullSound _bullsound;
     
 	public override void Enter()
 	{
 		bullbehaviour = GetComponent<BullBehaviour> ();
+        _bullsound = GetComponent<BullSound>();
 		bullbehaviour.isCharging = false;
 		bullbehaviour.acceleration (1000f);
 		bullbehaviour.setSpeed (0f);
@@ -34,6 +36,7 @@ public class StateStagger : StateParent {
 		BullAnimator.BullAnimation(6);
 		yield return new WaitForSeconds (waitTime);
 		GetComponent<StateMachine> ().SetState (StateID.IdleState);
+        _bullsound.AngrySound();
 	}
 }
 
