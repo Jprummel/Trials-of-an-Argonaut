@@ -39,14 +39,27 @@ public class AdjustHealth : MonoBehaviour {
 
     IEnumerator DeathTimer()
     {
-        _inputToggle.IsDead();
-        _playersounds.DeathSound();
-        AnimStateHandler.AnimStateGeneral(5);
-        AnimStateHandler.AnimStateOverride(5);
-        yield return new WaitForSeconds(_deathTimer);
-        AnimStateHandler.AnimStateGeneral(6);
-        AnimStateHandler.AnimStateOverride(6);
-        //Destroy(this.gameObject);        
+
+        if (this.tag == Tags.PLAYER)
+        {
+            Debug.Log("Player Died");
+            _inputToggle.IsDead();
+            _playersounds.DeathSound();
+            AnimStateHandler.AnimStateGeneral(5);
+            AnimStateHandler.AnimStateOverride(5);
+            yield return new WaitForSeconds(0.1f);
+            AnimStateHandler.AnimStateGeneral(6);
+            AnimStateHandler.AnimStateOverride(6);
+            yield return new WaitForSeconds(2);
+            Destroy(this.gameObject);
+        }
+
+        if (this.tag == Tags.BULL)
+        {
+            Debug.Log("Bull Died");
+            yield return new WaitForSeconds(1);
+            Destroy(this.gameObject);
+        }         
     }
 
     public void Knockback(float value , Collider other)
