@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StoryIntro : MonoBehaviour {
     [SerializeField]private Text        _introText;
+    [SerializeField]private Text        _skipText;
     [SerializeField]private Image       _loadingBar;
     [SerializeField]private AudioSource _introVoice;
                     private bool        _isLoadingGame;
@@ -105,6 +106,7 @@ public class StoryIntro : MonoBehaviour {
         if (Input.anyKeyDown && !_isLoadingGame)
         {
             _isLoadingGame = true;
+            _skipText.enabled = false;
             _introVoice.Stop();
             StopCoroutine(Introduction());
             StartCoroutine(LoadLevel());
